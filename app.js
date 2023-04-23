@@ -3,12 +3,13 @@ const cheerio = require("cheerio")
 const path = require("path")
 
 let dirName = "";
+let subDirName = "";
 const url = "https://www.indiabix.com/computer-science/computer-hardware/";
 
 let message = ""
 
 async function scrabe(url) {
-    return new Promise( async resolve => {
+    return new Promise(async resolve => {
         const res = await fetchUrl(url)
         fetchData(res).then(message => {
             resolve(message)
@@ -29,9 +30,14 @@ function fetchData(body) {
         const $ = cheerio.load(body);
         const title = $(".title-wrapper")
             .find(".title div h1");
+        const chapterName = $(".exercise .mb-3")
+            .text()
+            .split("-").at(-1).trim();
+        console.log("chapter", chapterName)
         quizBody.chapter_name = title.text().split("-").at(-1).trim();
         dirName = title.text().split("-")[0].trim();
-        // console.log(dirName)
+        subDirName = title.text().split("-")[1].trim();
+        // console.log(dirName, subDirName)
         const questions = [];
         const bixDivContainer = $('.card-style .bix-div-container')
         for (let i = 0; i < bixDivContainer.length; i++) {
@@ -60,8 +66,8 @@ function fetchData(body) {
             // let answer = $(bixDivContainer[i])
 
             o["correct_answer"] = o[`opt_${answer.charCodeAt(0) - 65}`]
-      
-            o["description"] = description.replace("Let's discuss.","").trim()
+
+            o["description"] = description.replace("Let's discuss.", "").trim()
             options.push(o);
             d.options = options;
             questions.push(d);
@@ -70,7 +76,7 @@ function fetchData(body) {
         }
         quizBody.questions = questions
 
-        saveJson(dirName, quizBody)
+        saveJson(dirName, subDirName, chapterName, quizBody)
 
         // Recursive call
         let nextPage = $(".pagination li:last a")
@@ -87,12 +93,21 @@ function fetchData(body) {
 
 }
 // console.log(body)
-const saveJson = (dir, databody) => {
-    try{
-        if (!fs.existsSync(dir)) {
-            fs.mkdirSync(dir);
-        }
-        const filePath = path.join(dir, `${databody.chapter_name}.json`);
+const saveJson = async (dir, subDirName, chapterName, databody) => {
+    try {
+        let subfolder = `${dir}/${subDirName}`;
+        // console.log(subfolder)
+        // if (!fs.existsSync(dir)) {
+        //     fs.mkdirSync(dir);
+        // }
+        // if (!fs.existsSync(subfolder)) {
+        //     console.log(subfolder)
+        //     fs.mkdirSync(subDirName);
+
+        // }
+        // console.log(subfolder)
+        await fs.promises.mkdir(`./${subfolder}`, { recursive: true });
+        const filePath = path.join(subfolder, `${chapterName}.json`);
         let finalData = {};
         let hasNewData = false;
         let newData = 0;
@@ -112,9 +127,9 @@ const saveJson = (dir, databody) => {
                             const optionsInNewQuestion = Object.keys(newquestion.options[0]).length;
                             // console.log(optionsInSavedQuestion)
                             // console.log(optionsInNewQuestion)
-    
+
                             if (optionsInNewQuestion == optionsInSavedQuestion) {
-    
+
                                 let flag = 0;
                                 for (let newOption in newquestion.options[0]) {
                                     for (let savedOption in savedQuestion.options[0]) {
@@ -132,13 +147,13 @@ const saveJson = (dir, databody) => {
                                 }
                                 // else {
                                 // console.log(`${flag} outof ${optionsInNewQuestion} options are found same in question ==> ${newquestion.question_title}`);
-    
+
                                 // do you want to keep this question
-    
+
                                 // const index = databody.questions.indexOf(newquestion)
                                 // databody.questions.splice(index, 1);
                                 // }
-    
+
                                 // console.log(flag);
                                 // console.log();
                                 // for(let savedOption in )
@@ -181,7 +196,7 @@ const saveJson = (dir, databody) => {
             }
         })
 
-    }catch(err){
+    } catch (err) {
         console.log(err)
     }
 }

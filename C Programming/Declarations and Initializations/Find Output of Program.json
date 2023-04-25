@@ -1,0 +1,162 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    int a[5] = {2, 3};\n    printf(\"%d, %d, %d\\n\", a[2], a[3], a[4]);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Garbage Values",
+                    "opt_2": "2, 3, 3",
+                    "opt_3": "3, 2, 2",
+                    "opt_4": "0, 0, 0",
+                    "correct_answer": "0, 0, 0",
+                    "description": "When an automatic array is partially initialized, the remaining elements are initialized to 0."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    struct emp\n    {\n        char name[20];\n        int age;\n        float sal;\n    };\n    struct emp e = {\"Tiger\"};\n    printf(\"%d, %f\\n\", e.age, e.sal);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 0.000000",
+                    "opt_2": "Garbage values",
+                    "opt_3": "Error",
+                    "opt_4": "None of above",
+                    "correct_answer": "0, 0.000000",
+                    "description": "When an automatic structure is partially initialized remaining elements are initialized to 0(zero)."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program?\n#include<stdio.h>\nint main()\n{\n    extern int a;\n    printf(\"%d\\n\", a);\n    return 0;\n}\nint a=20;",
+            "options": [
+                {
+                    "opt_1": "20",
+                    "opt_2": "0",
+                    "opt_3": "Garbage Value",
+                    "opt_4": "Error",
+                    "correct_answer": "20",
+                    "description": "extern int a; indicates that the variable a is defined elsewhere, usually in a separate source code module.\n\n\nprintf(\"%d\\n\", a); it prints the value of local variable int a = 20. Because, whenever there is a conflict between local variable and global variable, local variable gets the highest priority. So it prints 20."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program given below ?\n#include<stdio.h>\nint main()\n{\n    enum status { pass, fail, atkt};\n    enum status stud1, stud2, stud3;\n    stud1 = pass;\n    stud2 = atkt;\n    stud3 = fail;\n    printf(\"%d, %d, %d\\n\", stud1, stud2, stud3);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 1, 2",
+                    "opt_2": "1, 2, 3",
+                    "opt_3": "0, 2, 1",
+                    "opt_4": "1, 3, 2",
+                    "correct_answer": "0, 2, 1",
+                    "description": "enum takes the format like {0,1,2..) so pass=0, fail=1, atkt=2\nstud1 = pass (value is 0)\nstud2 = atkt (value is 2)\nstud3 = fail (value is 1)\nHence it prints 0, 2, 1"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int X=40;\n    {\n        int X=20;\n        printf(\"%d \", X);\n    }\n    printf(\"%d\\n\", X);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "40 40",
+                    "opt_2": "20 40",
+                    "opt_3": "20",
+                    "opt_4": "Error",
+                    "correct_answer": "20 40",
+                    "description": "In case of a conflict between a local variable and global variable, the local variable gets priority."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    int x = 10, y = 20, z = 5, i;\n    i = x < y < z;\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0",
+                    "opt_2": "1",
+                    "opt_3": "Error",
+                    "opt_4": "None of these",
+                    "correct_answer": "1",
+                    "description": "Since x < y turns to be TRUE it is replaced by 1. Then 1 < z is compared and to be TRUE. The 1 is assigned to i."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program?\n#include<stdio.h>\nint main()\n{\n    union a\n    {\n        int i;\n        char ch[2];\n    };\n    union a u;\n    u.ch[0] = 3;\n    u.ch[1] = 2;\n    printf(\"%d, %d, %d\\n\", u.ch[0], u.ch[1], u.i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3, 2, 515",
+                    "opt_2": "515, 2, 3",
+                    "opt_3": "3, 2, 5",
+                    "opt_4": "None of these",
+                    "correct_answer": "3, 2, 515",
+                    "description": "printf(\"%d, %d, %d\\n\", u.ch[0], u.ch[1], u.i); It prints the value of u.ch[0] = 3, u.ch[1] = 2 and it prints the value of u.i means the value of entire union size.\n\nSo the output is 3, 2, 515."
+                }
+            ]
+        },
+        {
+            "question_title": "In the following program how long will the for loop get executed?\n#include<stdio.h>\nint main()\n{\n    int i=5;\n    for(;scanf(\"%s\", &i); printf(\"%d\\n\", i));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "The for loop would not get executed at all",
+                    "opt_2": "The for loop would get executed only once",
+                    "opt_3": "The for loop would get executed 5 times",
+                    "opt_4": "The for loop would get executed infinite times",
+                    "correct_answer": "The for loop would get executed infinite times",
+                    "description": "During the for loop execution scanf() ask input and then printf() prints that given input. This process will be continued repeatedly because, scanf() returns the number of input given, the condition is always true(user gives a input means it reurns '1').\n                \nHence this for loop would get executed infinite times."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program in Turbo C (in DOS 16-bit OS)?\n#include<stdio.h>\nint main()\n{\n    char *s1;\n    char far *s2;\n    char huge *s3;\n    printf(\"%d, %d, %d\\n\", sizeof(s1), sizeof(s2), sizeof(s3));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 4, 6",
+                    "opt_2": "4, 4, 2",
+                    "opt_3": "2, 4, 4",
+                    "opt_4": "2, 2, 2",
+                    "correct_answer": "2, 4, 4",
+                    "description": "Any pointer size is 2 bytes. (only 16-bit offset)\nSo, char *s1 = 2 bytes.\nSo, char far *s2; = 4 bytes.\nSo, char huge *s3; = 4 bytes.\nA far, huge pointer has two parts: a 16-bit segment value and a 16-bit offset value.\n\nSince C is a compiler dependent language, it may give different output in other platforms. The above program works fine in Windows (TurboC), but error in Linux (GCC Compiler)."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    extern int fun(float);\n    int a;\n    a = fun(3.14);\n    printf(\"%d\\n\", a);\n    return 0;\n}\nint fun(int aa)\n{\n\treturn (int)++aa;\n}",
+            "options": [
+                {
+                    "opt_1": "3",
+                    "opt_2": "3.14",
+                    "opt_3": "0",
+                    "opt_4": "4",
+                    "opt_5": "Compile Error",
+                    "correct_answer": "Compile Error",
+                    "description": "2 Errors1. Type mismatch in redeclaration of fun2. Type mismatch in parameter aa"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint X=40;\nint main()\n{\n    int X=20;\n    printf(\"%d\\n\", X);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "20",
+                    "opt_2": "40",
+                    "opt_3": "Error",
+                    "opt_4": "No Output",
+                    "correct_answer": "20",
+                    "description": "Whenever there is conflict between a local variable and global variable, the local variable gets priority."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program in 16 bit platform (Turbo C under DOS)?\n#include<stdio.h>\nint main()\n{\n    extern int i;\n    i = 20;\n    printf(\"%d\\n\", sizeof(i));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2",
+                    "opt_2": "4",
+                    "opt_3": "vary from compiler",
+                    "opt_4": "Linker Error : Undefined symbol 'i'",
+                    "correct_answer": "Linker Error : Undefined symbol 'i'",
+                    "description": "Linker Error : Undefined symbol 'i'\nThe statement extern int i\nspecifies to the compiler that the memory for 'i' is allocated in some other program and that address will be given to the current program at the time of linking. But linker finds that no other variable of name 'i' is available in any other program with memory space allocated for it. Hence a linker error has occurred."
+                }
+            ]
+        }
+    ]
+}

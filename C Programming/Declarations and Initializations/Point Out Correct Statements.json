@@ -1,0 +1,83 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "Which of the following operations are INCORRECT?",
+            "options": [
+                {
+                    "opt_1": "int i = 35; i = i%5;",
+                    "opt_2": "short int j = 255; j = j;",
+                    "opt_3": "long int k = 365L; k = k;",
+                    "opt_4": "float a = 3.14; a = a%3;",
+                    "correct_answer": "float a = 3.14; a = a%3;",
+                    "description": "float a = 3.14; a = a%3; gives \"Illegal use of floating point\" error. \nThe modulus (%) operator can only be used on integer types. We have to use fmod() function in math.h for float values."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the declaration is correct?",
+            "options": [
+                {
+                    "opt_1": "int length;",
+                    "opt_2": "char int;",
+                    "opt_3": "int long;",
+                    "opt_4": "float double;",
+                    "correct_answer": "int length;",
+                    "description": "int length; denotes that variable length is int(integer) data type.\n\n\nchar int; here int is a keyword cannot be used a variable name.\n\nint long; here long is a keyword cannot be used a variable name.\nfloat double; here double is a keyword cannot be used a variable name.\nSo, the answer is int length;(Option A)."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following correctly represents a long double constant?",
+            "options": [
+                {
+                    "opt_1": "6.68",
+                    "opt_2": "6.68L",
+                    "opt_3": "6.68f",
+                    "opt_4": "6.68LF",
+                    "correct_answer": "6.68L",
+                    "description": "6.68 is double. \n6.68L is long double constant. \n6.68f is float constant. \n6.68LF is not allowed in c."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the structure is correct?\n\n\n1 :\nstruct book\n{\n    char name[10];\n    float price;\n    int pages;\n};\n\n\n2 :\nstruct aa\n{\n    char name[10];\n    float price;\n    int pages;\n}\n\n\n3 :\nstruct aa\n{\n    char name[10];\n    float price;\n    int pages;\n}",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "3",
+                    "opt_4": "All of above",
+                    "correct_answer": "1",
+                    "description": "In 2 and 3 semicolon are missing in structure element."
+                }
+            ]
+        },
+        {
+            "question_title": "1 :\ntypedef long a;extern int a c;\n\n\n2 :\ntypedef long a;extern a int c;\n\n\n3 :\ntypedef long a;extern a c;",
+            "options": [
+                {
+                    "opt_1": "1 correct",
+                    "opt_2": "2 correct",
+                    "opt_3": "3 correct",
+                    "opt_4": "1, 2, 3 are correct",
+                    "correct_answer": "3 correct",
+                    "description": "typedef long a;extern int a c; while compiling this statement becomes extern int long c;. This will result in to \"Declaration syntax error\".\n\n\ntypedef long a;extern a int c; while compiling this statement becomes extern long int c;. This will result in to \"Too many types in declaration error\".\n\n\ntypedef long a;extern a c; while compiling this statement becomes extern long c;. This is a valid c declaration statement. It says variable c is long data type and defined in some other file or module.\n\nSo, Option C is the correct answer."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the structure is incorrcet?\n\n\n1 :\nstruct aa\n{\n    int a;\n    float b;\n};\n\n\n2 :\nstruct aa\n{\n    int a;\n    float b;\n    struct aa var;\n};\n\n\n3 :\nstruct aa\n{\n    int a;\n    float b;\n    struct aa *var;\n};",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "3",
+                    "opt_4": "1, 2, 3",
+                    "correct_answer": "2",
+                    "description": "Option B gives \"Undefined structure in 'aa'\" error."
+                }
+            ]
+        }
+    ]
+}

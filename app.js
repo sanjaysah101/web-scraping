@@ -4,9 +4,11 @@ const path = require("path")
 
 let dirName = "";
 let subDirName = "";
-const url = "https://www.indiabix.com/computer-science/computer-hardware/";
+const url = "https://www.indiabix.com/microbiology/micro-organisms/002011";
+// const url = "https://www.indiabix.com/c-programming/declarations-and-initializations/";
 
-let message = ""
+let message = "";
+let answer;
 
 async function scrabe(url) {
     return new Promise(async resolve => {
@@ -25,87 +27,87 @@ const fetchUrl = async (url) => {
 }
 
 function fetchData(body) {
-    return new Promise(resolve => {
-        const quizBody = {};
-        const $ = cheerio.load(body);
-        const title = $(".title-wrapper")
-            .find(".title div h1");
-        const chapterName = $(".exercise .mb-3")
-            .text()
-            .split("-").at(-1).trim();
-        console.log("chapter", chapterName)
-        quizBody.chapter_name = title.text().split("-").at(-1).trim();
-        dirName = title.text().split("-")[0].trim();
-        subDirName = title.text().split("-")[1].trim();
-        // console.log(dirName, subDirName)
-        const questions = [];
-        const bixDivContainer = $('.card-style .bix-div-container')
-        for (let i = 0; i < bixDivContainer.length; i++) {
-            const d = {}
-            let questionTitle = $(bixDivContainer[i])
-                .find(".bix-td-qtxt")
+    try {
+        return new Promise(resolve => {
+            const quizBody = {};
+            const $ = cheerio.load(body);
+            const title = $(".title-wrapper")
+                .find(".title div h1");
+            const chapterName = $(".exercise .mb-3")
                 .text()
-                .trim();
-            d.question_title = questionTitle;
-            const options = []
-            const o = {}
-            const optionDiv = $(bixDivContainer[i])
-                .find(".bix-td-option-val");
-            for (let i = 0; i < optionDiv.length; i++) {
-                const option = $(optionDiv[i])
-                    .text().trim()
-                o[`opt_${i}`] = option
+                .split("-").at(-1).trim().replace("/", "-");
+            // console.log("chapter", chapterName)
+            quizBody.chapter_name = title.text().split("-").at(-1).trim();
+            dirName = title.text().split("-")[0].trim();
+            subDirName = title.text().split("-")[1].trim();
+            // console.log(dirName, subDirName)
+            const questions = [];
+            const bixDivContainer = $('.card-style .bix-div-container')
+            for (let i = 0; i < bixDivContainer.length; i++) {
+                const d = {}
+                let questionTitle = $(bixDivContainer[i])
+                    .find(".bix-td-qtxt")
+                    .text()
+                    .trim();
+                d.question_title = questionTitle;
+                const options = []
+                const o = {}
+                const optionDiv = $(bixDivContainer[i])
+                    .find(".bix-td-option-val");
+                for (let i = 0; i < optionDiv.length; i++) {
+                    const option = $(optionDiv[i])
+                        .text().trim()
+                    o[`opt_${i + 1}`] = option
+                }
+                let description = $(bixDivContainer[i])
+                    .find(".bix-td-miscell .bix-div-answer .bix-ans-description")
+                    .text()
+                    .trim();
+
+                answer = $('[class=jq-hdnakq][type=hidden]')[i].attribs.value;
+                o["correct_answer"] = o[`opt_${answer.charCodeAt(0) - 64}`]
+                o["description"] = description.replace("Let's discuss.", "").trim()
+                options.push(o);
+                d.options = options;
+                questions.push(d);
+                // console.log(questionTitle, " ===== ", answer)
+                // console.log(`opt_${answer.charCodeAt(0) - 64}`)
+                // console.log(o["correct_answer"])
+                // if(i == 2)
+                // break;
             }
-            let description = $(bixDivContainer[i])
-                .find(".bix-td-miscell .bix-div-answer .bix-ans-description")
+            quizBody.questions = questions
+
+            saveJson(dirName, subDirName, chapterName, quizBody)
+
+            // Recursive call
+            let nextPage = $(".pagination li:last a")
+            nextPage.each(async (index, value) => {
+                // Print the text from the tags and the associated href
+                let nextUrl = $(value).attr("href")
+                if ($(value).attr("href") != "#") {
+                    await scrabe(nextUrl)
+                }
+            })
+
+            const sectionList = $(".exercise .mb-3")
                 .text()
-                .trim();
-            // console.log(description)
+                .split("-").at(-1).trim().replace("/", "-");
+            console.log("sectionList", sectionList);
 
-            let answer = $('[class=jq-hdnakq][type=hidden]')[0].attribs.value;
-            // let answer = $(bixDivContainer[i])
 
-            o["correct_answer"] = o[`opt_${answer.charCodeAt(0) - 65}`]
-
-            o["description"] = description.replace("Let's discuss.", "").trim()
-            options.push(o);
-            d.options = options;
-            questions.push(d);
-            // console.log(o["description"])
-            // break;
-        }
-        quizBody.questions = questions
-
-        saveJson(dirName, subDirName, chapterName, quizBody)
-
-        // Recursive call
-        let nextPage = $(".pagination li:last a")
-        nextPage.each(async (index, value) => {
-            // Print the text from the tags and the associated href
-            let nextUrl = $(value).attr("href")
-            if ($(value).attr("href") != "#") {
-                await scrabe(nextUrl)
-
-            }
+            resolve(message)
         })
-        resolve(message)
-    })
+
+    } catch (err) {
+        console.log(err)
+    }
 
 }
 // console.log(body)
 const saveJson = async (dir, subDirName, chapterName, databody) => {
     try {
         let subfolder = `${dir}/${subDirName}`;
-        // console.log(subfolder)
-        // if (!fs.existsSync(dir)) {
-        //     fs.mkdirSync(dir);
-        // }
-        // if (!fs.existsSync(subfolder)) {
-        //     console.log(subfolder)
-        //     fs.mkdirSync(subDirName);
-
-        // }
-        // console.log(subfolder)
         await fs.promises.mkdir(`./${subfolder}`, { recursive: true });
         const filePath = path.join(subfolder, `${chapterName}.json`);
         let finalData = {};

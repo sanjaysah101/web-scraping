@@ -1,0 +1,60 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "Is there any difference in the following declarations?\nint myfun(int arr[]);int myfun(arr[20]);",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, we have to specify the data type of the parameter when declaring a function."
+                }
+            ]
+        },
+        {
+            "question_title": "Global variable are available to all functions. Does there exist a mechanism by way of which it available to some and not to others.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "The only way this can be achieved is to define the variable locally in main() instead of defining it globally and then passing it to the functions which need it."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that a global variable may have several declarations, but only one definition?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, In all the global variable declarations, you need to use the keyword extern."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that a function may have several declarations, but only one definition?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, but the function declarations must be identical.\nExample:\n\n#include<stdio.h>\n\nvoid Display();\nvoid Display();\nvoid Display();\n\nvoid Display()\n{\n   printf(\"Weclome to IndiaBIX.com..!\");\n}\n\nint main()\n{\n    Display();\n    return 0;\n}\n\n//Output:\nWeclome to IndiaBIX.com..!"
+                }
+            ]
+        },
+        {
+            "question_title": "Suppose a program is divided into three files f1, f2 and f3, and a variable is defined in the file f1 but used in files f2 and f3. In such a case would we need the extern declaration for the variables in the files f2 and f3?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

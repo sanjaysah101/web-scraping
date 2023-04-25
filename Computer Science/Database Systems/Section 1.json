@@ -1,0 +1,677 @@
+{
+    "chapter_name": "DBMS Introduction",
+    "questions": [
+        {
+            "question_title": "What is the name given to the database management system which is able to handle full text data, image data, audio and video?",
+            "options": [
+                {
+                    "opt_1": "Full media",
+                    "opt_2": "Graphics media",
+                    "opt_3": "Multimedia",
+                    "opt_4": "Hypertext",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Multimedia",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, which command is used to add new rows to a table?",
+            "options": [
+                {
+                    "opt_1": "ALTER TABLE",
+                    "opt_2": "ADD ROW",
+                    "opt_3": "INSERT",
+                    "opt_4": "APPEND",
+                    "opt_5": "None of the above",
+                    "correct_answer": "INSERT",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Sort/report generators",
+            "options": [
+                {
+                    "opt_1": "are   faster   than   index/report generators",
+                    "opt_2": "require   more   disk space   than index/report generators",
+                    "opt_3": "do   not   need   to   sort   before generating a report",
+                    "opt_4": "both (a) and (b)",
+                    "opt_5": "None of the above",
+                    "correct_answer": "require   more   disk space   than index/report generators",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "After you _____ a record, many data management the environments require you to issue a command to save the changes you made.",
+            "options": [
+                {
+                    "opt_1": "Delete",
+                    "opt_2": "Update",
+                    "opt_3": "Sort key",
+                    "opt_4": "Index",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Update",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The highest level in the hierarchy of data organization is called",
+            "options": [
+                {
+                    "opt_1": "data bank",
+                    "opt_2": "database",
+                    "opt_3": "data file",
+                    "opt_4": "data record",
+                    "opt_5": "None of the above",
+                    "correct_answer": "database",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Periodically adding, changing and deleting file records is called file",
+            "options": [
+                {
+                    "opt_1": "Updating",
+                    "opt_2": "upgrading",
+                    "opt_3": "restructuring",
+                    "opt_4": "renewing",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Updating",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "When using a database management system, the first thing that you must do is to",
+            "options": [
+                {
+                    "opt_1": "create a database file",
+                    "opt_2": "activate file editor",
+                    "opt_3": "load the software into your microÂ¬computer",
+                    "opt_4": "keep a floppy disk in readiness",
+                    "opt_5": "None of the above",
+                    "correct_answer": "load the software into your microÂ¬computer",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A number of related records that are treated as a unit is called",
+            "options": [
+                {
+                    "opt_1": "file",
+                    "opt_2": "field",
+                    "opt_3": "data",
+                    "opt_4": "batch",
+                    "opt_5": "None of the above",
+                    "correct_answer": "file",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "To have a file hold a list, it is necessary to",
+            "options": [
+                {
+                    "opt_1": "identify the records in the list",
+                    "opt_2": "identify the name, width and type of the fields of each record.",
+                    "opt_3": "decide which fields will be used as sort or index keys",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "All of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "If the record management system allows you to edit values before they are recorded on disk, you can",
+            "options": [
+                {
+                    "opt_1": "correct spelling changes before they are recorded",
+                    "opt_2": "change the name of a field",
+                    "opt_3": "change the width of a field",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "correct spelling changes before they are recorded",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Primitive operations common to all record management systems include",
+            "options": [
+                {
+                    "opt_1": "Print",
+                    "opt_2": "Sort",
+                    "opt_3": "Look-up",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Look-up",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, which command(s) is(are) used to enable/disable a database trigger?",
+            "options": [
+                {
+                    "opt_1": "MODIFY USER",
+                    "opt_2": "CHANGE USER",
+                    "opt_3": "ALTER TRIGGER",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "ALTER TRIGGER",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "An-owner-member    set    in    the CODASYL specifications may have",
+            "options": [
+                {
+                    "opt_1": "only one owner but many owner occurrences",
+                    "opt_2": "only one member but many member occurrence",
+                    "opt_3": "more than one member but only one occurrence per member",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "only one owner but many owner occurrences",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which command is used to remove an index from the database in SQL?",
+            "options": [
+                {
+                    "opt_1": "DELETE INDEX",
+                    "opt_2": "DROP INDEX",
+                    "opt_3": "REMOVE INDEX",
+                    "opt_4": "ROLL BACK INDEX",
+                    "opt_5": "None of the above",
+                    "correct_answer": "DROP INDEX",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is a database administrator's function?",
+            "options": [
+                {
+                    "opt_1": "database design",
+                    "opt_2": "backing up the database",
+                    "opt_3": "performance monitoring",
+                    "opt_4": "user coordination",
+                    "opt_5": "All of the above",
+                    "correct_answer": "All of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The data dictionary tells the DBMS",
+            "options": [
+                {
+                    "opt_1": "what files are in the database",
+                    "opt_2": "what attribute are possessed by the data",
+                    "opt_3": "what these files contain",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "All of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, which command is used to make permanent changes made by statements issue since the beginning of a transaction?",
+            "options": [
+                {
+                    "opt_1": "ZIP",
+                    "opt_2": "PACK",
+                    "opt_3": "COMMIT",
+                    "opt_4": "SAVE",
+                    "opt_5": "None of the above",
+                    "correct_answer": "COMMIT",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The Management Information system (MIS) structure with one main computer system is called a",
+            "options": [
+                {
+                    "opt_1": "hierarchical MIS structure",
+                    "opt_2": "distributed MIS structure",
+                    "opt_3": "centralized MIS structure",
+                    "opt_4": "decentralized MIS structure",
+                    "opt_5": "None of the above",
+                    "correct_answer": "centralized MIS structure",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The files stored on a secondary stage device are composed of a hierarchy of data. What does a record in a file contain?",
+            "options": [
+                {
+                    "opt_1": "Bits",
+                    "opt_2": "Characters",
+                    "opt_3": "Data field",
+                    "opt_4": "Schema",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Data field",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A form defines",
+            "options": [
+                {
+                    "opt_1": "where data is placed on the screen",
+                    "opt_2": "the width of each field",
+                    "opt_3": "both (a) and (b)",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "both (a) and (b)",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "If a calculation is embedded in a form",
+            "options": [
+                {
+                    "opt_1": "the result of the calculations are stored with the form",
+                    "opt_2": "the calculations are stored with the form",
+                    "opt_3": "the result of the calculations are printed in report",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "the calculations are stored with the form",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Data item characteristics that are important in data management include",
+            "options": [
+                {
+                    "opt_1": "punctuation",
+                    "opt_2": "language",
+                    "opt_3": "spelling",
+                    "opt_4": "width",
+                    "opt_5": "None of the above",
+                    "correct_answer": "width",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, which command(s) is(are) used to enable/disable all triggers on a table?",
+            "options": [
+                {
+                    "opt_1": "ALTER TRIGGERS",
+                    "opt_2": "ALTER TABLE",
+                    "opt_3": "MODIFY TRIGGERS IN TABLE",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "ALTER TABLE",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A list consists of last names, first names, addresses, and pin codes if all people in the list have the same last and the same pin code, a useful key would be",
+            "options": [
+                {
+                    "opt_1": "the pin code",
+                    "opt_2": "the last name",
+                    "opt_3": "a compound key consisting of the first name and the last name",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "a compound key consisting of the first name and the last name",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The main idea behind computer files is that it is convenient to",
+            "options": [
+                {
+                    "opt_1": "arrange them",
+                    "opt_2": "store information together",
+                    "opt_3": "create them",
+                    "opt_4": "access them",
+                    "opt_5": "None of the above",
+                    "correct_answer": "store information together",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "When you have finished entering information into a form",
+            "options": [
+                {
+                    "opt_1": "the template is written to the data file",
+                    "opt_2": "the  contents  of the  form  are written to the data file",
+                    "opt_3": "the contents of the form can be printed",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "the  contents  of the  form  are written to the data file",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The relational model uses some unfamiliar terminology. A tuple is equivalent to a:",
+            "options": [
+                {
+                    "opt_1": "record",
+                    "opt_2": "field",
+                    "opt_3": "file",
+                    "opt_4": "data base",
+                    "opt_5": "data item",
+                    "correct_answer": "record",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A top-to-bottom relationship among the items in a database is established by a",
+            "options": [
+                {
+                    "opt_1": "Hierarchical schema",
+                    "opt_2": "Network schema",
+                    "opt_3": "Relational schema",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Hierarchical schema",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "If you want to group the records in the abc database, you could use the Jobcode as the _____.",
+            "options": [
+                {
+                    "opt_1": "Delete",
+                    "opt_2": "Update",
+                    "opt_3": "Sort Key",
+                    "opt_4": "Index",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Sort Key",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the language used by most of the DBMSs for helping their users to access data?",
+            "options": [
+                {
+                    "opt_1": "High level language",
+                    "opt_2": "Query language",
+                    "opt_3": "SQL",
+                    "opt_4": "4GL",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Query language",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A database management system",
+            "options": [
+                {
+                    "opt_1": "allows simultaneous access to multiple files",
+                    "opt_2": "can   do   more   than   a   record management system",
+                    "opt_3": "is a collection of programs for managing data in a single file",
+                    "opt_4": "both (a) and (b)",
+                    "opt_5": "None of the above",
+                    "correct_answer": "both (a) and (b)",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which command is used to remove a table from the database in SQL?",
+            "options": [
+                {
+                    "opt_1": "DELETE TABLE",
+                    "opt_2": "DROP TABLE",
+                    "opt_3": "ERASE TABLE",
+                    "opt_4": "UNATTACH TABLE",
+                    "opt_5": "None of the above",
+                    "correct_answer": "DROP TABLE",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In a _____ a parent record type can be linked to one or more \"child\" record types, but a child record type can have only one parent.",
+            "options": [
+                {
+                    "opt_1": "Network database",
+                    "opt_2": "Relational database",
+                    "opt_3": "Distributed database",
+                    "opt_4": "Hierarchical database",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Hierarchical database",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The logical data structure with a one-to-many relationship is a :",
+            "options": [
+                {
+                    "opt_1": "network",
+                    "opt_2": "tree",
+                    "opt_3": "chain",
+                    "opt_4": "relational",
+                    "opt_5": "None of the above",
+                    "correct_answer": "tree",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is not a logical data-base structure?",
+            "options": [
+                {
+                    "opt_1": "tree",
+                    "opt_2": "relational",
+                    "opt_3": "network",
+                    "opt_4": "chain",
+                    "opt_5": "All of the above",
+                    "correct_answer": "chain",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A file produced by a spreadsheet",
+            "options": [
+                {
+                    "opt_1": "is generally stored on disk in an ASCII text format",
+                    "opt_2": "can be used as it by the DBMS",
+                    "opt_3": "can be used for graphic",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "is generally stored on disk in an ASCII text format",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A large computer information system maintains many different computer files. Which amongst them is called a perpetual file?",
+            "options": [
+                {
+                    "opt_1": "Specialized file",
+                    "opt_2": "Log file",
+                    "opt_3": "Master file",
+                    "opt_4": "Update file",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Master file",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, GRANT command is used to",
+            "options": [
+                {
+                    "opt_1": "allow user to access databases",
+                    "opt_2": "allow user to create databases",
+                    "opt_3": "grant system privileges, roles, and object privileges to uses and roles",
+                    "opt_4": "choose auditing for specific SQL commands",
+                    "opt_5": "None of the above",
+                    "correct_answer": "grant system privileges, roles, and object privileges to uses and roles",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A report generator is used to",
+            "options": [
+                {
+                    "opt_1": "update files",
+                    "opt_2": "print files on paper",
+                    "opt_3": "data entry",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "print files on paper",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following hardware components is the most important to the operation of a database management system?",
+            "options": [
+                {
+                    "opt_1": "high-resolution video display",
+                    "opt_2": "printer",
+                    "opt_3": "high speed, large-capacity disk",
+                    "opt_4": "plotter",
+                    "opt_5": "mouse",
+                    "correct_answer": "high speed, large-capacity disk",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A network schema",
+            "options": [
+                {
+                    "opt_1": "restricts the structure to a one-to-many relationship",
+                    "opt_2": "permits many-to-many relationÂ¬ships",
+                    "opt_3": "stores data in tables",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "permits many-to-many relationÂ¬ships",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "The PROJECT command will create new table that has",
+            "options": [
+                {
+                    "opt_1": "more  fields  than  the  original table",
+                    "opt_2": "more rows than the original table",
+                    "opt_3": "both (a) and (b)",
+                    "opt_4": "all the fields of master table",
+                    "opt_5": "None of the above",
+                    "correct_answer": "None of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which two files are used during operation of the DBMS?",
+            "options": [
+                {
+                    "opt_1": "query language and utilities",
+                    "opt_2": "data manipulation language and query language",
+                    "opt_3": "data dictionary and transaction log",
+                    "opt_4": "data dictionary and query language",
+                    "opt_5": "None of the above",
+                    "correct_answer": "data dictionary and transaction log",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Each of data files has a _____ that describe the way the data is stored in the file.",
+            "options": [
+                {
+                    "opt_1": "File structure",
+                    "opt_2": "Records",
+                    "opt_3": "Fields",
+                    "opt_4": "Database",
+                    "opt_5": "None of the above",
+                    "correct_answer": "File structure",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is not a relational database?",
+            "options": [
+                {
+                    "opt_1": "dBASE IV",
+                    "opt_2": "4th Dimension",
+                    "opt_3": "FoxPro",
+                    "opt_4": "Reflex",
+                    "opt_5": "None of the above",
+                    "correct_answer": "Reflex",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is true of a network structure?",
+            "options": [
+                {
+                    "opt_1": "It is a physical representation of the data",
+                    "opt_2": "It allows a many-to-many relationship",
+                    "opt_3": "It is conceptually simple",
+                    "opt_4": "It will be the dominant data base of the future",
+                    "opt_5": "None of the above",
+                    "correct_answer": "It allows a many-to-many relationship",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Sophisticated report generators can",
+            "options": [
+                {
+                    "opt_1": "print row-oriented reports",
+                    "opt_2": "perform arithmetic operations",
+                    "opt_3": "selectively   retrieve   and   print portions of a list",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "All of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Updating a database means",
+            "options": [
+                {
+                    "opt_1": "revising the file structure",
+                    "opt_2": "reorganizing the database",
+                    "opt_3": "modifying   or   adding   record occurrences",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "modifying   or   adding   record occurrences",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

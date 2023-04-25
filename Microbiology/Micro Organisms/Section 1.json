@@ -1,0 +1,70 @@
+{
+    "chapter_name": "Micro Organisms",
+    "questions": [
+        {
+            "question_title": "All the following are considered eukaryotes except",
+            "options": [
+                {
+                    "opt_1": "archaea",
+                    "opt_2": "fungi",
+                    "opt_3": "protozoa",
+                    "opt_4": "humans",
+                    "correct_answer": "archaea",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "All of the following individuals contributed to cell theory except",
+            "options": [
+                {
+                    "opt_1": "Robert Hooke",
+                    "opt_2": "Matthias Schleiden",
+                    "opt_3": "Theodor Schwann",
+                    "opt_4": "Rudolf Virchow",
+                    "correct_answer": "Robert Hooke",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which cell type is considered to have the oldest ancestor?",
+            "options": [
+                {
+                    "opt_1": "Archaea",
+                    "opt_2": "Bacteria",
+                    "opt_3": "Eukarya",
+                    "opt_4": "they all share the same ancestor",
+                    "correct_answer": "they all share the same ancestor",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What is Mycology?",
+            "options": [
+                {
+                    "opt_1": "Study of viruses",
+                    "opt_2": "Study of nucleic acid",
+                    "opt_3": "Study of bacteria",
+                    "opt_4": "Study of fungi",
+                    "correct_answer": "Study of fungi",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following organelles contain DNA, divides and possesses some degree of autonomy?",
+            "options": [
+                {
+                    "opt_1": "Golgi apparatus",
+                    "opt_2": "Ribosome",
+                    "opt_3": "Chloroplast",
+                    "opt_4": "Peroxisomes",
+                    "correct_answer": "Chloroplast",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

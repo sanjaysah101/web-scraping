@@ -1,0 +1,82 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "Range of float id -2.25e+308 to  2.25e+308",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, The range of float is -3.4e+38 to 3.4e+38."
+                }
+            ]
+        },
+        {
+            "question_title": "Size of short integer and long integer would vary from one platform to another.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, Depending on the operating system/compiler/system architecture you are working on, the range of data types can vary."
+                }
+            ]
+        },
+        {
+            "question_title": "Size of short integer and long integer can be verified using the sizeof() operator.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, we can find the size of short integer and long integer using the sizeof() operator. Example:\n                \n\n#include<stdio.h>\nint main()\n{\n    short int i = 10;\n    long int j = 10;\n    printf(\"short int is %d bytes.,\\nlong int is %d bytes.\",\n            sizeof(i),sizeof(j));\n    return 0;\n}\n\n\nOutput:\nshort int is 2 bytes.\nlong int is 4 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "A float is 4 bytes wide, whereas a double is 8 bytes wide.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, \n                float = 4 bytes. \n                double = 8 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "A long double can be used if range of a double is not enough to accommodate a real number.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, we can use long double; if double range is not enough. \ndouble = 8 bytes. \nlong double = 10 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "If the definition of the external variable occurs in the source file before its use in a particular function, then there is no need for an extern declaration in the function.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, When a function is declared inside the source file, that function(local function) get a priority than the extern function. So there is no need to declare a function as extern inside the same source file."
+                }
+            ]
+        },
+        {
+            "question_title": "Range of double is -1.7e-38 to  1.7e+38 (in 16 bit platform - Turbo C under DOS)",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, The range of double is -1.7e+308 to 1.7e+308."
+                }
+            ]
+        }
+    ]
+}

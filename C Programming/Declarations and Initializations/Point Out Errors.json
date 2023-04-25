@@ -1,0 +1,70 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "Point out the error in the following program (if it is compiled with Turbo C compiler).\n#include<stdio.h>\nint main()\n{\n    display();\n    return 0;\n}\nvoid display()\n{\n    printf(\"IndiaBIX.com\");\n}",
+            "options": [
+                {
+                    "opt_1": "No error",
+                    "opt_2": "display() doesn't get invoked",
+                    "opt_3": "display() is called before it is defined",
+                    "opt_4": "None of these",
+                    "correct_answer": "display() is called before it is defined",
+                    "description": "In this program the compiler will not know that the function display() exists. So, the compiler will generate \"Type mismatch in redeclaration of function display()\".\n\nTo over come this error, we have to add function prototype of function display().\nAnother way to overcome this error is to define the function display() before the  int main(); function.\n\n#include<stdio.h>\nvoid display(); /* function prototype */\n\nint main()\n{\n    display();\n    return 0;\n}\nvoid display()\n{\n    printf(\"IndiaBIX.com\");\n}\n\n\nOutput: IndiaBIX.com\n\nNote: This problem will not occur in modern compilers (this problem occurs in TurboC but not in GCC)."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is correct about err used in the declaration given below?\n typedef enum error { warning, test, exception } err;",
+            "options": [
+                {
+                    "opt_1": "It is a typedef for enum error.",
+                    "opt_2": "It is a variable of type enum error.",
+                    "opt_3": "The statement is erroneous.",
+                    "opt_4": "It is a structure.",
+                    "correct_answer": "It is a typedef for enum error.",
+                    "description": "A typedef gives a new name to an existing data type. So err is a new name for enum error."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nint main()\n{\n    int (*p)() = fun;\n    (*p)();\n    return 0;\n}\nint fun()\n{\n    printf(\"IndiaBix.com\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in int(*p)() = fun;",
+                    "opt_2": "Error: fun() prototype not defined",
+                    "opt_3": "No error",
+                    "opt_4": "None of these",
+                    "correct_answer": "Error: fun() prototype not defined",
+                    "description": "The compiler will not know that the function int fun() exists. So we have to define the function prototype of int fun();\nTo overcome this error, see the below program\n\n\n#include<stdio.h>\nint fun(); /* function prototype */\n\nint main()\n{\n    int (*p)() = fun;\n    (*p)();\n    return 0;\n}\nint fun()\n{\n    printf(\"IndiaBix.com\\n\");\n    return 0;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nint main()\n{\n    void v = 0;\n\n    printf(\"%d\", v);\n\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Declaration syntax error 'v' (or) Size of v is unknown or zero.",
+                    "opt_2": "Program terminates abnormally.",
+                    "opt_3": "No error.",
+                    "opt_4": "None of these.",
+                    "correct_answer": "Error: Declaration syntax error 'v' (or) Size of v is unknown or zero.",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nstruct emp\n{\n    char name[20];\n    int age;\n};\nint main()\n{\n    emp int xx;\n    int a;\n    printf(\"%d\\n\", &a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in printf",
+                    "opt_2": "Error: in emp int xx;",
+                    "opt_3": "No error.",
+                    "opt_4": "None of these.",
+                    "correct_answer": "Error: in emp int xx;",
+                    "description": "There is an error in the line emp int xx;\n\n\nTo overcome this error, remove the int and add the struct at the begining of emp int xx;\n\n#include<stdio.h>\nstruct emp\n{\n    char name[20];\n    int age;\n};\nint main()\n{\n    struct emp xx;\n    int a;\n    printf(\"%d\\n\", &a);\n    return 0;\n}"
+                }
+            ]
+        }
+    ]
+}

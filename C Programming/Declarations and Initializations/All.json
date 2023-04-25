@@ -1,0 +1,579 @@
+{
+    "chapter_name": "Declarations and Initializations",
+    "questions": [
+        {
+            "question_title": "Which of the following is not user defined data type?\n\n\n1 :\nstruct book\n{\n    char name[10];\n    float price;\n    int pages;\n};\n\n\n2 :\nlong int l = 2.35;\n\n\n3 :\nenum day {Sun, Mon, Tue, Wed};",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "3",
+                    "opt_4": "Both 1 and 2",
+                    "correct_answer": "2",
+                    "description": "C data types classification are\n\n\n    Primary data types\n        \n            int\n            char\n            float\n            double\n            void\n        \n    \n    Secondary data types (or) User-defined data type\n        \n        Array\n        Pointer\n        Structure\n        Union\n        Enum\n        \n    \n\n\nSo, clearly long int l = 2.35; is not User-defined data type. (i.e.long int l = 2.35; is the answer.)"
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements should be used to obtain a remainder after dividing 3.14 by 2.1 ?",
+            "options": [
+                {
+                    "opt_1": "rem = 3.14 % 2.1;",
+                    "opt_2": "rem = modf(3.14, 2.1);",
+                    "opt_3": "rem = fmod(3.14, 2.1);",
+                    "opt_4": "Remainder cannot be obtain in floating point division.",
+                    "correct_answer": "rem = fmod(3.14, 2.1);",
+                    "description": "fmod(x,y) - Calculates x modulo y, the remainder of x/y.\n\nThis function is the same as the modulus operator. But fmod() performs floating point divisions.\n\nExample:\n\n#include <stdio.h>\n#include <math.h>\n\nint main ()\n{\n  printf (\"fmod of 3.14/2.1 is %lf\\n\", fmod (3.14,2.1) );\n  return 0;\n}\n\nOutput:\nfmod of 3.14/2.1 is 1.040000"
+                }
+            ]
+        },
+        {
+            "question_title": "When we mention the prototype of a function?",
+            "options": [
+                {
+                    "opt_1": "Defining",
+                    "opt_2": "Declaring",
+                    "opt_3": "Prototyping",
+                    "opt_4": "Calling",
+                    "correct_answer": "Declaring",
+                    "description": "A function prototype in C or C++ is a declaration of a function that omits the function body but does specify the function's name, argument types and return type. While a function definition specifies what a function does, a function prototype can be thought of as specifying its interface."
+                }
+            ]
+        },
+        {
+            "question_title": "Is there any difference between following declarations?\n\n\n1 :\nextern int fun();\n\n\n2 :\nint fun();",
+            "options": [
+                {
+                    "opt_1": "Both are identical",
+                    "opt_2": "No difference, except extern int fun(); is probably in another file",
+                    "opt_3": "int fun(); is overrided with extern int fun();",
+                    "opt_4": "None of these",
+                    "correct_answer": "No difference, except extern int fun(); is probably in another file",
+                    "description": "extern int fun(); declaration in C is to indicate the existence of a global function and it is defined externally to the current module or in another file. \n\nint fun(); declaration in C is to indicate the existence of a function inside the current module or in the same file."
+                }
+            ]
+        },
+        {
+            "question_title": "How would you round off a value from 1.66 to 2.0?",
+            "options": [
+                {
+                    "opt_1": "ceil(1.66)",
+                    "opt_2": "floor(1.66)",
+                    "opt_3": "roundup(1.66)",
+                    "opt_4": "roundto(1.66)",
+                    "correct_answer": "ceil(1.66)",
+                    "description": "/* Example for ceil() and floor() functions: */\n\n#include<stdio.h>\n#include<math.h>\n\nint main()\n{\n    printf(\"\\n Result : %f\" , ceil(1.44) );\n    printf(\"\\n Result : %f\" , ceil(1.66) );\n \n    printf(\"\\n Result : %f\" , floor(1.44) );    \n    printf(\"\\n Result : %f\" , floor(1.66) );\n\n    return 0;\n}\n// Output:\n// Result : 2.000000\n// Result : 2.000000\n// Result : 1.000000\n// Result : 1.000000"
+                }
+            ]
+        },
+        {
+            "question_title": "What are the types of linkages?",
+            "options": [
+                {
+                    "opt_1": "Internal and External",
+                    "opt_2": "External, Internal and None",
+                    "opt_3": "External and None",
+                    "opt_4": "Internal",
+                    "correct_answer": "External, Internal and None",
+                    "description": "External Linkage-> means global, non-static variables and functions.\nInternal Linkage-> means static variables and functions with file scope.\nNone Linkage-> means Local variables."
+                }
+            ]
+        },
+        {
+            "question_title": "Identify which of the following are declarations\n\n\n1 :\nextern int x;\n\n\n2 :\nfloat square ( float x ) { ... }\n\n\n3 :\ndouble pow(double, double);",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "1 and 3",
+                    "opt_4": "3",
+                    "correct_answer": "1 and 3",
+                    "description": "extern int x; - is an external variable declaration.\ndouble pow(double, double); - is a function prototype declaration.\n\nTherefore, 1 and 3 are declarations. 2 is definition."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following special symbol allowed in a variable name?",
+            "options": [
+                {
+                    "opt_1": "* (asterisk)",
+                    "opt_2": "| (pipeline)",
+                    "opt_3": "- (hyphen)",
+                    "opt_4": "_ (underscore)",
+                    "correct_answer": "_ (underscore)",
+                    "description": "Variable names in C are made up of letters (upper and lower case) and digits. The underscore character (\"_\") is also permitted. Names must not begin with a digit.\nExamples of valid (but not very descriptive) C variable names:\n=> foo \n=> Bar \n=> BAZ \n=> foo_bar \n=> _foo42 \n=> _ \n=> QuUx"
+                }
+            ]
+        },
+        {
+            "question_title": "By default a real number is treated as a",
+            "options": [
+                {
+                    "opt_1": "float",
+                    "opt_2": "double",
+                    "opt_3": "long double",
+                    "opt_4": "far double",
+                    "correct_answer": "double",
+                    "description": "In computing, 'real number' often refers to non-complex floating-point numbers. It include both rational numbers, such as 42 and 3/4, and irrational numbers such as pi = 3.14159265...\n\n\nWhen the accuracy of the floating point number is insufficient, we can use the double to define the number. The double is same as float but with longer precision and takes double space (8 bytes) than float.\n\n\nTo extend the precision further we can use long double which occupies 10 bytes of memory space."
+                }
+            ]
+        },
+        {
+            "question_title": "Is the following statement a declaration or definition?\nextern int i;",
+            "options": [
+                {
+                    "opt_1": "Declaration",
+                    "opt_2": "Definition",
+                    "opt_3": "Function",
+                    "opt_4": "Error",
+                    "correct_answer": "Declaration",
+                    "description": "Declaring is the way a programmer tells the compiler to expect a particular type, be it a variable, class/struct/union type, a function type (prototype) or a particular object instance. (ie. extern int i)\n                \n                \nDeclaration never reserves any space for the variable or instance in the program's memory; it simply a \"hint\" to the compiler that a use of the variable or  instance is expected in the program. This hinting is technically called \"forward reference\"."
+                }
+            ]
+        },
+        {
+            "question_title": "In the following program where is the variable a getting defined and where it is getting declared?\n#include<stdio.h>\nint main()\n{\n    extern int a;\n    printf(\"%d\\n\", a);\n    return 0;\n}\nint a=20;",
+            "options": [
+                {
+                    "opt_1": "extern int a is declaration, int a = 20 is the definition",
+                    "opt_2": "int a = 20 is declaration, extern int a is the definition",
+                    "opt_3": "int a = 20 is definition, a is not defined",
+                    "opt_4": "a is declared, a is not defined",
+                    "correct_answer": "extern int a is declaration, int a = 20 is the definition",
+                    "description": "- During declaration we tell the datatype of the Variable.\n- During definition the value is initialized."
+                }
+            ]
+        }, {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    int a[5] = {2, 3};\n    printf(\"%d, %d, %d\\n\", a[2], a[3], a[4]);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Garbage Values",
+                    "opt_2": "2, 3, 3",
+                    "opt_3": "3, 2, 2",
+                    "opt_4": "0, 0, 0",
+                    "correct_answer": "0, 0, 0",
+                    "description": "When an automatic array is partially initialized, the remaining elements are initialized to 0."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    struct emp\n    {\n        char name[20];\n        int age;\n        float sal;\n    };\n    struct emp e = {\"Tiger\"};\n    printf(\"%d, %f\\n\", e.age, e.sal);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 0.000000",
+                    "opt_2": "Garbage values",
+                    "opt_3": "Error",
+                    "opt_4": "None of above",
+                    "correct_answer": "0, 0.000000",
+                    "description": "When an automatic structure is partially initialized remaining elements are initialized to 0(zero)."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program?\n#include<stdio.h>\nint main()\n{\n    extern int a;\n    printf(\"%d\\n\", a);\n    return 0;\n}\nint a=20;",
+            "options": [
+                {
+                    "opt_1": "20",
+                    "opt_2": "0",
+                    "opt_3": "Garbage Value",
+                    "opt_4": "Error",
+                    "correct_answer": "20",
+                    "description": "extern int a; indicates that the variable a is defined elsewhere, usually in a separate source code module.\n\n\nprintf(\"%d\\n\", a); it prints the value of local variable int a = 20. Because, whenever there is a conflict between local variable and global variable, local variable gets the highest priority. So it prints 20."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program given below ?\n#include<stdio.h>\nint main()\n{\n    enum status { pass, fail, atkt};\n    enum status stud1, stud2, stud3;\n    stud1 = pass;\n    stud2 = atkt;\n    stud3 = fail;\n    printf(\"%d, %d, %d\\n\", stud1, stud2, stud3);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 1, 2",
+                    "opt_2": "1, 2, 3",
+                    "opt_3": "0, 2, 1",
+                    "opt_4": "1, 3, 2",
+                    "correct_answer": "0, 2, 1",
+                    "description": "enum takes the format like {0,1,2..) so pass=0, fail=1, atkt=2\nstud1 = pass (value is 0)\nstud2 = atkt (value is 2)\nstud3 = fail (value is 1)\nHence it prints 0, 2, 1"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int X=40;\n    {\n        int X=20;\n        printf(\"%d \", X);\n    }\n    printf(\"%d\\n\", X);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "40 40",
+                    "opt_2": "20 40",
+                    "opt_3": "20",
+                    "opt_4": "Error",
+                    "correct_answer": "20 40",
+                    "description": "In case of a conflict between a local variable and global variable, the local variable gets priority."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    int x = 10, y = 20, z = 5, i;\n    i = x < y < z;\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0",
+                    "opt_2": "1",
+                    "opt_3": "Error",
+                    "opt_4": "None of these",
+                    "correct_answer": "1",
+                    "description": "Since x < y turns to be TRUE it is replaced by 1. Then 1 < z is compared and to be TRUE. The 1 is assigned to i."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program?\n#include<stdio.h>\nint main()\n{\n    union a\n    {\n        int i;\n        char ch[2];\n    };\n    union a u;\n    u.ch[0] = 3;\n    u.ch[1] = 2;\n    printf(\"%d, %d, %d\\n\", u.ch[0], u.ch[1], u.i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3, 2, 515",
+                    "opt_2": "515, 2, 3",
+                    "opt_3": "3, 2, 5",
+                    "opt_4": "None of these",
+                    "correct_answer": "3, 2, 515",
+                    "description": "printf(\"%d, %d, %d\\n\", u.ch[0], u.ch[1], u.i); It prints the value of u.ch[0] = 3, u.ch[1] = 2 and it prints the value of u.i means the value of entire union size.\n\nSo the output is 3, 2, 515."
+                }
+            ]
+        },
+        {
+            "question_title": "In the following program how long will the for loop get executed?\n#include<stdio.h>\nint main()\n{\n    int i=5;\n    for(;scanf(\"%s\", &i); printf(\"%d\\n\", i));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "The for loop would not get executed at all",
+                    "opt_2": "The for loop would get executed only once",
+                    "opt_3": "The for loop would get executed 5 times",
+                    "opt_4": "The for loop would get executed infinite times",
+                    "correct_answer": "The for loop would get executed infinite times",
+                    "description": "During the for loop execution scanf() ask input and then printf() prints that given input. This process will be continued repeatedly because, scanf() returns the number of input given, the condition is always true(user gives a input means it reurns '1').\n                \nHence this for loop would get executed infinite times."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program in Turbo C (in DOS 16-bit OS)?\n#include<stdio.h>\nint main()\n{\n    char *s1;\n    char far *s2;\n    char huge *s3;\n    printf(\"%d, %d, %d\\n\", sizeof(s1), sizeof(s2), sizeof(s3));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 4, 6",
+                    "opt_2": "4, 4, 2",
+                    "opt_3": "2, 4, 4",
+                    "opt_4": "2, 2, 2",
+                    "correct_answer": "2, 4, 4",
+                    "description": "Any pointer size is 2 bytes. (only 16-bit offset)\nSo, char *s1 = 2 bytes.\nSo, char far *s2; = 4 bytes.\nSo, char huge *s3; = 4 bytes.\nA far, huge pointer has two parts: a 16-bit segment value and a 16-bit offset value.\n\nSince C is a compiler dependent language, it may give different output in other platforms. The above program works fine in Windows (TurboC), but error in Linux (GCC Compiler)."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the output of the program\n#include<stdio.h>\nint main()\n{\n    extern int fun(float);\n    int a;\n    a = fun(3.14);\n    printf(\"%d\\n\", a);\n    return 0;\n}\nint fun(int aa)\n{\n\treturn (int)++aa;\n}",
+            "options": [
+                {
+                    "opt_1": "3",
+                    "opt_2": "3.14",
+                    "opt_3": "0",
+                    "opt_4": "4",
+                    "opt_5": "Compile Error",
+                    "correct_answer": "Compile Error",
+                    "description": "2 Errors1. Type mismatch in redeclaration of fun2. Type mismatch in parameter aa"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint X=40;\nint main()\n{\n    int X=20;\n    printf(\"%d\\n\", X);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "20",
+                    "opt_2": "40",
+                    "opt_3": "Error",
+                    "opt_4": "No Output",
+                    "correct_answer": "20",
+                    "description": "Whenever there is conflict between a local variable and global variable, the local variable gets priority."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program in 16 bit platform (Turbo C under DOS)?\n#include<stdio.h>\nint main()\n{\n    extern int i;\n    i = 20;\n    printf(\"%d\\n\", sizeof(i));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2",
+                    "opt_2": "4",
+                    "opt_3": "vary from compiler",
+                    "opt_4": "Linker Error : Undefined symbol 'i'",
+                    "correct_answer": "Linker Error : Undefined symbol 'i'",
+                    "description": "Linker Error : Undefined symbol 'i'\nThe statement extern int i\nspecifies to the compiler that the memory for 'i' is allocated in some other program and that address will be given to the current program at the time of linking. But linker finds that no other variable of name 'i' is available in any other program with memory space allocated for it. Hence a linker error has occurred."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following operations are INCORRECT?",
+            "options": [
+                {
+                    "opt_1": "int i = 35; i = i%5;",
+                    "opt_2": "short int j = 255; j = j;",
+                    "opt_3": "long int k = 365L; k = k;",
+                    "opt_4": "float a = 3.14; a = a%3;",
+                    "correct_answer": "float a = 3.14; a = a%3;",
+                    "description": "float a = 3.14; a = a%3; gives \"Illegal use of floating point\" error. \nThe modulus (%) operator can only be used on integer types. We have to use fmod() function in math.h for float values."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the declaration is correct?",
+            "options": [
+                {
+                    "opt_1": "int length;",
+                    "opt_2": "char int;",
+                    "opt_3": "int long;",
+                    "opt_4": "float double;",
+                    "correct_answer": "int length;",
+                    "description": "int length; denotes that variable length is int(integer) data type.\n\n\nchar int; here int is a keyword cannot be used a variable name.\n\nint long; here long is a keyword cannot be used a variable name.\nfloat double; here double is a keyword cannot be used a variable name.\nSo, the answer is int length;(Option A)."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following correctly represents a long double constant?",
+            "options": [
+                {
+                    "opt_1": "6.68",
+                    "opt_2": "6.68L",
+                    "opt_3": "6.68f",
+                    "opt_4": "6.68LF",
+                    "correct_answer": "6.68L",
+                    "description": "6.68 is double. \n6.68L is long double constant. \n6.68f is float constant. \n6.68LF is not allowed in c."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the structure is correct?\n\n\n1 :\nstruct book\n{\n    char name[10];\n    float price;\n    int pages;\n};\n\n\n2 :\nstruct aa\n{\n    char name[10];\n    float price;\n    int pages;\n}\n\n\n3 :\nstruct aa\n{\n    char name[10];\n    float price;\n    int pages;\n}",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "3",
+                    "opt_4": "All of above",
+                    "correct_answer": "1",
+                    "description": "In 2 and 3 semicolon are missing in structure element."
+                }
+            ]
+        },
+        {
+            "question_title": "1 :\ntypedef long a;extern int a c;\n\n\n2 :\ntypedef long a;extern a int c;\n\n\n3 :\ntypedef long a;extern a c;",
+            "options": [
+                {
+                    "opt_1": "1 correct",
+                    "opt_2": "2 correct",
+                    "opt_3": "3 correct",
+                    "opt_4": "1, 2, 3 are correct",
+                    "correct_answer": "3 correct",
+                    "description": "typedef long a;extern int a c; while compiling this statement becomes extern int long c;. This will result in to \"Declaration syntax error\".\n\n\ntypedef long a;extern a int c; while compiling this statement becomes extern long int c;. This will result in to \"Too many types in declaration error\".\n\n\ntypedef long a;extern a c; while compiling this statement becomes extern long c;. This is a valid c declaration statement. It says variable c is long data type and defined in some other file or module.\n\nSo, Option C is the correct answer."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the structure is incorrcet?\n\n\n1 :\nstruct aa\n{\n    int a;\n    float b;\n};\n\n\n2 :\nstruct aa\n{\n    int a;\n    float b;\n    struct aa var;\n};\n\n\n3 :\nstruct aa\n{\n    int a;\n    float b;\n    struct aa *var;\n};",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2",
+                    "opt_3": "3",
+                    "opt_4": "1, 2, 3",
+                    "correct_answer": "2",
+                    "description": "Option B gives \"Undefined structure in 'aa'\" error."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program (if it is compiled with Turbo C compiler).\n#include<stdio.h>\nint main()\n{\n    display();\n    return 0;\n}\nvoid display()\n{\n    printf(\"IndiaBIX.com\");\n}",
+            "options": [
+                {
+                    "opt_1": "No error",
+                    "opt_2": "display() doesn't get invoked",
+                    "opt_3": "display() is called before it is defined",
+                    "opt_4": "None of these",
+                    "correct_answer": "display() is called before it is defined",
+                    "description": "In this program the compiler will not know that the function display() exists. So, the compiler will generate \"Type mismatch in redeclaration of function display()\".\n\nTo over come this error, we have to add function prototype of function display().\nAnother way to overcome this error is to define the function display() before the  int main(); function.\n\n#include<stdio.h>\nvoid display(); /* function prototype */\n\nint main()\n{\n    display();\n    return 0;\n}\nvoid display()\n{\n    printf(\"IndiaBIX.com\");\n}\n\n\nOutput: IndiaBIX.com\n\nNote: This problem will not occur in modern compilers (this problem occurs in TurboC but not in GCC)."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is correct about err used in the declaration given below?\n typedef enum error { warning, test, exception } err;",
+            "options": [
+                {
+                    "opt_1": "It is a typedef for enum error.",
+                    "opt_2": "It is a variable of type enum error.",
+                    "opt_3": "The statement is erroneous.",
+                    "opt_4": "It is a structure.",
+                    "correct_answer": "It is a typedef for enum error.",
+                    "description": "A typedef gives a new name to an existing data type. So err is a new name for enum error."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nint main()\n{\n    int (*p)() = fun;\n    (*p)();\n    return 0;\n}\nint fun()\n{\n    printf(\"IndiaBix.com\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in int(*p)() = fun;",
+                    "opt_2": "Error: fun() prototype not defined",
+                    "opt_3": "No error",
+                    "opt_4": "None of these",
+                    "correct_answer": "Error: fun() prototype not defined",
+                    "description": "The compiler will not know that the function int fun() exists. So we have to define the function prototype of int fun();\nTo overcome this error, see the below program\n\n\n#include<stdio.h>\nint fun(); /* function prototype */\n\nint main()\n{\n    int (*p)() = fun;\n    (*p)();\n    return 0;\n}\nint fun()\n{\n    printf(\"IndiaBix.com\\n\");\n    return 0;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nint main()\n{\n    void v = 0;\n\n    printf(\"%d\", v);\n\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Declaration syntax error 'v' (or) Size of v is unknown or zero.",
+                    "opt_2": "Program terminates abnormally.",
+                    "opt_3": "No error.",
+                    "opt_4": "None of these.",
+                    "correct_answer": "Error: Declaration syntax error 'v' (or) Size of v is unknown or zero.",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the following program.\n#include<stdio.h>\nstruct emp\n{\n    char name[20];\n    int age;\n};\nint main()\n{\n    emp int xx;\n    int a;\n    printf(\"%d\\n\", &a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in printf",
+                    "opt_2": "Error: in emp int xx;",
+                    "opt_3": "No error.",
+                    "opt_4": "None of these.",
+                    "correct_answer": "Error: in emp int xx;",
+                    "description": "There is an error in the line emp int xx;\n\n\nTo overcome this error, remove the int and add the struct at the begining of emp int xx;\n\n#include<stdio.h>\nstruct emp\n{\n    char name[20];\n    int age;\n};\nint main()\n{\n    struct emp xx;\n    int a;\n    printf(\"%d\\n\", &a);\n    return 0;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Range of float id -2.25e+308 to  2.25e+308",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, The range of float is -3.4e+38 to 3.4e+38."
+                }
+            ]
+        },
+        {
+            "question_title": "Size of short integer and long integer would vary from one platform to another.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, Depending on the operating system/compiler/system architecture you are working on, the range of data types can vary."
+                }
+            ]
+        },
+        {
+            "question_title": "Size of short integer and long integer can be verified using the sizeof() operator.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, we can find the size of short integer and long integer using the sizeof() operator. Example:\n                \n\n#include<stdio.h>\nint main()\n{\n    short int i = 10;\n    long int j = 10;\n    printf(\"short int is %d bytes.,\\nlong int is %d bytes.\",\n            sizeof(i),sizeof(j));\n    return 0;\n}\n\n\nOutput:\nshort int is 2 bytes.\nlong int is 4 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "A float is 4 bytes wide, whereas a double is 8 bytes wide.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, \n                float = 4 bytes. \n                double = 8 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "A long double can be used if range of a double is not enough to accommodate a real number.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, we can use long double; if double range is not enough. \ndouble = 8 bytes. \nlong double = 10 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "If the definition of the external variable occurs in the source file before its use in a particular function, then there is no need for an extern declaration in the function.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, When a function is declared inside the source file, that function(local function) get a priority than the extern function. So there is no need to declare a function as extern inside the same source file."
+                }
+            ]
+        },
+        {
+            "question_title": "Range of double is -1.7e-38 to  1.7e+38 (in 16 bit platform - Turbo C under DOS)",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, The range of double is -1.7e+308 to 1.7e+308."
+                }
+            ]
+        },
+        {
+            "question_title": "Is there any difference in the following declarations?\nint myfun(int arr[]);int myfun(arr[20]);",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, we have to specify the data type of the parameter when declaring a function."
+                }
+            ]
+        },
+        {
+            "question_title": "Global variable are available to all functions. Does there exist a mechanism by way of which it available to some and not to others.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "The only way this can be achieved is to define the variable locally in main() instead of defining it globally and then passing it to the functions which need it."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that a global variable may have several declarations, but only one definition?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, In all the global variable declarations, you need to use the keyword extern."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that a function may have several declarations, but only one definition?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, but the function declarations must be identical.\nExample:\n\n#include<stdio.h>\n\nvoid Display();\nvoid Display();\nvoid Display();\n\nvoid Display()\n{\n   printf(\"Weclome to IndiaBIX.com..!\");\n}\n\nint main()\n{\n    Display();\n    return 0;\n}\n\n//Output:\nWeclome to IndiaBIX.com..!"
+                }
+            ]
+        },
+        {
+            "question_title": "Suppose a program is divided into three files f1, f2 and f3, and a variable is defined in the file f1 but used in files f2 and f3. In such a case would we need the extern declaration for the variables in the files f2 and f3?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

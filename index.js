@@ -7,6 +7,7 @@ var app = express();
 var path = require("path");
 
 const scrabe = require("./app.js")
+const getanchor = require("./getAchor.js")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -39,6 +40,38 @@ app.get("/", (req, res) => {
     res.render('Home', {
         isSaved: "none"
     })
+
+    // const fs = require("fs")
+    // const path = require("path")
+    // let subfolder = `./IndiaBix`;
+    // // fs.promises.mkdir(`./${subfolder}`, { recursive: true });
+    // const filePath = path.join(subfolder, `allurl.json`);
+    // fs.readFile(filePath, 'utf-8', async (err, data) => {
+    //     if (err) console.log(err);
+    //     if (data) {
+    //         data = JSON.parse(data);
+
+    //         const urlList = [...data];
+    //         // console.log(typeof urlList);
+    //         // console.log(data[10])
+    //         for (let i = 0; i < urlList.length; i++) {
+    //             // if(i >= 10){
+    //             // console.log(i)
+
+    //             console.log(urlList[i]);
+    //             const data = await getanchor(url)
+    //             res.json(data);
+
+    //         }
+    //     }
+    // })
+    // res.send("sdf")
+});
+
+app.get("/anchor", async (req, res) => {
+    const url = "https://www.indiabix.com/";
+    const data = await getanchor(url)
+    res.json(data);
 });
 
 app.post("/api", async (req, res) => {

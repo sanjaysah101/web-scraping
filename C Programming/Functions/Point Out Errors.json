@@ -1,0 +1,44 @@
+{
+    "chapter_name": "Functions",
+    "questions": [
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\nint f(int a)\n{\n  a > 20? return(10): return(20);\n}\nint main()\n{\n    int f(int);\n    int b;\n    b = f(20);\n    printf(\"%d\\n\", b);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Prototype declaration",
+                    "opt_2": "No error",
+                    "opt_3": "Error: return statement cannot be used with conditional operators",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: return statement cannot be used with conditional operators",
+                    "description": "In a ternary operator, we cannot use the return statement. The ternary operator requires expressions but not code."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\n\nint main()\n{\n    int a=10;\n    void f();\n    a = f();\n    printf(\"%d\\n\", a);\n    return 0;\n}\nvoid f()\n{\n    printf(\"Hi\");\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Not allowed assignment",
+                    "opt_2": "Error: Doesn't print anything",
+                    "opt_3": "No error",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: Not allowed assignment",
+                    "description": "The function void f() is not visible to the compiler while going through main() function. So we have to declare this prototype void f(); before to main() function. This kind of error will not occur in modern compilers."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n\nf(int a, int b)\n{\n    int a;\n    a = 20;\n    return a;\n}",
+            "options": [
+                {
+                    "opt_1": "Missing parenthesis in return statement",
+                    "opt_2": "The function should be defined as int f(int a, int b)",
+                    "opt_3": "Redeclaration of a",
+                    "opt_4": "None of above",
+                    "correct_answer": "Redeclaration of a",
+                    "description": "f(int a, int b)  The variable a is declared in the function argument statement.\n\n\nint a; Here again we are declaring the variable a. Hence it shows the error \"Redeclaration of a\""
+                }
+            ]
+        }
+    ]
+}

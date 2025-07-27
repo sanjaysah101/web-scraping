@@ -1,0 +1,49 @@
+{
+    "chapter_name": "Pointers",
+    "questions": [
+        {
+            "question_title": "The following program reports an error on compilation.\n#include<stdio.h>\nint main()\n{\n    float i=10, *j;\n    void *k;\n    k=&i;\n    j=k;\n    printf(\"%f\\n\", *j);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "This program will NOT report any error. (Tested in Turbo C under DOS and GCC under Linux)  The output: 10.000000"
+                }
+            ]
+        },
+        {
+            "question_title": "Are the three declarations char **apple, char *apple[],  and char apple[][] same?",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Are the expression *ptr++ and ++*ptr are same?",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "*ptr++ increments the pointer and not the value, whereas the ++*ptr increments the value being pointed by ptr"
+                }
+            ]
+        },
+        {
+            "question_title": "Will the program compile?\n#include<stdio.h>\nint main()\n{\n    char str[5] = \"IndiaBIX\";\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "C doesn't do array bounds checking at compile time, hence this compiles.\n\nBut, the modern compilers like Turbo C++ detects this as 'Error: Too many initializers'.\n\nGCC would give you a warning."
+                }
+            ]
+        }
+    ]
+}

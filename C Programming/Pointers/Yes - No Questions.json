@@ -1,0 +1,60 @@
+{
+    "chapter_name": "Pointers",
+    "questions": [
+        {
+            "question_title": "Will the following program give any warning on compilation in TurboC (under DOS)?\n#include<stdio.h>\n\nint main()\n{\n    int *p1, i=25;\n    void *p2;\n    p1=&i;\n    p2=&i;\n    p1=p2;\n    p2=p1;\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Is there any difference between the following two statements?\nchar *p=0;char *t=NULL;",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "NULL is #defined as 0 in the 'stdio.h' file. Thus, both p and t are NULL pointers."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the program compile in Turbo C?\n#include<stdio.h>\nint main()\n{\n    int a=10, *j;\n    void *k;\n    j=k=&a;\n    j++;\n    k++;\n    printf(\"%u %u\\n\", j, k);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "Error in statement k++. We cannot perform arithmetic on void pointers.\n\nThe following error will be displayed while compiling above program in TurboC.\n\nCompiling PROGRAM.C:\nError PROGRAM.C 8: Size of the type is unknown or zero."
+                }
+            ]
+        },
+        {
+            "question_title": "Is the NULL pointer same as an uninitialised pointer?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Is this a correct way for NULL pointer assignment?\nint i=0;char *q=(char*)i;",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "The correct way is char *q=0 (or) char *q=(char*)0"
+                }
+            ]
+        }
+    ]
+}

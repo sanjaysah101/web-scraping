@@ -1,0 +1,82 @@
+{
+    "chapter_name": "Functions",
+    "questions": [
+        {
+            "question_title": "Names of functions in two different files linked together must be unique",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, If two function are declared in a same name, it gives \"Error: Multiple declaration of function_name())\"."
+                }
+            ]
+        },
+        {
+            "question_title": "In C all functions except main() can be called recursively.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "Any function including main() can be called recursively."
+                }
+            ]
+        },
+        {
+            "question_title": "A function may have any number of return statements each returning different values.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function may have any number of return statements each returning different values and each return statements will not occur successively."
+                }
+            ]
+        },
+        {
+            "question_title": "A function cannot be defined inside another function",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "A function cannot be defined inside the another function, but a function can be called inside a another function."
+                }
+            ]
+        },
+        {
+            "question_title": "Functions can be called either by value or reference",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function can be called either call by value or call by reference.\nExample:\nCall by value means c = sub(a, b); here value of a and b are passed.\n\nCall by reference means c = sub(&a, &b); here address of a and b are passed."
+                }
+            ]
+        },
+        {
+            "question_title": "If return type for a function is not specified, it defaults to int",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, The default return type for a function is int."
+                }
+            ]
+        },
+        {
+            "question_title": "Functions cannot return more than one value at a time",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function cannot return more than one value at a time. because after returning a value the control is given back to calling function."
+                }
+            ]
+        }
+    ]
+}

@@ -1,1 +1,75 @@
-{"chapter_name":"DBMS Chapter 3","questions":[{"question_title":"A computer file can be best described as","options":[{"opt_1":"a single data item","opt_2":"a general collection of data items","opt_3":"an  orderly  collection  of data items","opt_4":"a random collection of data items","opt_5":"None of the above","correct_answer":"an  orderly  collection  of data items","description":"No answer description is available."}]},{"question_title":"A good query system","options":[{"opt_1":"can accept English language commands","opt_2":"allows non-programmers to access information stored in a database","opt_3":"can be accessed only by data processing professionals","opt_4":"both (a) and (b)","opt_5":"None of the above","correct_answer":"allows non-programmers to access information stored in a database","description":"No answer description is available."}]},{"question_title":"In SQL, which command is used to select data in rows and column from one or more tables?","options":[{"opt_1":"CHOOSE","opt_2":"SELECT","opt_3":"LIST","opt_4":"BROWSE","opt_5":"None of the above","correct_answer":"SELECT","description":"No answer description is available."}]},{"question_title":"A report form","options":[{"opt_1":"appears on the computer monitor during data entry","opt_2":"is used during report generation to format data","opt_3":"both (a) and (b)","opt_4":"All of the above","opt_5":"None of the above","correct_answer":"is used during report generation to format data","description":"No answer description is available."}]},{"question_title":"A scheme describes","options":[{"opt_1":"data elements","opt_2":"records and files","opt_3":"record relationships","opt_4":"All of the above","opt_5":"None of the above","correct_answer":"All of the above","description":"No answer description is available."}]}]}
+{
+    "chapter_name": "DBMS Chapter 3",
+    "questions": [
+        {
+            "question_title": "A computer file can be best described as",
+            "options": [
+                {
+                    "opt_1": "a single data item",
+                    "opt_2": "a general collection of data items",
+                    "opt_3": "an  orderly  collection  of data items",
+                    "opt_4": "a random collection of data items",
+                    "opt_5": "None of the above",
+                    "correct_answer": "an  orderly  collection  of data items",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A good query system",
+            "options": [
+                {
+                    "opt_1": "can accept English language commands",
+                    "opt_2": "allows non-programmers to access information stored in a database",
+                    "opt_3": "can be accessed only by data processing professionals",
+                    "opt_4": "both (a) and (b)",
+                    "opt_5": "None of the above",
+                    "correct_answer": "allows non-programmers to access information stored in a database",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In SQL, which command is used to select data in rows and column from one or more tables?",
+            "options": [
+                {
+                    "opt_1": "CHOOSE",
+                    "opt_2": "SELECT",
+                    "opt_3": "LIST",
+                    "opt_4": "BROWSE",
+                    "opt_5": "None of the above",
+                    "correct_answer": "SELECT",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A report form",
+            "options": [
+                {
+                    "opt_1": "appears on the computer monitor during data entry",
+                    "opt_2": "is used during report generation to format data",
+                    "opt_3": "both (a) and (b)",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "is used during report generation to format data",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "A scheme describes",
+            "options": [
+                {
+                    "opt_1": "data elements",
+                    "opt_2": "records and files",
+                    "opt_3": "record relationships",
+                    "opt_4": "All of the above",
+                    "opt_5": "None of the above",
+                    "correct_answer": "All of the above",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

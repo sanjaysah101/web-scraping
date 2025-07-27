@@ -1,0 +1,31 @@
+{
+    "chapter_name": "Pointers",
+    "questions": [
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\n\nint main()\n{\n    int a[] = {10, 20, 30, 40, 50};\n    int j;\n    for(j=0; j<5; j++)\n    {\n        printf(\"%d\\n\", a);\n        a++;\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Declaration syntax",
+                    "opt_2": "Error: Expression syntax",
+                    "opt_3": "Error: LValue required",
+                    "opt_4": "Error: Rvalue required",
+                    "correct_answer": "Error: LValue required",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the compile time error in the program given below.\n#include<stdio.h>\n\nint main()\n{\n    int *x;\n    *x=100;\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: invalid assignment for x",
+                    "opt_2": "Error: suspicious pointer conversion",
+                    "opt_3": "No error",
+                    "opt_4": "None of above",
+                    "correct_answer": "No error",
+                    "description": "While reading the code there is no error, but upon running the program having an unitialised variable can cause the program to crash (Null pointer assignment)."
+                }
+            ]
+        }
+    ]
+}

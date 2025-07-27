@@ -1,0 +1,49 @@
+{
+    "chapter_name": "Expressions",
+    "questions": [
+        {
+            "question_title": "Will the expression *p = p be disallowed by the compiler?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "Because, here even though the value of p is accessed twice it is used to modify two different objects p and *p"
+                }
+            ]
+        },
+        {
+            "question_title": "Every operator has an Associativity",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, Each and every operator has an associativity.\nThe associativity (or fixity) of an operator is a property that determines how operators of the same precedence are grouped in the absence of parentheses. Operators may be left-associative, right-associative or non-associative."
+                }
+            ]
+        },
+        {
+            "question_title": "Are the following two statement same?\n\n\n1.\na <= 20 ? (b = 30): (c = 30);\n\n\n2.\n(a <=20) ? b : (c = 30);",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, the expressions 1 and 2 are not same.\n\n\n1. a <= 20 ? (b = 30) : (c = 30); This statement can be rewritten as,\n\nif(a <= 20)\n{\n    b = 30;\n}\nelse\n{\n    c = 30;\n}\n\n\n\n2. (a <=20) ? b : (c = 30); This statement can be rewritten as,\n\nif(a <= 20)\n{\n    //Nothing here\n}\nelse\n{\n    c = 30;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Two different operators would always have different Associativity.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, Two different operators may have same associativity.\n\n\nExample: \nArithmetic operators like ++, -- having Right-to-Left associativity.\nRelational operators like >, >= also have Left-to-Right associativity."
+                }
+            ]
+        }
+    ]
+}

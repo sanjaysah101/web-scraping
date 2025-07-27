@@ -1,0 +1,31 @@
+{
+    "chapter_name": "C Preprocessor",
+    "questions": [
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\n\nint main()\n{\n    int i;\n    #if A\n        printf(\"Enter any number:\");\n        scanf(\"%d\", &i);\n    #elif B\n        printf(\"The number is odd\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: unexpected end of file because there is no matching #endif",
+                    "opt_2": "The number is odd",
+                    "opt_3": "Garbage values",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: unexpected end of file because there is no matching #endif",
+                    "description": "The conditional macro #if must have an #endif. In this program there is no #endif statement written."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\n#define SI(p, n, r) float si; si=p*n*r/100;\nint main()\n{\n    float p=2500, r=3.5;\n    int n=3;\n    SI(p, n, r);\n    SI(1500, 2, 2.5);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "26250.00 7500.00",
+                    "opt_2": "Nothing will print",
+                    "opt_3": "Error: Multiple declaration of si",
+                    "opt_4": "Garbage values",
+                    "correct_answer": "Error: Multiple declaration of si",
+                    "description": "The macro #define SI(p, n, r) float si; si=p*n*r/100; contains the error. To remove this error, we have to modify this macro to\n\n #define SI(p,n,r) p*n*r/100"
+                }
+            ]
+        }
+    ]
+}

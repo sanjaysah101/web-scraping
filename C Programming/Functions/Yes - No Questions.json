@@ -1,0 +1,93 @@
+{
+    "chapter_name": "Functions",
+    "questions": [
+        {
+            "question_title": "Every function must return a value",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, If a function return type is declared as void it cannot return any value."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the following functions work?\nint f1(int a, int b)\n{\n    return ( f2(20) );\n}\nint f2(int a)\n{\n    return (a*a);\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, It will return the value 20*20 = 400\nExample:\n\n#include <stdio.h>\nint f1(int, int); /* Function prototype */\nint f2(int); /* Function prototype */\n\nint main()\n{\n    int a = 2, b = 3, c;\n    c = f1(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\n\nint f1(int a, int b)\n{\n    return ( f2(20) );\n}\n\nint f2(int a)\n{\n    return (a * a);\n}\n\nOutput:\nc = 400"
+                }
+            ]
+        },
+        {
+            "question_title": "Usually recursion works slower than loops.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "When a recursive call is made, the function/process clones itself and then process that funtion. This leads to time and space constrains.\n\n\nIn a loop, there is no recursive call involved that saves a lot of time and space too."
+                }
+            ]
+        },
+        {
+            "question_title": "If a function contains two return statements successively, the compiler will generate warnings. Yes/No ?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes. If a function contains two return statements  successively, the compiler will generate \"Unreachable code\" warnings.\nExample:\n\n#include<stdio.h>\nint mul(int, int); /* Function prototype */\n\nint main()\n{\n    int a = 4, b = 3, c;\n    c = mul(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\nint mul(int a, int b)\n{\n   return (a * b);\n   return (a - b); /* Warning: Unreachable code */\n}\n\nOutput:\nc = 12"
+                }
+            ]
+        },
+        {
+            "question_title": "Functions cannot return a floating point number",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "A function can return floating point value.\nExample:\n\n#include <stdio.h>\nfloat sub(float, float); /* Function prototype */\n\nint main()\n{\n    float a = 4.5, b = 3.2, c;\n    c = sub(a, b);\n    printf(\"c = %f\\n\", c);\n    return 0;\n}\nfloat sub(float a, float b)\n{\n   return (a - b);\n}\n\nOutput: \nc = 1.300000"
+                }
+            ]
+        },
+        {
+            "question_title": "Maximum number of arguments that a function can take is 12",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, C can accept upto 127 maximum number of arguments in a function."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that too many recursive calls may result into stack overflow?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, too many recursive calls may result into stack overflow. because when a function is called its return address is stored in stack.\nAfter sometime the stack memory will be filled completely. Hence stack overflow error will occur."
+                }
+            ]
+        },
+        {
+            "question_title": "In a function two return statements should never occur.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, In a function two return statements can occur but not successively.\nExample:\n\n#include <stdio.h>\nint mul(int, int); /* Function prototype */\n\nint main()\n{\n    int a = 0, b = 3, c;\n    c = mul(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\n\n/* Two return statements in the mul() function */\nint mul(int a, int b)\n{\n   if(a == 0 || b == 0)\n   {\n        return 0;\n   }\n   else\n   {\n        return (a * b);\n   }\n}\n\nOutput:\nc = 0"
+                }
+            ]
+        }
+    ]
+}

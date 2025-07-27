@@ -1,0 +1,170 @@
+{
+    "chapter_name": "C Preprocessor",
+    "questions": [
+        {
+            "question_title": "A header file contains macros, structure declaration and function prototypes.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, the header file contains classes, function prototypes, structure declaration, macros."
+                }
+            ]
+        },
+        {
+            "question_title": "A preprocessor directive is a message from programmer to the preprocessor.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, the programmer tells the compiler to include the preprocessor when compiling."
+                }
+            ]
+        },
+        {
+            "question_title": "Once preprocessing is over and the program is sent for the compilation the macros are removed from the expanded source code.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, After preprocessing all the macro in the program are removed."
+                }
+            ]
+        },
+        {
+            "question_title": "Macros have a local scope.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, The scope of macros is globals and functions. Also the scope of macros is only from the point of definition to the end of the file."
+                }
+            ]
+        },
+        {
+            "question_title": "There exists a way to prevent the same file from getting #included twice in the same program.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, We can prevent the same file from getting included again by using a preprocessor directive called #ifndef (short for \"if not defined\") to determine whether we've already defined a preprocessor symbol called XSTRING_H. If we have already defined this symbol, the compiler will ignore the rest of the file until it sees a #endif (which in this case is at the end of the file).\n\n\n#ifndef XSTRING_H\n\n\n#define XSTRING_H\ndefines the same preprocessor symbol,\n\n Finally, the last line of the file, \n#endif"
+                }
+            ]
+        },
+        {
+            "question_title": "Macros with arguments are allowed",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A macro may have arguments.\nExample: #define CUBE(X)(X*X*X)"
+                }
+            ]
+        },
+        {
+            "question_title": "The preprocessor can trap simple errors like missing declarations, nested comments or mismatch of braces.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, the preprocessor cannot trap the errors, it only replaces the macro with the given expression. But the compiler will detect errors."
+                }
+            ]
+        },
+        {
+            "question_title": "Preprocessor directive #ifdef .. #else ... #endif is used for conditional compilation.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, these macros are used for conditional operation.\n\n#if <constant-expression>\n#elif <constant-expression>\n#endif"
+                }
+            ]
+        },
+        {
+            "question_title": "If the file to be included doesn't exist, the preprocessor flashes an error message.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, the included file does not exist it will generate the error."
+                }
+            ]
+        },
+        {
+            "question_title": "A macro must always be defined in capital letters.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "FALSE, The macro is case insensitive."
+                }
+            ]
+        },
+        {
+            "question_title": "Preprocessor directive #undef can be used only on a macro that has been #define earlier",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, #undef can be used only on a macro that has been #define earlier \nExample: #define PI 3.14\nWe can undefine PI macro by #undef PI"
+                }
+            ]
+        },
+        {
+            "question_title": "A preprocessor directive is a message from compiler to a linker.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "FALSE\n                Example: #define symbol replacement \n\nWhen the preprocessor encounters #define directive, it replaces any occurrence of symbol in the rest of the code by replacement. This replacement can be an  statement or expression or a block or simple text."
+                }
+            ]
+        },
+        {
+            "question_title": "Macro calls and function calls work exactly similarly.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, A macro just replaces each occurrence with the code assigned to it. e.g. SQUARE(3) with ((3)*(3)) in the program.\nA function is compiled once and can be called from anywhere that has visibility to the funciton."
+                }
+            ]
+        },
+        {
+            "question_title": "Every C program will contain at least one preprocessor directive.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, the preprocessor directive is not mandatory in any c program."
+                }
+            ]
+        },
+        {
+            "question_title": "In a macro call the control is passed to the macro.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "False, Always the macro is substituted by the given text/expression."
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+    "chapter_name": "Control Instructions",
+    "questions": [
+        {
+            "question_title": "A char variable can store either an ASCII character or a Unicode character.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Yes, we can store either an ASCII character or a Unicode character in a char variable."
+                }
+            ]
+        },
+        {
+            "question_title": "If scanf() is used to store a value in a char variable then along with the value a carriage return(\\r) also gets stored it.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "No, the carriage return tells the compiler to read the input from the buffer after ENTER key is pressed."
+                }
+            ]
+        },
+        {
+            "question_title": "A short integer is at least 16 bits wide and a long integer is at least 32 bits wide.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "The basic C compiler is 16 bit compiler, below are the size of it's data types \nThe size of short int is 2 bytes wide(16 bits).\nThe size of long int is 4 bytes wide(32 bits)."
+                }
+            ]
+        },
+        {
+            "question_title": "The modulus operator cannot be used with a long double.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "fmod(x,y) - Calculates x modulo y, the remainder of x/y.\n \nThis function is the same as the modulus operator. But fmod() performs floating point or long double divisions."
+                }
+            ]
+        }
+    ]
+}

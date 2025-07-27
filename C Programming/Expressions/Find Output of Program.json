@@ -1,0 +1,200 @@
+{
+    "chapter_name": "Expressions",
+    "questions": [
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=2;\n    printf(\"%d, %d\\n\", ++i, ++i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3, 4",
+                    "opt_2": "4, 3",
+                    "opt_3": "4, 4",
+                    "opt_4": "Output may vary from compiler to compiler",
+                    "correct_answer": "Output may vary from compiler to compiler",
+                    "description": "The order of evaluation of arguments passed to a function call is unspecified.\n\nAnyhow, we consider ++i, ++i are Right-to-Left associativity. The output of the program is 4, 3.\n\nIn TurboC, the output will be 4, 3.\nIn GCC, the output will be 4, 4."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i && ++j || ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 2, 0, 1",
+                    "opt_2": "-3, 2, 0, 1",
+                    "opt_3": "-2, 3, 0, 1",
+                    "opt_4": "2, 3, 1, 1",
+                    "correct_answer": "-2, 3, 0, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i && ++j || ++k;\nbecomes m = (-2 && 3) || ++k;\nbecomes m = TRUE || ++k;. (++k) is not executed because (-2 && 3) alone return TRUE. Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of i,j are increemented by '1'(one).\n\n\nHence the output is \"-2, 3, 0, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=4, j=-1, k=0, w, x, y, z;\n    w = i || j || k;\n    x = i && j && k;\n    y = i || j &&k;\n    z = i && j || k;\n    printf(\"%d, %d, %d, %d\\n\", w, x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 1, 1, 1",
+                    "opt_2": "1, 1, 0, 1",
+                    "opt_3": "1, 0, 0, 1",
+                    "opt_4": "1, 0, 1, 1",
+                    "correct_answer": "1, 0, 1, 1",
+                    "description": "Step 1: int i=4, j=-1, k=0, w, x, y, z; here variable i, j, k, w, x, y, z are declared as an integer type and the variable i, j, k are initialized to 4, -1, 0 respectively.\n\n\nStep 2: w = i || j || k; becomes w = 4 || -1 || 0;.  Hence it returns TRUE. So, w=1\n\n\nStep 3: x = i && j && k; becomes x = 4 && -1 && 0;  Hence it returns FALSE. So, x=0\n\n\nStep 4: y = i || j &&k; becomes y = 4 || -1 && 0;  Hence it returns TRUE. So, y=1\n\n\nStep 5: z = i && j || k; becomes z = 4 && -1 || 0; Hence it returns TRUE. So, z=1.\n\n\nStep 6: printf(\"%d, %d, %d, %d\\n\", w, x, y, z); Hence the output is \"1, 0, 1, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=4, y, z;\n    y = --x;\n    z = x--;\n    printf(\"%d, %d, %d\\n\", x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "4, 3, 3",
+                    "opt_2": "4, 3, 2",
+                    "opt_3": "3, 3, 2",
+                    "opt_4": "2, 3, 3",
+                    "correct_answer": "2, 3, 3",
+                    "description": "Step 1: int x=4, y, z; here variable x, y, z are declared as an integer type and variable x is initialized to 4.\nStep 2: y = --x; becomes y = 3; because (--x) is pre-decrement operator.\nStep 3: z = x--; becomes z = 3;. In the next step variable x becomes 2, because (x--) is post-decrement operator. \nStep 4: printf(\"%d, %d, %d\\n\", x, y, z); Hence it prints \"2, 3, 3\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    char ch;\n    ch = 'A';\n    printf(\"The letter is\");\n    printf(\"%c\", ch >= 'A' && ch <= 'Z' ? ch + 'a' - 'A':ch);\n    printf(\"Now the letter is\");\n    printf(\"%c\\n\", ch >= 'A' && ch <= 'Z' ? ch : ch + 'a' - 'A');\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "The letter is aNow the letter is A",
+                    "opt_2": "The letter is ANow the letter is a",
+                    "opt_3": "Error",
+                    "opt_4": "None of above",
+                    "correct_answer": "The letter is aNow the letter is A",
+                    "description": "Step 1: char ch; ch = 'A'; here variable ch is declared as an character type an initialized to 'A'.\n\n\nStep 2: printf(\"The letter is\"); It prints \"The letter is\".\n\n\nStep 3: printf(\"%c\", ch >= 'A' && ch <= 'Z' ? ch + 'a' - 'A':ch);\n\nThe ASCII value of 'A' is 65 and 'a' is 97.\nHere => ('A' >= 'A' && 'A' <= 'Z') ? (A + 'a' - 'A'):('A')\n=> (TRUE && TRUE) ? (65 + 97 - 65) : ('A')\n=> (TRUE) ? (97): ('A') \nIn printf the format specifier is '%c'. Hence prints 97 as 'a'.\n\n\nStep 4: printf(\"Now the letter is\"); It prints \"Now the letter is\".\n\n\nStep 5: printf(\"%c\\n\", ch >= 'A' && ch <= 'Z' ? ch : ch + 'a' - 'A');\n\nHere => ('A' >= 'A' && 'A' <= 'Z') ? ('A') : (A + 'a' - 'A')\n=> (TRUE && TRUE) ? ('A') :(65 + 97 - 65)\n=> (TRUE) ? ('A') : (97) \nIt prints 'A'\nHence the output is\nThe letter is a\nNow the letter is A"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=2;\n    int j = i + (1, 2, 3, 4, 5);\n    printf(\"%d\\n\", j);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "4",
+                    "opt_2": "7",
+                    "opt_3": "6",
+                    "opt_4": "5",
+                    "correct_answer": "7",
+                    "description": "Because, comma operator used in the expression i (1, 2, 3, 4, 5). The comma operator has left-right associativity. The left operand is always evaluated first, and the result of evaluation is discarded before the right operand is evaluated. In this expression 5 is the right most operand, hence after evaluating expression (1, 2, 3, 4, 5) the result is 5, which on adding to i results into 7."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i || ++j && ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 2, 0, 1",
+                    "opt_2": "1, 2, 1, 0",
+                    "opt_3": "-2, 2, 0, 0",
+                    "opt_4": "-2, 2, 0, 1",
+                    "correct_answer": "-2, 2, 0, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i || ++j && ++k; here (++j && ++k;) this code will not get executed because ++i has non-zero value.\nbecomes m = -2 || ++j && ++k;\nbecomes m = TRUE || ++j && ++k; Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of variable 'i' only increemented by '1'(one). The variable j,k are not increemented.\n\n\nHence the output is \"-2, 2, 0, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=12, y=7, z;\n    z = x!=4 || y == 2;\n    printf(\"z=%d\\n\", z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "z=0",
+                    "opt_2": "z=1",
+                    "opt_3": "z=4",
+                    "opt_4": "z=2",
+                    "correct_answer": "z=1",
+                    "description": "Step 1: int x=12, y=7, z; here variable x, y and z are declared as an integer and variable x and y are initialized to 12, 7 respectively.\n\n\nStep 2: z = x!=4 || y == 2; becomes z = 12!=4 || 7 == 2; then z = (condition true) || (condition false); Hence it returns 1. So the value of z=1.\n\n\nStep 3: printf(\"z=%d\\n\", z); Hence the output of the program is \"z=1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int k, num=30;\n    k = (num>5 ? (num <=10 ? 100 : 200): 500);\n    printf(\"%d\\n\", num);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "200",
+                    "opt_2": "30",
+                    "opt_3": "100",
+                    "opt_4": "500",
+                    "correct_answer": "30",
+                    "description": "Step 1: int k, num=30; here variable k and num are declared as an integer type and variable num is initialized to '30'.\nStep 2: k = (num>5 ? (num <=10 ? 100 : 200): 500); This statement does not affect the output of the program. Because we are going to print the variable num in the next statement. So, we skip this statement.\nStep 3: printf(\"%d\\n\", num); It prints the value of variable num '30'\nStep 3: Hence the output of the program is '30'"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=3;\n    i = i++;\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3",
+                    "opt_2": "4",
+                    "opt_3": "5",
+                    "opt_4": "6",
+                    "correct_answer": "4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=55;\n    printf(\"%d, %d, %d\\n\", x<=55, x=40, x>=10);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 40, 1",
+                    "opt_2": "1, 55, 1",
+                    "opt_3": "1, 55, 0",
+                    "opt_4": "1, 1, 1",
+                    "correct_answer": "1, 40, 1",
+                    "description": "Step 1: int x=55; here variable x is declared as an integer type and initialized to '55'.\nStep 2: printf(\"%d, %d, %d\\n\", x<=55, x=40, x>=10);\nIn printf the execution of expressions is from Right to Left. \nhere x>=10 returns TRUE hence it prints '1'.  \nx=40 here x is assigned to 40 Hence it prints '40'. \nx<=55 returns TRUE. hence it prints '1'.\nStep 3: Hence the output is \"1, 40, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    static int a[20];\n    int i = 0;\n    a[i] = i  ;\n    printf(\"%d, %d, %d\\n\", a[0], a[1], i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 0, 1",
+                    "opt_2": "1, 1, 1",
+                    "opt_3": "0, 0, 0",
+                    "opt_4": "0, 1, 0",
+                    "correct_answer": "0, 0, 0",
+                    "description": "Step 1: static int a[20]; here variable a is declared as an integer type and static. If a variable is declared as static and it will be automatically initialized to value '0'(zero).\n\n\nStep 2: int i = 0; here vaiable i is declared as an integer type and initialized to '0'(zero).\nStep 3: a[i] = i ; becomes a[0] = 0;\nStep 4: printf(\"%d, %d, %d\\n\", a[0], a[1], i); Here a[0] = 0, a[1] = 0(because all staic variables are initialized to '0') and i = 0.\nStep 4: Hence the output is \"0, 0, 0\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int a=100, b=200, c;\n    c = (a == 100 || b > 200);\n    printf(\"c=%d\\n\", c);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "c=100",
+                    "opt_2": "c=200",
+                    "opt_3": "c=1",
+                    "opt_4": "c=300",
+                    "correct_answer": "c=1",
+                    "description": "Step 1: int a=100, b=200, c; \nStep 2: c = (a == 100 || b > 200); \nbecomes c = (100 == 100 || 200 > 200);\nbecomes c = (TRUE || FALSE);\nbecomes c = (TRUE);(ie. c = 1)\nStep 3: printf(\"c=%d\\n\", c); It prints the value of variable i=1\nHence the output of the program is '1'(one)."
+                }
+            ]
+        },
+        {
+            "question_title": "Assuming, integer is 2 byte, What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%x\\n\", -2<<2);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "ffff",
+                    "opt_2": "0",
+                    "opt_3": "fff8",
+                    "opt_4": "Error",
+                    "correct_answer": "fff8",
+                    "description": "The integer value 2 is represented as 00000000 00000010 in binary system. \n\nNegative numbers are represented in 2's complement method. \n\n1's complement of 00000000 00000010 is 11111111 11111101 (Change all 0s to 1 and 1s to 0). \n\n2's complement of 00000000 00000010 is 11111111 11111110 (Add 1 to 1's complement to obtain the 2's complement value). \n\nTherefore, in binary we represent -2 as: 11111111 11111110. \n\nAfter left shifting it by 2 bits we obtain: 11111111 11111000, and it is equal to \"fff8\" in hexadecimal system."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i && ++j && ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "-2, 3, 1, 1",
+                    "opt_2": "2, 3, 1, 2",
+                    "opt_3": "1, 2, 3, 1",
+                    "opt_4": "3, 3, 1, 2",
+                    "correct_answer": "-2, 3, 1, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i && ++j && ++k;\nbecomes m = -2 && 3 && 1;\nbecomes m = TRUE && TRUE; Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of i,j,k are increemented by '1'(one).\n\n\nHence the output is \"-2, 3, 1, 1\"."
+                }
+            ]
+        }
+    ]
+}

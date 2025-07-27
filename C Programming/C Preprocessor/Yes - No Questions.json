@@ -1,0 +1,83 @@
+{
+    "chapter_name": "C Preprocessor",
+    "questions": [
+        {
+            "question_title": "Will the program compile successfully?\n#include<stdio.h>\n#define X (4+Y)\n#define Y (X+3)\n\nint main()\n{\n    printf(\"%d\\n\", 4*X+2);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "Reports an error: Undefined symbol 'X'"
+                }
+            ]
+        },
+        {
+            "question_title": "Would the following typedef work?\ntypedef #include l;",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "Because typedef goes to work after preprocessing."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the following program print the message infinite number of times?\n#include<stdio.h>\n#define INFINITELOOP while(1)\n\nint main()\n{\n    INFINITELOOP\n    printf(\"IndiaBIX\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, the program prints \"IndiaBIX\" and runs infinitely.\n\nThe macro INFINITELOOP while(1) replaces the text 'INFINITELOOP' by 'while(1)'\n\n\nIn the main function, while(1) satisfies the while condition and it prints \"IndiaBIX\". Then it comes to while(1) and the loop runs infinitely."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the program compile successfully?\n#include<stdio.h>\n\nint main()\n{\n    #ifdef NOTE\n        int a;\n        a=10;\n    #else\n        int a;\n        a=20;\n    #endif\n    printf(\"%d\\n\", a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, this program will compile and run successfully and prints 20.\n\nThe macro #ifdef NOTE evaluates the given expression to 1. If satisfied it executes the #ifdef block statements. Here #ifdef condition fails because the Macro NOTE is nowhere declared.\n\n\nHence the #else block gets executed, the variable a is declared and assigned a value of 20.\n\n\nprintf(\"%d\\n\", a); It prints the value of variable a 20."
+                }
+            ]
+        },
+        {
+            "question_title": "Will it result in to an error if a header file is included twice?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "opt_3": "It is compiler dependent.",
+                    "correct_answer": "It is compiler dependent.",
+                    "description": "Unless the header file has taken care to ensure that if already included it doesn't get included again.\n\nTurbo C, GCC compilers would take care of these problems, generate no error."
+                }
+            ]
+        },
+        {
+            "question_title": "It is necessary that a header files should have a .h extension?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, the header files have any kind of extension."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the program compile successfully?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"India\" \"BIX\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, It prints \"IndiaBIX\""
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+{
+    "chapter_name": "Pointers",
+    "questions": [
+        {
+            "question_title": "In the following program add a statement in the function fact() such that the factorial gets stored in j.\n#include<stdio.h>\nvoid fact(int*);\n\nint main()\n{\n    int i=5;\n    fact(&i);\n    printf(\"%d\\n\", i);\n    return 0;\n}\nvoid fact(int *j)\n{\n    static int s=1;\n    if(*j!=0)\n    {\n        s = s**j;\n        *j = *j-1;\n        fact(j);\n        /* Add a statement here */\n    }\n}",
+            "options": [
+                {
+                    "opt_1": "j=s;",
+                    "opt_2": "*j=s;",
+                    "opt_3": "*j=&s;",
+                    "opt_4": "&j=s;",
+                    "correct_answer": "*j=s;",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the statements is correct about the program?\n#include<stdio.h>\n\nint main()\n{\n    float a=3.14;\n    char *j;\n    j = (char*)&a;\n    printf(\"%d\\n\", *j);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "It prints ASCII value of the binary number present in the first byte of a float variable a.",
+                    "opt_2": "It prints character equivalent of the binary number present in the first byte of a float variable a.",
+                    "opt_3": "It will print 3",
+                    "opt_4": "It will print a garbage value",
+                    "correct_answer": "It prints ASCII value of the binary number present in the first byte of a float variable a.",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the statements is correct about the program?\n#include<stdio.h>\n\nint main()\n{\n    int i=10;\n    int *j=&i;\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "j and i are pointers to an int",
+                    "opt_2": "i is a pointer to an int and stores address of j",
+                    "opt_3": "j is a pointer to an int and stores address of i",
+                    "opt_4": "j is a pointer to a pointer to an int and stores address of i",
+                    "correct_answer": "j is a pointer to an int and stores address of i",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements correct about k used in the below statement?char ****k;",
+            "options": [
+                {
+                    "opt_1": "k is a pointer to a pointer to a pointer to a char",
+                    "opt_2": "k is a pointer to a pointer to a pointer to a pointer to a char",
+                    "opt_3": "k is a pointer to a char pointer",
+                    "opt_4": "k is a pointer to a pointer to a char",
+                    "correct_answer": "k is a pointer to a pointer to a pointer to a pointer to a char",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which statement will you add to the following program to ensure that the program outputs \"IndiaBIX\" on execution?\n#include<stdio.h>\n\nint main()\n{\n    char s[] = \"IndiaBIX\";\n    char t[25];\n    char *ps, *pt;\n    ps = s;\n    pt = t;\n    while(*ps)\n        *pt++ = *ps++;\n\n    /* Add a statement here */\n    printf(\"%s\\n\", t);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "*pt='';",
+                    "opt_2": "pt='\\0';",
+                    "opt_3": "pt='\\n';",
+                    "opt_4": "*pt='\\0';",
+                    "correct_answer": "*pt='\\0';",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements correctly declare a function that receives a pointer to pointer to a pointer to a float and returns a pointer to a pointer to a pointer to a pointer to a float?",
+            "options": [
+                {
+                    "opt_1": "float **fun(float***);",
+                    "opt_2": "float *fun(float**);",
+                    "opt_3": "float fun(float***);",
+                    "opt_4": "float ****fun(float***);",
+                    "correct_answer": "float ****fun(float***);",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "In the following program add a statement in the function fun() such that address of a gets stored in j?\n#include<stdio.h>\nint main()\n{\n    int *j;\n    void fun(int**);\n    fun(&j);\n    return 0;\n}\nvoid fun(int **k)\n{\n    int a=10;\n    /* Add a statement here */\n}",
+            "options": [
+                {
+                    "opt_1": "**k=a;",
+                    "opt_2": "k=&a;",
+                    "opt_3": "*k=&a",
+                    "opt_4": "&k=*a",
+                    "correct_answer": "*k=&a",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the statements is correct about the program?\n#include<stdio.h>\n\nint main()\n{\n    int arr[3][3] = {1, 2, 3, 4};\n    printf(\"%d\\n\", *(*(*(arr))));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Output: Garbage value",
+                    "opt_2": "Output: 1",
+                    "opt_3": "Output: 3",
+                    "opt_4": "Error: Invalid indirection",
+                    "correct_answer": "Error: Invalid indirection",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

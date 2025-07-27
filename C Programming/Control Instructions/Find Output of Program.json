@@ -1,0 +1,265 @@
+{
+    "chapter_name": "Control Instructions",
+    "questions": [
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    float a = 0.7;\n    if(0.7 > a)\n        printf(\"Hi\\n\");\n    else\n        printf(\"Hello\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Hi",
+                    "opt_2": "Hello",
+                    "opt_3": "Hi Hello",
+                    "opt_4": "None of above",
+                    "correct_answer": "Hi",
+                    "description": "if(0.7 > a) here a is a float variable and 0.7 is a double constant. The double constant 0.7 is greater than the float variable a. Hence the if condition is satisfied and it prints 'Hi'Example:\n \n#include<stdio.h>\nint main()\n{\n    float a=0.7;\n    printf(\"%.10f %.10f\\n\",0.7, a);\n    return 0;\n}\n \n \nOutput:0.7000000000  0.6999999881"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i = 5;\n    while(i-- >= 0)\n        printf(\"%d,\", i);\n    i = 5;\n    printf(\"\\n\");\n    while(i-- >= 0)\n        printf(\"%i,\", i);\n    while(i-- >= 0)\n        printf(\"%d,\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "4, 3, 2, 1, 0, -14, 3, 2, 1, 0, -1",
+                    "opt_2": "5, 4, 3, 2, 1, 05, 4, 3, 2, 1, 0",
+                    "opt_3": "Error",
+                    "opt_4": "5, 4, 3, 2, 1, 05, 4, 3, 2, 1, 05, 4, 3, 2, 1, 0",
+                    "correct_answer": "4, 3, 2, 1, 0, -14, 3, 2, 1, 0, -1",
+                    "description": "Step 1: Initially the value of variable i is '5'.\nLoop 1: while(i-- >= 0) here i = 5, this statement becomes while(5-- >= 0) Hence the while condition is satisfied and it prints '4'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 2: while(i-- >= 0) here i = 4, this statement becomes while(4-- >= 0) Hence the while condition is satisfied and it prints '3'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 3: while(i-- >= 0) here i = 3, this statement becomes while(3-- >= 0) Hence the while condition is satisfied and it prints '2'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 4: while(i-- >= 0) here i = 2, this statement becomes while(2-- >= 0) Hence the while condition is satisfied and it prints '1'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 5: while(i-- >= 0) here i = 1, this statement becomes while(1-- >= 0) Hence the while condition is satisfied and it prints '0'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 6: while(i-- >= 0) here i = 0, this statement becomes while(0-- >= 0) Hence the while condition is satisfied and it prints '-1'. (variable 'i' is decremented by '1'(one) in previous while condition)\nLoop 7: while(i-- >= 0) here i = -1, this statement becomes while(-1-- >= 0) Hence the while condition is not satisfied and loop exits.\nThe output of first while loop is 4,3,2,1,0,-1\n\n\nStep 2: Then the value of variable i is initialized to '5' Then it prints a new line character(\\n).\nSee the above Loop 1 to Loop 7 .\nThe output of second while loop is 4,3,2,1,0,-1\n\n\nStep 3: The third while loop, while(i-- >= 0) here i = -1(because the variable 'i' is decremented to '-1' by previous while loop and it never initialized.). This statement becomes while(-1-- >= 0) Hence the while condition is not satisfied and loop exits.\n\nHence the output of the program is \n4,3,2,1,0,-1\n4,3,2,1,0,-1"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=3;\n    switch(i)\n    {\n        case 1:\n            printf(\"Hello\\n\");\n        case 2:\n            printf(\"Hi\\n\");\n        case 3:\n            continue;\n        default:\n            printf(\"Bye\\n\");\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Misplaced continue",
+                    "opt_2": "Bye",
+                    "opt_3": "No output",
+                    "opt_4": "Hello Hi",
+                    "correct_answer": "Error: Misplaced continue",
+                    "description": "The keyword continue cannot be used in switch case. It must be used in for or while or do while loop. If there is any looping statement in switch case then we can use continue."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=1, y=1;\n    for(; y; printf(\"%d %d\\n\", x, y))\n    {\n        y = x++ <= 5;\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2 13 14 15 16 17 0",
+                    "opt_2": "2 13 14 15 16 1",
+                    "opt_3": "2 13 14 15 1",
+                    "opt_4": "2 23 34 45 5",
+                    "correct_answer": "2 13 14 15 16 17 0",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int a=0, b=1, c=3;\n    *((a) ? &b : &a) = a ? b : c;\n    printf(\"%d, %d, %d\\n\", a, b, c);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 1, 3",
+                    "opt_2": "1, 2, 3",
+                    "opt_3": "3, 1, 3",
+                    "opt_4": "1, 3, 1",
+                    "correct_answer": "3, 1, 3",
+                    "description": "Step 1: int a=0, b=1, c=3; here variable a, b, and c are declared as integer type and initialized to 0, 1, 3 respectively.\nStep 2: *((a) ? &b : &a) = a ? b : c; The right side of the expression(a?b:c) becomes (0?1:3). Hence it return the value '3'. \nThe left side of the expression *((a) ? &b : &a) becomes *((0) ? &b : &a). Hence this contains the address of the variable a *(&a).\nStep 3: *((a) ? &b : &a) = a ? b : c; Finally this statement becomes *(&a)=3. Hence the variable a has the value '3'.\n\n\nStep 4: printf(\"%d, %d, %d\\n\", a, b, c); It prints \"3, 1, 3\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int a = 300, b, c;\n    if(a >= 400)\n        b = 300;\n    c = 200;\n    printf(\"%d, %d, %d\\n\", a, b, c);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "300, 300, 200",
+                    "opt_2": "Garbage, 300, 200",
+                    "opt_3": "300, Garbage, 200",
+                    "opt_4": "300, 300, Garbage",
+                    "correct_answer": "300, Garbage, 200",
+                    "description": "Step 1: int a = 300, b, c; here variable a is initialized to '300', variable b and c are declared, but not initialized.\nStep 2: if(a >= 400) means if(300 >= 400). Hence this condition will be failed.\nStep 3: c = 200; here variable c is initialized to '200'.\nStep 4: printf(\"%d, %d, %d\\n\", a, b, c); It prints \"300, garbage value, 200\". because variable b is not initialized."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int k, num = 30;\n    k = (num < 10) ? 100 : 200;\n    printf(\"%d\\n\", num);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "200",
+                    "opt_2": "30",
+                    "opt_3": "100",
+                    "opt_4": "500",
+                    "correct_answer": "30",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x = 3;\n    float y = 3.0;\n    if(x == y)\n        printf(\"x and y are equal\");\n    else\n        printf(\"x and y are not equal\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "x and y are equal",
+                    "opt_2": "x and y are not equal",
+                    "opt_3": "Unpredictable",
+                    "opt_4": "No output",
+                    "correct_answer": "x and y are equal",
+                    "description": "Step 1: int x = 3; here variable x is an integer type and initialized to '3'.\nStep 2: float y = 3.0; here variable y is an float type and initialized to '3.0'\nStep 3: if(x == y) here we are comparing if(3 == 3.0) hence this condition is satisfied. \nHence it prints \"x and y are equal\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    unsigned int i = 65535; /* Assume 2 byte integer*/\n    while(i++ != 0)\n        printf(\"%d\",++i);\n    printf(\"\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Infinite loop",
+                    "opt_2": "0 1 2 ... 65535",
+                    "opt_3": "0 1 2 ... 32767 - 32766 -32765 -1 0",
+                    "opt_4": "No output",
+                    "correct_answer": "Infinite loop",
+                    "description": "Here unsigned int size is 2 bytes. It varies from 0,1,2,3, ... to 65535.\n\n\nStep 1:unsigned int i = 65535;\n\n\nStep 2: \nLoop 1: while(i++ != 0) this statement becomes while(65535 != 0). Hence the while(TRUE) condition is satisfied. Then the printf(\"%d\", ++i); prints '1'(variable 'i' is already incremented by '1' in while statement and now incremented by '1' in printf statement)\nLoop 2: while(i++ != 0) this statement becomes while(1 != 0). Hence the while(TRUE) condition is satisfied. Then the printf(\"%d\", ++i); prints '3'(variable 'i' is already incremented by '1' in while statement and now incremented by '1' in printf statement)\n....\n....\n\nThe while loop will never stops executing, because variable i will never become '0'(zero). Hence it is an 'Infinite loop'."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x = 10, y = 20;\n    if(!(!x) && x)\n        printf(\"x = %d\\n\", x);\n    else\n        printf(\"y = %d\\n\", y);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "y =20",
+                    "opt_2": "x = 0",
+                    "opt_3": "x = 10",
+                    "opt_4": "x = 1",
+                    "correct_answer": "x = 10",
+                    "description": "The logical not operator takes expression and evaluates to true if the expression is false and evaluates to false if the expression is true. In other words it  reverses the value of the expression.\n\n Step 1: if(!(!x) && x) \n Step 2: if(!(!10) && 10)\n Step 3: if(!(0) && 10)\n Step 3: if(1 && 10)\n Step 4: if(TRUE) here the if condition is satisfied. Hence it prints x = 10."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    char str[]=\"C-program\";\n    int a = 5;\n    printf(a >10?\"Ps\\n\":\"%s\\n\", str);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "C-program",
+                    "opt_2": "Ps",
+                    "opt_3": "Error",
+                    "opt_4": "None of above",
+                    "correct_answer": "C-program",
+                    "description": "Step 1: char str[]=\"C-program\"; here variable str contains \"C-program\".\nStep 2: int a = 5; here variable a contains \"5\".\nStep 3: printf(a >10?\"Ps\\n\":\"%s\\n\", str); this statement can be written as\n\n\n\nif(a > 10)\n{\n    printf(\"Ps\\n\");\n}\nelse\n{\n    printf(\"%s\\n\", str);\n}\n\nHere we are checking a > 10 means 5 > 10. Hence this condition will be failed. So it prints variable str.\n\n\nHence the output is \"C-program\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=4;\n    switch(i)\n    {\n        default:\n           printf(\"This is default\\n\");\n        case 1:\n           printf(\"This is case 1\\n\");\n           break;\n        case 2:\n           printf(\"This is case 2\\n\");\n           break;\n        case 3:\n           printf(\"This is case 3\\n\");\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "This is default\nThis is case 1",
+                    "opt_2": "This is case 3\nThis is default",
+                    "opt_3": "This is case 1\nThis is case 3",
+                    "opt_4": "This is default",
+                    "correct_answer": "This is default\nThis is case 1",
+                    "description": "In the very begining of switch-case statement default statement is encountered. So, it prints \"This is default\".\n\nIn default statement there is no break; statement is included. So it prints the case 1 statements. \"This is case 1\".\n\nThen the break; statement is encountered. Hence the program exits from the switch-case block."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i = 1;\n    switch(i)\n    {\n        printf(\"Hello\\n\");\n        case 1:\n            printf(\"Hi\\n\");\n            break;\n        case 2:\n            printf(\"\\nBye\\n\");\n            break;\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "HelloHi",
+                    "opt_2": "HelloBye",
+                    "opt_3": "Hi",
+                    "opt_4": "Bye",
+                    "correct_answer": "Hi",
+                    "description": "switch(i) has the variable i it has the value '1'(one).\n\n\nThen case 1: statements got executed. so, it prints \"Hi\". The break; statement make the program to be exited from switch-case statement.\n\nswitch-case do not execute any statements outside these blocks case and default \nHence the output is \"Hi\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    unsigned int i = 65536; /* Assume 2 byte integer*/\n    while(i != 0)\n        printf(\"%d\",++i);\n    printf(\"\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Infinite loop",
+                    "opt_2": "0 1 2 ... 65535",
+                    "opt_3": "0 1 2 ... 32767 - 32766 -32765 -1 0",
+                    "opt_4": "No output",
+                    "correct_answer": "No output",
+                    "description": "Here unsigned int size is 2 bytes. It varies from 0,1,2,3, ... to 65535.\n\n\nStep 1:unsigned int i = 65536; here variable i becomes '0'(zero). because unsigned int varies from 0 to 65535.\n\n\nStep 2: while(i != 0) this statement becomes while(0 != 0). Hence the while(FALSE) condition is not satisfied. So, the inside the statements of while loop will not get executed.\n\nHence there is no output.\nNote: Don't forget that the size of int should be 2 bytes. If you run the above program in GCC it may run infinite loop, because in Linux platform the size of the integer is 4 bytes."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int a = 500, b = 100, c;\n    if(!a >= 400)\n        b = 300;\n    c = 200;\n    printf(\"b = %d c = %d\\n\", b, c);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "b = 300 c = 200",
+                    "opt_2": "b = 100 c = garbage",
+                    "opt_3": "b = 300 c = garbage",
+                    "opt_4": "b = 100 c = 200",
+                    "correct_answer": "b = 100 c = 200",
+                    "description": "Initially variables a = 500, b = 100 and c is not assigned.\n\n\nStep 1: if(!a >= 400)\nStep 2: if(!500 >= 400)\nStep 3: if(0 >= 400)\nStep 4: if(FALSE)  Hence the if condition is failed.\nStep 5: So, variable c is assigned to a value '200'.\nStep 6: printf(\"b = %d c = %d\\n\", b, c); It prints value of b and c.\nHence the output is \"b = 100 c = 200\""
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    char j=1;\n    while(j < 5)\n    {\n        printf(\"%d, \", j);\n        j = j+1;\n    }\n    printf(\"\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1 2 3 ... 127",
+                    "opt_2": "1 2 3 ... 255",
+                    "opt_3": "1 2 3 ... 127 128 0 1 2 3 ... infinite times",
+                    "opt_4": "1, 2, 3, 4",
+                    "correct_answer": "1, 2, 3, 4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    char ch;\n    if(ch = printf(\"\"))\n        printf(\"It matters\\n\");\n    else\n        printf(\"It doesn't matters\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "It matters",
+                    "opt_2": "It doesn't matters",
+                    "opt_3": "matters",
+                    "opt_4": "No output",
+                    "correct_answer": "It doesn't matters",
+                    "description": "printf() returns the number of charecters printed on the console.\n\n\nStep 1: if(ch = printf(\"\")) here printf() does not print anything, so it returns '0'(zero). \nStep 2: if(ch = 0) here variable ch has the value '0'(zero). \nStep 3: if(0) Hence the if condition is not satisfied. So it prints the else statements. \nHence the output is \"It doesn't matters\".\n\nNote: Compiler shows a warning \"possibly incorrect assinment\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=0;\n    for(; i<=5; i++);\n        printf(\"%d\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "0, 1, 2, 3, 4, 5",
+                    "opt_2": "5",
+                    "opt_3": "1, 2, 3, 4",
+                    "opt_4": "6",
+                    "correct_answer": "6",
+                    "description": "Step 1: int i = 0; here variable i is an integer type and initialized to '0'.\nStep 2: for(; i<=5; i++); variable i=0 is already assigned in previous step. The semi-colon at the end of this for loop tells, \"there is no more statement is inside the loop\". \nLoop 1: here i=0, the condition in for(; 0<=5; i++) loop satisfies and then i is incremented by '1'(one)\nLoop 2: here i=1, the condition in for(; 1<=5; i++) loop satisfies and then i is incremented by '1'(one)\nLoop 3: here i=2, the condition in for(; 2<=5; i++) loop satisfies and then i is incremented by '1'(one)\nLoop 4: here i=3, the condition in for(; 3<=5; i++) loop satisfies and then i is increemented by '1'(one)\nLoop 5: here i=4, the condition in for(; 4<=5; i++) loop satisfies and then i is incremented by '1'(one)\nLoop 6: here i=5, the condition in for(; 5<=5; i++) loop satisfies and then i is incremented by '1'(one)\nLoop 7: here i=6, the condition in for(; 6<=5; i++) loop fails and then i is not incremented.\n\n\nStep 3: printf(\"%d\", i); here the value of i is 6. Hence the output is '6'."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x, y, z;\n    x=y=z=1;\n    z = ++x || ++y && ++z;\n    printf(\"x=%d, y=%d, z=%d\\n\", x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "x=2, y=1, z=1",
+                    "opt_2": "x=2, y=2, z=1",
+                    "opt_3": "x=2, y=2, z=2",
+                    "opt_4": "x=1, y=2, z=1",
+                    "correct_answer": "x=2, y=1, z=1",
+                    "description": "Step 1: x=y=z=1; here the variables x ,y, z are initialized to value '1'.\n\n\nStep 2: z = ++x || ++y && ++z; becomes z = ( (++x) || (++y && ++z) ). Here ++x becomes 2. So there is no need to check the other side because ||(Logical OR) condition is satisfied.(z = (2 || ++y && ++z)). There is no need to process ++y && ++z. Hence it returns '1'. So the value of variable z is '1'\n\n\nStep 3: printf(\"x=%d, y=%d, z=%d\\n\", x, y, z); It prints \"x=2, y=1, z=1\". here x is increemented in previous step. y and z are not increemented."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program, if a short int is 2 bytes wide?\n#include<stdio.h>\nint main()\n{\n    short int i = 0;\n    for(i<=5 && i>=-1; ++i; i>0)\n        printf(\"%u,\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1 ... 65535",
+                    "opt_2": "Expression syntax error",
+                    "opt_3": "No output",
+                    "opt_4": "0, 1, 2, 3, 4, 5",
+                    "correct_answer": "1 ... 65535",
+                    "description": "for(i<=5 && i>=-1; ++i; i>0)\nso expression i<=5 && i>=-1 initializes for loop.\nexpression ++i is the loop condition.\nexpression i>0 is the increment expression.\nIn for( i <= 5 && i >= -1; ++i; i>0) expression i<=5 && i>=-1 evaluates to one.\nLoop condition always get evaluated to true. Also at this point it increases i by one.\nAn increment_expression i>0 has no effect on value of i.so for loop get executed till the limit of integer (ie. 65535)"
+                }
+            ]
+        }
+    ]
+}

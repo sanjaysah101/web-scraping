@@ -1,0 +1,31 @@
+{
+    "chapter_name": "C Preprocessor",
+    "questions": [
+        {
+            "question_title": "Which of the following are correctly formed #define statements in C?",
+            "options": [
+                {
+                    "opt_1": "#define CUBE (X) (X*X*X);",
+                    "opt_2": "#define CUBE(x) (X*X*X)",
+                    "opt_3": "#define CUBE(X)(X*X*X)",
+                    "opt_4": "#define CUBE(X) {X*X*X}",
+                    "correct_answer": "#define CUBE(X)(X*X*X)",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following are correct preprocessor directives in C?\n\n\n1:\n#ifdef\n\n\n2:\n#if\n\n\n3:\n#elif\n\n\n4:\n#undef",
+            "options": [
+                {
+                    "opt_1": "1, 2",
+                    "opt_2": "4",
+                    "opt_3": "1, 2, 4",
+                    "opt_4": "1, 2, 3, 4",
+                    "correct_answer": "1, 2, 3, 4",
+                    "description": "The macros #ifdef #if #elif are called conditional macros.\nThe macro #undef undefine the previosly declared macro symbol.\nHence all the given statements are macro preprocessor directives."
+                }
+            ]
+        }
+    ]
+}

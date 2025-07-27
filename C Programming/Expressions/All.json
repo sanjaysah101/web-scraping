@@ -1,0 +1,366 @@
+{
+    "chapter_name": "Expressions",
+    "questions": [
+        {
+            "question_title": "Which of the following are unary operators in C?\n\n\n1.\n!\n\n\n2.\nsizeof\n\n\n3.\n~\n\n\n4.\n&&",
+            "options": [
+                {
+                    "opt_1": "1, 2",
+                    "opt_2": "1, 3",
+                    "opt_3": "2, 4",
+                    "opt_4": "1, 2, 3",
+                    "correct_answer": "1, 2, 3",
+                    "description": "An operation with only one operand is called unary operation.\nUnary operators:\n! Logical NOT operator.\n~ bitwise NOT operator.\nsizeof Size-of operator.\n\n\n&& Logical AND is a logical operator.\n\nTherefore, 1, 2, 3 are unary operators."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following correctly shows the hierarchy of arithmetic operations in C?",
+            "options": [
+                {
+                    "opt_1": "/ + * -",
+                    "opt_2": "* - / +",
+                    "opt_3": "+ - / *",
+                    "opt_4": "/ * + -",
+                    "correct_answer": "/ * + -",
+                    "description": "Simply called as BODMAS (Bracket of Division, Multiplication, Addition and Subtraction).\n\nHow Do I Remember ? BODMAS !\n \nB - Brackets first\nO - Orders (ie Powers and Square Roots, etc.)\nDM - Division and Multiplication (left-to-right)\nAS - Addition and Subtraction (left-to-right)"
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is the correct order of evaluation for the below expression?z = x + y * z / 4 % 2 - 1",
+            "options": [
+                {
+                    "opt_1": "* / % + - =",
+                    "opt_2": "= * / % + -",
+                    "opt_3": "/ * % - + =",
+                    "opt_4": "*  % /  - + =",
+                    "correct_answer": "* / % + - =",
+                    "description": "C uses left associativity for evaluating expressions to break a tie between two operators having same precedence."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is the correct usage of conditional operators used in C?",
+            "options": [
+                {
+                    "opt_1": "a>b ? c=30 : c=40;",
+                    "opt_2": "a>b ? c=30;",
+                    "opt_3": "max = a>b ? a>c?a:c:b>c?b:c",
+                    "opt_4": "return (a>b)?(a:b)",
+                    "correct_answer": "max = a>b ? a>c?a:c:b>c?b:c",
+                    "description": "Option A: assignment statements are always return in paranthesis in the case of conditional operator. It should be a>b? (c=30):(c=40);\n\nOption B: it is syntatically wrong.\n\nOption D: syntatically wrong, it should be return(a>b ? a:b); \n\nOption C: it uses nested conditional operator, this is logic for finding greatest number out of three numbers."
+                }
+            ]
+        },
+        {
+            "question_title": "In which order do the following gets evaluated\n\n\n1.\nRelational\n\n\n2.\nArithmetic\n\n\n3.\nLogical\n\n\n4.\nAssignment",
+            "options": [
+                {
+                    "opt_1": "2134",
+                    "opt_2": "1234",
+                    "opt_3": "4321",
+                    "opt_4": "3214",
+                    "correct_answer": "2134",
+                    "description": "2. Arithmetic operators: *, /, %, +, - \n1. Relational operators: >, <, >=, <=, ==, !=\n3. Logical operators   : !, &&, ||\n4. Assignment operators: ="
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following is the correct order if calling functions in the below code?\na = f1(23, 14) * f2(12/4) + f3();",
+            "options": [
+                {
+                    "opt_1": "f1, f2, f3",
+                    "opt_2": "f3, f2, f1",
+                    "opt_3": "Order may vary from compiler to compiler",
+                    "opt_4": "None of above",
+                    "correct_answer": "Order may vary from compiler to compiler",
+                    "description": "Here, Multiplication will happen before the addition, but in which order the functions would be called is undefined. In an arithmetic expression the parenthesis tell the compiler which operands go with which operators but do not force the compiler to evaluate everything within the parenthesis first."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=2;\n    printf(\"%d, %d\\n\", ++i, ++i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3, 4",
+                    "opt_2": "4, 3",
+                    "opt_3": "4, 4",
+                    "opt_4": "Output may vary from compiler to compiler",
+                    "correct_answer": "Output may vary from compiler to compiler",
+                    "description": "The order of evaluation of arguments passed to a function call is unspecified.\n\nAnyhow, we consider ++i, ++i are Right-to-Left associativity. The output of the program is 4, 3.\n\nIn TurboC, the output will be 4, 3.\nIn GCC, the output will be 4, 4."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i && ++j || ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 2, 0, 1",
+                    "opt_2": "-3, 2, 0, 1",
+                    "opt_3": "-2, 3, 0, 1",
+                    "opt_4": "2, 3, 1, 1",
+                    "correct_answer": "-2, 3, 0, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i && ++j || ++k;\nbecomes m = (-2 && 3) || ++k;\nbecomes m = TRUE || ++k;. (++k) is not executed because (-2 && 3) alone return TRUE. Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of i,j are increemented by '1'(one).\n\n\nHence the output is \"-2, 3, 0, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=4, j=-1, k=0, w, x, y, z;\n    w = i || j || k;\n    x = i && j && k;\n    y = i || j &&k;\n    z = i && j || k;\n    printf(\"%d, %d, %d, %d\\n\", w, x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 1, 1, 1",
+                    "opt_2": "1, 1, 0, 1",
+                    "opt_3": "1, 0, 0, 1",
+                    "opt_4": "1, 0, 1, 1",
+                    "correct_answer": "1, 0, 1, 1",
+                    "description": "Step 1: int i=4, j=-1, k=0, w, x, y, z; here variable i, j, k, w, x, y, z are declared as an integer type and the variable i, j, k are initialized to 4, -1, 0 respectively.\n\n\nStep 2: w = i || j || k; becomes w = 4 || -1 || 0;.  Hence it returns TRUE. So, w=1\n\n\nStep 3: x = i && j && k; becomes x = 4 && -1 && 0;  Hence it returns FALSE. So, x=0\n\n\nStep 4: y = i || j &&k; becomes y = 4 || -1 && 0;  Hence it returns TRUE. So, y=1\n\n\nStep 5: z = i && j || k; becomes z = 4 && -1 || 0; Hence it returns TRUE. So, z=1.\n\n\nStep 6: printf(\"%d, %d, %d, %d\\n\", w, x, y, z); Hence the output is \"1, 0, 1, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=4, y, z;\n    y = --x;\n    z = x--;\n    printf(\"%d, %d, %d\\n\", x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "4, 3, 3",
+                    "opt_2": "4, 3, 2",
+                    "opt_3": "3, 3, 2",
+                    "opt_4": "2, 3, 3",
+                    "correct_answer": "2, 3, 3",
+                    "description": "Step 1: int x=4, y, z; here variable x, y, z are declared as an integer type and variable x is initialized to 4.\nStep 2: y = --x; becomes y = 3; because (--x) is pre-decrement operator.\nStep 3: z = x--; becomes z = 3;. In the next step variable x becomes 2, because (x--) is post-decrement operator. \nStep 4: printf(\"%d, %d, %d\\n\", x, y, z); Hence it prints \"2, 3, 3\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    char ch;\n    ch = 'A';\n    printf(\"The letter is\");\n    printf(\"%c\", ch >= 'A' && ch <= 'Z' ? ch + 'a' - 'A':ch);\n    printf(\"Now the letter is\");\n    printf(\"%c\\n\", ch >= 'A' && ch <= 'Z' ? ch : ch + 'a' - 'A');\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "The letter is aNow the letter is A",
+                    "opt_2": "The letter is ANow the letter is a",
+                    "opt_3": "Error",
+                    "opt_4": "None of above",
+                    "correct_answer": "The letter is aNow the letter is A",
+                    "description": "Step 1: char ch; ch = 'A'; here variable ch is declared as an character type an initialized to 'A'.\n\n\nStep 2: printf(\"The letter is\"); It prints \"The letter is\".\n\n\nStep 3: printf(\"%c\", ch >= 'A' && ch <= 'Z' ? ch + 'a' - 'A':ch);\n\nThe ASCII value of 'A' is 65 and 'a' is 97.\nHere => ('A' >= 'A' && 'A' <= 'Z') ? (A + 'a' - 'A'):('A')\n=> (TRUE && TRUE) ? (65 + 97 - 65) : ('A')\n=> (TRUE) ? (97): ('A') \nIn printf the format specifier is '%c'. Hence prints 97 as 'a'.\n\n\nStep 4: printf(\"Now the letter is\"); It prints \"Now the letter is\".\n\n\nStep 5: printf(\"%c\\n\", ch >= 'A' && ch <= 'Z' ? ch : ch + 'a' - 'A');\n\nHere => ('A' >= 'A' && 'A' <= 'Z') ? ('A') : (A + 'a' - 'A')\n=> (TRUE && TRUE) ? ('A') :(65 + 97 - 65)\n=> (TRUE) ? ('A') : (97) \nIt prints 'A'\nHence the output is\nThe letter is a\nNow the letter is A"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=2;\n    int j = i + (1, 2, 3, 4, 5);\n    printf(\"%d\\n\", j);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "4",
+                    "opt_2": "7",
+                    "opt_3": "6",
+                    "opt_4": "5",
+                    "correct_answer": "7",
+                    "description": "Because, comma operator used in the expression i (1, 2, 3, 4, 5). The comma operator has left-right associativity. The left operand is always evaluated first, and the result of evaluation is discarded before the right operand is evaluated. In this expression 5 is the right most operand, hence after evaluating expression (1, 2, 3, 4, 5) the result is 5, which on adding to i results into 7."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i || ++j && ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 2, 0, 1",
+                    "opt_2": "1, 2, 1, 0",
+                    "opt_3": "-2, 2, 0, 0",
+                    "opt_4": "-2, 2, 0, 1",
+                    "correct_answer": "-2, 2, 0, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i || ++j && ++k; here (++j && ++k;) this code will not get executed because ++i has non-zero value.\nbecomes m = -2 || ++j && ++k;\nbecomes m = TRUE || ++j && ++k; Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of variable 'i' only increemented by '1'(one). The variable j,k are not increemented.\n\n\nHence the output is \"-2, 2, 0, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=12, y=7, z;\n    z = x!=4 || y == 2;\n    printf(\"z=%d\\n\", z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "z=0",
+                    "opt_2": "z=1",
+                    "opt_3": "z=4",
+                    "opt_4": "z=2",
+                    "correct_answer": "z=1",
+                    "description": "Step 1: int x=12, y=7, z; here variable x, y and z are declared as an integer and variable x and y are initialized to 12, 7 respectively.\n\n\nStep 2: z = x!=4 || y == 2; becomes z = 12!=4 || 7 == 2; then z = (condition true) || (condition false); Hence it returns 1. So the value of z=1.\n\n\nStep 3: printf(\"z=%d\\n\", z); Hence the output of the program is \"z=1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int k, num=30;\n    k = (num>5 ? (num <=10 ? 100 : 200): 500);\n    printf(\"%d\\n\", num);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "200",
+                    "opt_2": "30",
+                    "opt_3": "100",
+                    "opt_4": "500",
+                    "correct_answer": "30",
+                    "description": "Step 1: int k, num=30; here variable k and num are declared as an integer type and variable num is initialized to '30'.\nStep 2: k = (num>5 ? (num <=10 ? 100 : 200): 500); This statement does not affect the output of the program. Because we are going to print the variable num in the next statement. So, we skip this statement.\nStep 3: printf(\"%d\\n\", num); It prints the value of variable num '30'\nStep 3: Hence the output of the program is '30'"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=3;\n    i = i++;\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3",
+                    "opt_2": "4",
+                    "opt_3": "5",
+                    "opt_4": "6",
+                    "correct_answer": "4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int x=55;\n    printf(\"%d, %d, %d\\n\", x<=55, x=40, x>=10);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 40, 1",
+                    "opt_2": "1, 55, 1",
+                    "opt_3": "1, 55, 0",
+                    "opt_4": "1, 1, 1",
+                    "correct_answer": "1, 40, 1",
+                    "description": "Step 1: int x=55; here variable x is declared as an integer type and initialized to '55'.\nStep 2: printf(\"%d, %d, %d\\n\", x<=55, x=40, x>=10);\nIn printf the execution of expressions is from Right to Left. \nhere x>=10 returns TRUE hence it prints '1'.  \nx=40 here x is assigned to 40 Hence it prints '40'. \nx<=55 returns TRUE. hence it prints '1'.\nStep 3: Hence the output is \"1, 40, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    static int a[20];\n    int i = 0;\n    a[i] = i  ;\n    printf(\"%d, %d, %d\\n\", a[0], a[1], i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1, 0, 1",
+                    "opt_2": "1, 1, 1",
+                    "opt_3": "0, 0, 0",
+                    "opt_4": "0, 1, 0",
+                    "correct_answer": "0, 0, 0",
+                    "description": "Step 1: static int a[20]; here variable a is declared as an integer type and static. If a variable is declared as static and it will be automatically initialized to value '0'(zero).\n\n\nStep 2: int i = 0; here vaiable i is declared as an integer type and initialized to '0'(zero).\nStep 3: a[i] = i ; becomes a[0] = 0;\nStep 4: printf(\"%d, %d, %d\\n\", a[0], a[1], i); Here a[0] = 0, a[1] = 0(because all staic variables are initialized to '0') and i = 0.\nStep 4: Hence the output is \"0, 0, 0\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int a=100, b=200, c;\n    c = (a == 100 || b > 200);\n    printf(\"c=%d\\n\", c);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "c=100",
+                    "opt_2": "c=200",
+                    "opt_3": "c=1",
+                    "opt_4": "c=300",
+                    "correct_answer": "c=1",
+                    "description": "Step 1: int a=100, b=200, c; \nStep 2: c = (a == 100 || b > 200); \nbecomes c = (100 == 100 || 200 > 200);\nbecomes c = (TRUE || FALSE);\nbecomes c = (TRUE);(ie. c = 1)\nStep 3: printf(\"c=%d\\n\", c); It prints the value of variable i=1\nHence the output of the program is '1'(one)."
+                }
+            ]
+        },
+        {
+            "question_title": "Assuming, integer is 2 byte, What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%x\\n\", -2<<2);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "ffff",
+                    "opt_2": "0",
+                    "opt_3": "fff8",
+                    "opt_4": "Error",
+                    "correct_answer": "fff8",
+                    "description": "The integer value 2 is represented as 00000000 00000010 in binary system. \n\nNegative numbers are represented in 2's complement method. \n\n1's complement of 00000000 00000010 is 11111111 11111101 (Change all 0s to 1 and 1s to 0). \n\n2's complement of 00000000 00000010 is 11111111 11111110 (Add 1 to 1's complement to obtain the 2's complement value). \n\nTherefore, in binary we represent -2 as: 11111111 11111110. \n\nAfter left shifting it by 2 bits we obtain: 11111111 11111000, and it is equal to \"fff8\" in hexadecimal system."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint main()\n{\n    int i=-3, j=2, k=0, m;\n    m = ++i && ++j && ++k;\n    printf(\"%d, %d, %d, %d\\n\", i, j, k, m);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "-2, 3, 1, 1",
+                    "opt_2": "2, 3, 1, 2",
+                    "opt_3": "1, 2, 3, 1",
+                    "opt_4": "3, 3, 1, 2",
+                    "correct_answer": "-2, 3, 1, 1",
+                    "description": "Step 1: int i=-3, j=2, k=0, m; here variable i, j, k, m are declared as an integer type and variable i, j, k are initialized to -3, 2, 0 respectively.\n\n\nStep 2: m = ++i && ++j && ++k;\nbecomes m = -2 && 3 && 1;\nbecomes m = TRUE && TRUE; Hence this statement becomes TRUE. So it returns '1'(one). Hence m=1.\n\n\nStep 3: printf(\"%d, %d, %d, %d\\n\", i, j, k, m); In the previous step the value of i,j,k are increemented by '1'(one).\n\n\nHence the output is \"-2, 3, 1, 1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "Associativity has no role to play unless the precedence of operator is same.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Associativity is only needed when the operators in an expression have the same precedence. Usually + and - have the same precedence.\nConsider the expression 7 - 4 + 2. The result could be either (7 - 4) + 2 = 5 or 7 - (4 + 2) = 1. The former result corresponds to the case when + and - are left-associative, the latter to when + and - are right-associative.\n\nUsually the addition, subtraction, multiplication, and division operators are left-associative, while the exponentiation, assignment and conditional operators are right-associative. To prevent cases where operands would be associated with two operators, or no operator at all, operators with the same precedence must have the same associativity."
+                }
+            ]
+        },
+        {
+            "question_title": "In the expression a=b=5 the order of Assignment is NOT decided by Associativity of operators",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "The equal to = operator has Right-to-Left Associativity. So it assigns b=5 then a=b."
+                }
+            ]
+        },
+        {
+            "question_title": "Associativity of an operator is either Left to Right or Right to Left.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Yes, the associativity of an operator is either Left to Right or Right to Left."
+                }
+            ]
+        },
+        {
+            "question_title": "The expression of the right hand side of || operators doesn't get evaluated if the left hand side determines the outcome.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Because, if a is non-zero then b will not be evaluated in the expression (a || b)"
+                }
+            ]
+        },
+        {
+            "question_title": "Will the expression *p = p be disallowed by the compiler?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "Because, here even though the value of p is accessed twice it is used to modify two different objects p and *p"
+                }
+            ]
+        },
+        {
+            "question_title": "Every operator has an Associativity",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, Each and every operator has an associativity.\nThe associativity (or fixity) of an operator is a property that determines how operators of the same precedence are grouped in the absence of parentheses. Operators may be left-associative, right-associative or non-associative."
+                }
+            ]
+        },
+        {
+            "question_title": "Are the following two statement same?\n\n\n1.\na <= 20 ? (b = 30): (c = 30);\n\n\n2.\n(a <=20) ? b : (c = 30);",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, the expressions 1 and 2 are not same.\n\n\n1. a <= 20 ? (b = 30) : (c = 30); This statement can be rewritten as,\n\nif(a <= 20)\n{\n    b = 30;\n}\nelse\n{\n    c = 30;\n}\n\n\n\n2. (a <=20) ? b : (c = 30); This statement can be rewritten as,\n\nif(a <= 20)\n{\n    //Nothing here\n}\nelse\n{\n    c = 30;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Two different operators would always have different Associativity.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, Two different operators may have same associativity.\n\n\nExample: \nArithmetic operators like ++, -- having Right-to-Left associativity.\nRelational operators like >, >= also have Left-to-Right associativity."
+                }
+            ]
+        }
+    ]
+}

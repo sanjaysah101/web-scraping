@@ -1,0 +1,49 @@
+{
+    "chapter_name": "Control Instructions",
+    "questions": [
+        {
+            "question_title": "The way the break is used to take control out of switch and continue to take control of the beginning of the switch?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "continue can work only with loops and not with switch"
+                }
+            ]
+        },
+        {
+            "question_title": "By default, the data type of a constant without a decimal point is int, whereas the one with a decimal point is a double.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "6 is int constant.  \n6.68 is double.  \n6.68L is long double constant.  \n6.68f is float constant."
+                }
+            ]
+        },
+        {
+            "question_title": "We want to test whether a value lies in the range 2 to 4 or 5 to 7. Can we do this using a switch?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "We can do this in following switch statement\n\nswitch(a)\n{\n    case 2:\n    case 3:\n    case 4:\n       /* some statements */\n       break;\n    case 5:\n    case 6:\n    case 7:\n       /* some statements */\n       break;\n}"
+                }
+            ]
+        },
+        {
+            "question_title": "Can we use a switch statement to switch on strings?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "The cases in a switch must either have integer constants or constant expressions."
+                }
+            ]
+        }
+    ]
+}

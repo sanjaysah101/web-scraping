@@ -1,0 +1,304 @@
+{
+    "chapter_name": "Pointers",
+    "questions": [
+        {
+            "question_title": "What will be the output of the program assuming that the array begins at the location 1002 and size of an integer is 4 bytes?\n#include<stdio.h>\n\nint main()\n{\n    int a[3][4] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };\n    printf(\"%u, %u, %u\\n\", a[0]+1, *(a[0]+1), *(*(a+0)+1));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "448, 4, 4",
+                    "opt_2": "520, 2, 2",
+                    "opt_3": "1006, 2, 2",
+                    "opt_4": "Error",
+                    "correct_answer": "1006, 2, 2",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program assuming that the array begins at location 1002?\n#include<stdio.h>\n\nint main()\n{\n    int a[2][3][4] = { {1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1, 2}, \n                       {2, 1, 4, 7, 6, 7, 8, 9, 0, 0, 0, 0} };\n    printf(\"%u, %u, %u, %d\\n\", a, *a, **a, ***a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "1002, 2004, 4008, 2",
+                    "opt_2": "2004, 4008, 8016, 1",
+                    "opt_3": "1002, 1002, 1002, 1",
+                    "opt_4": "Error",
+                    "correct_answer": "1002, 1002, 1002, 1",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    int i, a[] = {2, 4, 6, 8, 10};\n    change(a, 5);\n    for(i=0; i<=4; i++)\n        printf(\"%d, \", a[i]);\n    return 0;\n}\nvoid change(int *b, int n)\n{\n    int i;\n    for(i=0; i<n; i++)\n        *(b+1) = *(b+i)+5;\n}",
+            "options": [
+                {
+                    "opt_1": "7, 9, 11, 13, 15",
+                    "opt_2": "2, 15, 6, 8, 10",
+                    "opt_3": "2 4 6 8 10",
+                    "opt_4": "3, 1, -1, -3, -5",
+                    "correct_answer": "2, 15, 6, 8, 10",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char *str;\n    str = \"%d\\n\";\n    str++;\n    str++;\n    printf(str-2, 300);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "No output",
+                    "opt_2": "30",
+                    "opt_3": "3",
+                    "opt_4": "300",
+                    "correct_answer": "300",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    void *vp;\n    char ch=74, *cp=\"JACK\";\n    int j=65;\n    vp=&ch;\n    printf(\"%c\", *(char*)vp);\n    vp=&j;\n    printf(\"%c\", *(int*)vp);\n    vp=cp;\n    printf(\"%s\", (char*)vp+2);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "JCK",
+                    "opt_2": "J65K",
+                    "opt_3": "JAK",
+                    "opt_4": "JACK",
+                    "correct_answer": "JACK",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    static char *s[] = {\"black\", \"white\", \"pink\", \"violet\"};\n    char **ptr[] = {s+3, s+2, s+1, s}, ***p;\n    p = ptr;\n    ++p;\n    printf(\"%s\", **p+1);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "ink",
+                    "opt_2": "ack",
+                    "opt_3": "ite",
+                    "opt_4": "let",
+                    "correct_answer": "ink",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char str[] = \"peace\";\n    char *s = str;\n    printf(\"%s\\n\", s++ +3);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "peace",
+                    "opt_2": "eace",
+                    "opt_3": "ace",
+                    "opt_4": "ce",
+                    "correct_answer": "ce",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char *str;\n    str = \"%s\";\n    printf(str, \"K\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error",
+                    "opt_2": "No output",
+                    "opt_3": "K",
+                    "opt_4": "%s",
+                    "correct_answer": "K",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char *p;\n    p=\"hello\";\n    printf(\"%s\\n\", *&*&p);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "llo",
+                    "opt_2": "hello",
+                    "opt_3": "ello",
+                    "opt_4": "h",
+                    "correct_answer": "hello",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nvoid fun(void *p);\nint i;\n\nint main()\n{\n    void *vptr;\n    vptr = &i;\n    fun(vptr);\n    return 0;\n}\nvoid fun(void *p)\n{\n    int **q;\n    q = (int**)&p;\n    printf(\"%d\\n\", **q);\n}",
+            "options": [
+                {
+                    "opt_1": "Error: cannot convert from void** to int**",
+                    "opt_2": "Garbage value",
+                    "opt_3": "0",
+                    "opt_4": "No output",
+                    "correct_answer": "0",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char str[20] = \"Hello\";\n    char *const p=str;\n    *p='M';\n    printf(\"%s\\n\", str);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Mello",
+                    "opt_2": "Hello",
+                    "opt_3": "HMello",
+                    "opt_4": "MHello",
+                    "correct_answer": "Mello",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    int arr[3] = {2, 3, 4};\n    char *p;\n    p = arr;\n    p = (char*)((int*)(p));\n    printf(\"%d, \", *p);\n    p = (int*)(p+1);\n    printf(\"%d\", *p);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 3",
+                    "opt_2": "2, 0",
+                    "opt_3": "2, Garbage value",
+                    "opt_4": "0, 0",
+                    "correct_answer": "2, 0",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n#include<string.h>\n\nint main()\n{\n    int i, n;\n    char *x=\"Alice\";\n    n = strlen(x);\n    *x = x[n];\n    for(i=0; i<=n; i++)\n    {\n        printf(\"%s \", x);\n        x++;\n    }\n    printf(\"\\n\", x);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Alice",
+                    "opt_2": "ecilA",
+                    "opt_3": "Alice lice ice ce e",
+                    "opt_4": "lice ice ce e",
+                    "correct_answer": "lice ice ce e",
+                    "description": "If you compile and execute this program in windows platform with Turbo C, it will give \"lice ice ce e\".\n\nIt may give different output in other platforms (depends upon compiler and machine). The online C compiler given in this site will give the Option C as output (it runs on Linux platform)."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    int x=30, *y, *z;\n    y=&x; /* Assume address of x is 500 and integer is 4 byte size */\n    z=y;\n    *y++=*z++;\n    x++;\n    printf(\"x=%d, y=%d, z=%d\\n\", x, y, z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "x=31, y=502, z=502",
+                    "opt_2": "x=31, y=500, z=500",
+                    "opt_3": "x=31, y=498, z=498",
+                    "opt_4": "x=31, y=504, z=504",
+                    "correct_answer": "x=31, y=504, z=504",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program If the integer is 4bytes long?\n#include<stdio.h>\n\nint main()\n{\n    int ***r, **q, *p, i=8;\n    p = &i;\n    q = &p;\n    r = &q;\n    printf(\"%d, %d, %d\\n\", *p, **q, ***r);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "8, 8, 8",
+                    "opt_2": "4000, 4002, 4004",
+                    "opt_3": "4000, 4004, 4008",
+                    "opt_4": "4000, 4008, 4016",
+                    "correct_answer": "8, 8, 8",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    int arr[2][2][2] = {10, 2, 3, 4, 5, 6, 7, 8};\n    int *p, *q;\n    p = &arr[1][1][1];\n    q = (int*) arr;\n    printf(\"%d, %d\\n\", *p, *q);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "8, 10",
+                    "opt_2": "10, 2",
+                    "opt_3": "8, 1",
+                    "opt_4": "Garbage values",
+                    "correct_answer": "8, 10",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    char str1[] = \"India\";\n    char str2[] = \"BIX\";\n    char *s1 = str1, *s2=str2;\n    while(*s1++ = *s2++)\n        printf(\"%s\", str1);\n\n    printf(\"\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "IndiaBIX",
+                    "opt_2": "BndiaBIdiaBIXia",
+                    "opt_3": "India",
+                    "opt_4": "(null)",
+                    "correct_answer": "BndiaBIdiaBIXia",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program if the size of pointer is 4-bytes?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%d, %d\\n\", sizeof(NULL), sizeof(\"\"));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 1",
+                    "opt_2": "2, 2",
+                    "opt_3": "4, 1",
+                    "opt_4": "4, 2",
+                    "correct_answer": "4, 1",
+                    "description": "In TurboC, the output will be 2, 1 because the size of the pointer is 2 bytes in 16-bit platform. \n\nBut in Linux, the output will be 4, 1 because the size of the pointer is 4 bytes.\n\nThis difference is due to the platform dependency of C compiler."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%c\\n\", 7[\"IndiaBIX\"]);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in printf",
+                    "opt_2": "Nothing will print",
+                    "opt_3": "print \"X\" of IndiaBIX",
+                    "opt_4": "print \"7\"",
+                    "correct_answer": "print \"X\" of IndiaBIX",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\nint *check(static int, static int);\n\nint main()\n{\n    int *c;\n    c = check(10, 20);\n    printf(\"%d\\n\", c);\n    return 0;\n}\nint *check(static int i, static int j)\n{\n    int *p, *q;\n    p = &i;\n    q = &j;\n    if(i >= 45)\n        return (p);\n    else\n        return (q);\n}",
+            "options": [
+                {
+                    "opt_1": "10",
+                    "opt_2": "20",
+                    "opt_3": "Error: Non portable pointer conversion",
+                    "opt_4": "Error: cannot use static for function parameters",
+                    "correct_answer": "Error: cannot use static for function parameters",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "If the size of integer is 4bytes, What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    int arr[] = {12, 13, 14, 15, 16};\n    printf(\"%d, %d, %d\\n\", sizeof(arr), sizeof(*arr), sizeof(arr[0]));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "10, 2, 4",
+                    "opt_2": "20, 4, 4",
+                    "opt_3": "16, 2, 2",
+                    "opt_4": "20, 2, 2",
+                    "correct_answer": "20, 4, 4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\npower(int**);\nint main()\n{\n    int a=5, *aa; /* Address of 'a' is 1000 */\n    aa = &a;\n    a = power(&aa);\n    printf(\"%d\\n\", a);\n    return 0;\n}\npower(int **ptr)\n{\n    int b;\n    b = **ptr***ptr;\n    return (b);\n}",
+            "options": [
+                {
+                    "opt_1": "5",
+                    "opt_2": "25",
+                    "opt_3": "125",
+                    "opt_4": "Garbage value",
+                    "correct_answer": "25",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program ?\n#include<stdio.h>\n\nint main()\n{\n    int i=3, *j, k;\n    j = &i;\n    printf(\"%d\\n\", i**j*i+*j);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "30",
+                    "opt_2": "27",
+                    "opt_3": "9",
+                    "opt_4": "3",
+                    "correct_answer": "30",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

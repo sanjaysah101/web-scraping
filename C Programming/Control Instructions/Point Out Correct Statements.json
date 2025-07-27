@@ -1,0 +1,122 @@
+{
+    "chapter_name": "Control Instructions",
+    "questions": [
+        {
+            "question_title": "Which of the following statements are correct about an if-else statements in a C-program?\n\n\n1:\nEvery if-else statement can be replaced by an equivalent statements using   ?: operators\n\n\n2:\nNested if-else statements are allowed.\n\n\n3:\nMultiple statements in an if block are allowed.\n\n\n4:\nMultiple statements in an else block are allowed.",
+            "options": [
+                {
+                    "opt_1": "1 and 2",
+                    "opt_2": "2 and 3",
+                    "opt_3": "1, 2 and 4",
+                    "opt_4": "2, 3, 4",
+                    "correct_answer": "2, 3, 4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following sentences are correct about a switch loop in a C program?\n\n\n\n1:\nswitch is useful when we wish to check the value of variable against a particular set of values.\n\n\n2:\nswitch is useful when we wish to check whether a value falls in different ranges.\n\n\n3:\nCompiler implements a jump table for cases used in switch.\n\n\n4:\nIt is not necessary to use a break in every switch statement.",
+            "options": [
+                {
+                    "opt_1": "1,2",
+                    "opt_2": "1,3,4",
+                    "opt_3": "2,4",
+                    "opt_4": "2",
+                    "correct_answer": "1,3,4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the below program?\n#include<stdio.h>\nint main()\n{\n    int i = 10, j = 15;\n    if(i % 2 = j % 3)\n        printf(\"IndiaBIX\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Expression syntax",
+                    "opt_2": "Error: Lvalue required",
+                    "opt_3": "Error: Rvalue required",
+                    "opt_4": "The Code runs successfully",
+                    "correct_answer": "Error: Lvalue required",
+                    "description": "if(i % 2 = j % 3) This statement generates \"LValue required error\". There is no variable on the left side of the expression to assign (j % 3)."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the below program?\n#include<stdio.h>\nint main()\n{\n    int n = 0, y = 1;\n    y == 1 ? n=0 : n=1;\n    if(n)\n        printf(\"Yes\\n\");\n    else\n        printf(\"No\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Declaration terminated incorrectly",
+                    "opt_2": "Error: Syntax error",
+                    "opt_3": "Error: Lvalue required",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: Lvalue required",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the program?\n#include<stdio.h>\nint main()\n{\n    int x = 30, y = 40;\n    if(x == y)\n        printf(\"x is equal to y\\n\");\n\n    else if(x > y)\n        printf(\"x is greater than y\\n\");\n\n    else if(x < y)\n        printf(\"x is less than y\\n\")\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Statement missing",
+                    "opt_2": "Error: Expression syntax",
+                    "opt_3": "Error: Lvalue required",
+                    "opt_4": "Error: Rvalue required",
+                    "correct_answer": "Error: Statement missing",
+                    "description": "This program will result in error \"Statement missing ;\"\n\nprintf(\"x is less than y\\n\") here ; should be added to the end of this statement."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the below program?\n#include<stdio.h>\nint main()\n{\n    int i = 10, j = 20;\n    if(i = 5) && if(j = 10)\n        printf(\"Have a nice day\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Output: Have a nice day",
+                    "opt_2": "No output",
+                    "opt_3": "Error: Expression syntax",
+                    "opt_4": "Error: Undeclared identifier if",
+                    "correct_answer": "Error: Expression syntax",
+                    "description": "\"Expression syntax\" error occur in this line if(i = 5) && if(j = 10). \n\nIt should be like if((i == 5) && (j == 10))."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following sentences are correct about a for loop in a C program?\n\n\n\n1:\nfor loop works faster than a while loop.\n\n\n2:\nAll things that can be done using a for loop can also be done using a while loop.\n\n\n3:\nfor(;;); implements an infinite loop.\n\n\n4:\nfor loop can be used if we want statements in a loop get executed at least once.",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "1, 2",
+                    "opt_3": "2, 3",
+                    "opt_4": "2, 3, 4",
+                    "correct_answer": "2, 3, 4",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the below program?\n#include<stdio.h>\nint main()\n{\n    int i = 0;\n    i++;\n    if(i <= 5)\n    {\n        printf(\"IndiaBIX\\n\");\n        exit(0);\n        main();\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "The program prints 'IndiaBIX' 5 times",
+                    "opt_2": "The program prints 'IndiaBIX' one time",
+                    "opt_3": "The call to main() after exit() doesn't materialize.",
+                    "opt_4": "The compiler reports an error since main() cannot call itself.",
+                    "correct_answer": "The program prints 'IndiaBIX' one time",
+                    "description": "Step 1: int i = 0; here variable i is declared as an integer type and initialized to '0'(zero).\nStep 2: i++; here variable i is increemented by 1(one). Hence, i = 1\nStep 3: if(i <= 5) becomes if(1 <= 5) here we are checking '1' is less than or equal to '5'. Hence the if condition is satisfied.\nStep 4: printf(\"IndiaBIX\\n\"); It prints \"IndiaBIX\"\nStep 5: exit(); terminates the program execution.\n\n\nHence the output is \"IndiaBIX\"."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the below C-program?\n#include<stdio.h>\nint main()\n{\n    int x = 10, y = 100%90, i;\n    for(i=1; i<10; i++)\n    if(x != y);\n        printf(\"x = %d y = %d\\n\", x, y);\n    return 0;\n}\n\n\n\n1 :\nThe printf() function is called 10 times.\n\n\n2 :\nThe program will produce the output x = 10 y = 10\n\n\n3 :\nThe ; after the if(x!=y) will NOT produce an error.\n\n\n4 :\nThe program will not produce output.",
+            "options": [
+                {
+                    "opt_1": "1",
+                    "opt_2": "2, 3",
+                    "opt_3": "3, 4",
+                    "opt_4": "4",
+                    "correct_answer": "2, 3",
+                    "description": "No answer description is available."
+                }
+            ]
+        }
+    ]
+}

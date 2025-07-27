@@ -1,0 +1,200 @@
+{
+    "chapter_name": "C Preprocessor",
+    "questions": [
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define MIN(x, y) (x<y)? x : y;\nint main()\n{\n    int x=3, y=4, z;\n    z = MIN(x+y/2, y-1);\n    if(z > 0)\n        printf(\"%d\\n\", z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "3",
+                    "opt_2": "4",
+                    "opt_3": "0",
+                    "opt_4": "No output",
+                    "correct_answer": "3",
+                    "description": "The macro MIN(x, y) (x<y)? x : y; returns the smallest value from the given two numbers.\n\n\nStep 1: int x=3, y=4, z; The variable x, y, z are declared as an integer type and the variable x, y are initialized to value 3, 4 respectively.\n\n\nStep 2: z = MIN(x+y/2, y-1); becomes,\n\n => z = (x+y/2 < y-1)? x+y/2 : y - 1; \n\n => z = (3+4/2 < 4-1)? 3+4/2 : 4 - 1; \n\n => z = (3+2 < 4-1)? 3+2 : 4 - 1; \n\n => z = (5 < 3)? 5 : 3; \n\n The macro return the number 3 and it is stored in the variable z. \n\nStep 3: if(z > 0) becomes if(3 > 0) here the if condition is satisfied. It executes the if block statements.\n\n\nStep 4: printf(\"%d\\n\", z);. It prints the value of variable z.\n\nHence the output of the program is 3"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define FUN(arg) do\\\n                 {\\\n                    if(arg)\\\n                        printf(\"IndiaBIX...\", \"\\n\");\\\n                  }while(--i)\n\nint main()\n{\n    int i=2;\n    FUN(i<3);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "IndiaBIX...\nIndiaBIX...\nIndiaBIX",
+                    "opt_2": "IndiaBIX... IndiaBIX...",
+                    "opt_3": "Error: cannot use control instructions in macro",
+                    "opt_4": "No output",
+                    "correct_answer": "IndiaBIX... IndiaBIX...",
+                    "description": "The macro FUN(arg) prints the statement \"IndiaBIX...\" untill the while condition is satisfied.\n\n\nStep 1: int i=2; The variable i is declared as an integer type and initialized to 2.\n\n\nStep 2: FUN(i<3); becomes,\n\ndo\n{\n    if(2 < 3)\n    printf(\"IndiaBIX...\", \"\\n\");\n}while(--2)\n\n\nAfter the 2 while loops the value of i becomes '0'(zero). Hence the while loop breaks.\nHence the output of the program is \"IndiaBIX... IndiaBIX...\""
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define FUN(i, j) i##j\n\nint main()\n{\n    int va1=10;\n    int va12=20;\n    printf(\"%d\\n\", FUN(va1, 2));\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "10",
+                    "opt_2": "20",
+                    "opt_3": "1020",
+                    "opt_4": "12",
+                    "correct_answer": "20",
+                    "description": "The following program will make you understand about ## (macro concatenation) operator clearly.\n\n#include<stdio.h>\n#define FUN(i, j) i##j\n\nint main()\n{\n    int First  \t= 10;\n    int Second  = 20;\n\n    char FirstSecond[] = \"IndiaBIX\";\n\n    printf(\"%s\\n\", FUN(First, Second) );\n\n    return 0;\n}\n\nOutput:\n-------\nIndiaBIX\n\n\n\nThe preprocessor will replace FUN(First, Second) as FirstSecond.\n\nTherefore, the printf(\"%s\\n\", FUN(First, Second) ); statement will become as printf(\"%s\\n\", FirstSecond );\n\nHence it prints IndiaBIX as output.\n\nLike the same, the line printf(\"%d\\n\", FUN(va1, 2)); given in the above question will become as printf(\"%d\\n\", va12 );.\n\nTherefore, it prints 20 as output."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define JOIN(s1, s2) printf(\"%s=%s %s=%s \\n\", #s1, s1, #s2, s2);\nint main()\n{\n    char *str1=\"India\";\n    char *str2=\"BIX\";\n    JOIN(str1, str2);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "str1=IndiaBIX str2=BIX",
+                    "opt_2": "str1=India str2=BIX",
+                    "opt_3": "str1=India str2=IndiaBIX",
+                    "opt_4": "Error: in macro substitution",
+                    "correct_answer": "str1=India str2=BIX",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define SQR(x)(x*x)\n\nint main()\n{\n    int a, b=3;\n    a = SQR(b+2);\n    printf(\"%d\\n\", a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "25",
+                    "opt_2": "11",
+                    "opt_3": "Error",
+                    "opt_4": "Garbage value",
+                    "correct_answer": "11",
+                    "description": "The macro function SQR(x)(x*x) calculate the square of the given number 'x'. (Eg: 102)\n\n\nStep 1: int a, b=3; Here the variable a, b are declared as an integer type and the variable b is initialized to 3.\n\n\nStep 2: a = SQR(b+2); becomes,\n => a = b+2 * b+2;  Here SQR(x) is replaced by macro to x*x .\n => a = 3+2 * 3+2; \n => a = 3 + 6 + 2; \n => a = 11; \n\nStep 3: printf(\"%d\\n\", a); It prints the value of variable 'a'.\n\nHence the output of the program is 11"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define PRINT(int) printf(\"int=%d, \", int);\n\nint main()\n{\n    int x=2, y=3, z=4;   \n    PRINT(x);\n    PRINT(y);\n    PRINT(z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "int=2, int=3, int=4",
+                    "opt_2": "int=2, int=2, int=2",
+                    "opt_3": "int=3, int=3, int=3",
+                    "opt_4": "int=4, int=4, int=4",
+                    "correct_answer": "int=2, int=3, int=4",
+                    "description": "The macro PRINT(int) print(\"%d,\", int); prints the given variable value in an integer format.\n\n\nStep 1: int x=2, y=3, z=4; The variable x, y, z are declared as an integer type and initialized to 2, 3, 4 respectively.\n\n\nStep 2: PRINT(x); becomes printf(\"int=%d,\",x). Hence it prints 'int=2'.\n\n\nStep 3: PRINT(y); becomes printf(\"int=%d,\",y). Hence it prints 'int=3'.\n\n\nStep 4: PRINT(z); becomes printf(\"int=%d,\",z). Hence it prints 'int=4'.\n\nHence the output of the program is int=2, int=3, int=4."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define CUBE(x) (x*x*x)\n\nint main()\n{\n    int a, b=3;\n    a = CUBE(b++);\n    printf(\"%d, %d\\n\", a, b);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "9, 4",
+                    "opt_2": "27, 4",
+                    "opt_3": "27, 6",
+                    "opt_4": "Error",
+                    "correct_answer": "27, 6",
+                    "description": "The macro function CUBE(x) (x*x*x) calculates the cubic value of given number(Eg: 103.)\n\n\nStep 1: int a, b=3; The variable a and b are declared as an integer type and varaible b id initialized to 3.\n\n\nStep 2: a = CUBE(b++); becomes\n\n => a = b++ * b++ * b++; \n => a = 3 * 3 * 3; Here we are using post-increement operator, so the 3 is not incremented in this statement.\n => a = 27; Here, 27 is store in the variable a. By the way, the value of variable b is incremented by 3. (ie: b=6)\n\nStep 3: printf(\"%d, %d\\n\", a, b); It prints the value of variable a and b.\n\nHence the output of the program is 27, 6."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define MAX(a, b) (a > b ? a : b)\n\nint main()\n{\n    int x;\n    x = MAX(3+2, 2+7);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "8",
+                    "opt_2": "9",
+                    "opt_3": "6",
+                    "opt_4": "5",
+                    "correct_answer": "9",
+                    "description": "The macro MAX(a, b) (a > b ? a : b) returns the biggest value of the given two numbers.\n\n\nStep 1 : int x; The variable x is declared as an integer type.\n\n\nStep 2 : x = MAX(3+2, 2+7); becomes,\n\n => x = (3+2 > 2+7 ? 3+2 : 2+7) \n => x = (5 > 9 ? 5 : 9) \n => x = 9 \n\nStep 3 : printf(\"%d\\n\", x); It prints the value of variable x.\n\nHence the output of the program is 9."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define SQUARE(x) x*x\n\nint main()\n{\n    float s=10, u=30, t=2, a;\n    a = 2*(s-u*t)/SQUARE(t);\n    printf(\"Result = %f\", a);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Result = -100.000000",
+                    "opt_2": "Result = -25.000000",
+                    "opt_3": "Result = 0.000000",
+                    "opt_4": "Result = 100.000000",
+                    "correct_answer": "Result = -100.000000",
+                    "description": "The macro function SQUARE(x) x*x calculate the square of the given number 'x'. (Eg: 102)\n\n\nStep 1: float s=10, u=30, t=2, a; Here the variable s, u, t, a are declared as an floating point type and the variable s, u, t are initialized to 10, 30, 2.\n\n\nStep 2: a = 2*(s-u*t)/SQUARE(t); becomes,\n => a = 2 * (10 - 30 * 2) / t * t;  Here SQUARE(t) is replaced by macro to t*t .\n => a = 2 * (10 - 30 * 2) / 2 * 2; \n => a = 2 * (10 - 60) / 2 * 2; \n => a = 2 * (-50) / 2 * 2 ; \n => a = 2 * (-25) * 2 ; \n => a = (-50) * 2 ; \n => a = -100; \n\nStep 3: printf(\"Result=%f\", a); It prints the value of variable 'a'.\n\nHence the output of the program is -100"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define SWAP(a, b) int t; t=a, a=b, b=t;\nint main()\n{\n    int a=10, b=12;\n    SWAP(a, b);\n    printf(\"a = %d, b = %d\\n\", a, b);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "a = 10, b = 12",
+                    "opt_2": "a = 12, b = 10",
+                    "opt_3": "Error: Declaration not allowed in macro",
+                    "opt_4": "Error: Undefined symbol 't'",
+                    "correct_answer": "a = 12, b = 10",
+                    "description": "The macro SWAP(a, b) int t; t=a, a=b, b=t; swaps the value of the given two variable.\n\n\nStep 1: int a=10, b=12; The variable a and b are declared as an integer type and initialized to 10, 12 respectively.\n\n\nStep 2: SWAP(a, b);. Here the macro is substituted and it swaps the value to variable a and b.\n\nHence the output of the program is 12, 10."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define str(x) #x\n#define Xstr(x) str(x)\n#define oper multiply\n\nint main()\n{\n    char *opername = Xstr(oper);\n    printf(\"%s\\n\", opername);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in macro substitution",
+                    "opt_2": "Error: invalid reference 'x' in macro",
+                    "opt_3": "print 'multiply'",
+                    "opt_4": "No output",
+                    "correct_answer": "print 'multiply'",
+                    "description": "The macro #define str(x) #x replaces the symbol 'str(x)' with 'x'.\n\n\nThe macro #define Xstr(x) str(x) replaces the symbol 'Xstr(x)' with 'str(x)'.\n\n\nThe macro #define oper multiply replaces the symbol 'oper' with 'multiply'.\n\n\nStep 1: char *opername = Xstr(oper); The varible *opername is declared as an pointer to a character type.\n\n\n => Xstr(oper); becomes, \n => Xstr(multiply); \n => str(multiply) \n => char *opername = multiply \n\n\nStep 2: printf(\"%s\\n\", opername); It prints the value of variable opername.\n\n\nHence the output of the program is \"multiply\""
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define MESS junk\n\nint main()\n{\n    printf(\"MESS\\n\");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "junk",
+                    "opt_2": "MESS",
+                    "opt_3": "Error",
+                    "opt_4": "Nothing will print",
+                    "correct_answer": "MESS",
+                    "description": "printf(\"MESS\\n\"); It prints the text \"MESS\". There is no macro calling inside the printf statement occured."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define MAN(x, y) ((x)>(y)) ? (x):(y);\n\nint main()\n{\n    int i=10, j=5, k=0;\n    k = MAN(++i, j++);\n    printf(\"%d, %d, %d\\n\", i, j, k);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "12, 6, 12",
+                    "opt_2": "11, 5, 11",
+                    "opt_3": "11, 5, Garbage",
+                    "opt_4": "12, 6, Garbage",
+                    "correct_answer": "12, 6, 12",
+                    "description": "The macro MAN(x, y) ((x)>(y)) ? (x):(y); returns the biggest number of given two numbers.\n\n\nStep 1: int i=10, j=5, k=0; The variable i, j, k are declared as an integer type and initialized to value 10, 5, 0 respectively.\n\n\nStep 2: k = MAN(++i, j++); becomes,\n\n => k = ((++i)>(j++)) ? (++i):(j++); \n => k = ((11)>(5)) ? (12):(6); \n => k = 12 \n\nStep 3: printf(\"%d, %d, %d\\n\", i, j, k); It prints the variable i, j, k. \n\nIn the above macro step 2 the variable i value is increemented by 2 and variable j value is increemented by 1.\nHence the output of the program is 12, 6, 12"
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define MAX(a, b, c) (a>b ? a>c ? a : c: b>c ? b : c)\n\nint main()\n{\n    int x;\n    x = MAX(3+2, 2+7, 3+7);\n    printf(\"%d\\n\", x);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "5",
+                    "opt_2": "9",
+                    "opt_3": "10",
+                    "opt_4": "3+7",
+                    "correct_answer": "10",
+                    "description": "The macro MAX(a, b, c) (a>b ? a>c ? a : c: b>c ? b : c) returns the biggest of given three numbers.\n\n\nStep 1: int x; The variable x is declared as an integer type.\n\n Step 2: x = MAX(3+2, 2+7, 3+7); becomes, \n => x = (3+2 >2+7 ? 3+2 > 3+7 ? 3+2 : 3+7: 2+7 > 3+7 ? 2+7 : 3+7)  \n => x = (5 >9 ? (5 > 10 ? 5 : 10): (9 > 10 ? 9 : 10) )  \n => x = (5 >9 ? (10): (10) )  \n => x = 10  \n Step 3: printf(\"%d\\n\", x); It prints the value of 'x'. \nHence the output of the program is \"10\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#define PRINT(i) printf(\"%d,\",i)\n\nint main()\n{\n    int x=2, y=3, z=4;\n    PRINT(x);\n    PRINT(y);\n    PRINT(z);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "2, 3, 4,",
+                    "opt_2": "2, 2, 2,",
+                    "opt_3": "3, 3, 3,",
+                    "opt_4": "4, 4, 4,",
+                    "correct_answer": "2, 3, 4,",
+                    "description": "The macro PRINT(i) print(\"%d,\", i); prints the given variable value in an integer format.\n\n\nStep 1: int x=2, y=3, z=4; The variable x, y, z are declared as an integer type and initialized to 2, 3, 4 respectively.\n\n\nStep 2: PRINT(x); becomes printf(\"%d,\",x). Hence it prints '2'.\n\n\nStep 3: PRINT(y); becomes printf(\"%d,\",y). Hence it prints '3'.\n\n\nStep 4: PRINT(z); becomes printf(\"%d,\",z). Hence it prints '4'.\n\nHence the output of the program is 2, 3, 4."
+                }
+            ]
+        }
+    ]
+}

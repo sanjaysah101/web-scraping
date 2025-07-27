@@ -1,0 +1,49 @@
+{
+    "chapter_name": "Expressions",
+    "questions": [
+        {
+            "question_title": "Associativity has no role to play unless the precedence of operator is same.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Associativity is only needed when the operators in an expression have the same precedence. Usually + and - have the same precedence.\nConsider the expression 7 - 4 + 2. The result could be either (7 - 4) + 2 = 5 or 7 - (4 + 2) = 1. The former result corresponds to the case when + and - are left-associative, the latter to when + and - are right-associative.\n\nUsually the addition, subtraction, multiplication, and division operators are left-associative, while the exponentiation, assignment and conditional operators are right-associative. To prevent cases where operands would be associated with two operators, or no operator at all, operators with the same precedence must have the same associativity."
+                }
+            ]
+        },
+        {
+            "question_title": "In the expression a=b=5 the order of Assignment is NOT decided by Associativity of operators",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "The equal to = operator has Right-to-Left Associativity. So it assigns b=5 then a=b."
+                }
+            ]
+        },
+        {
+            "question_title": "Associativity of an operator is either Left to Right or Right to Left.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Yes, the associativity of an operator is either Left to Right or Right to Left."
+                }
+            ]
+        },
+        {
+            "question_title": "The expression of the right hand side of || operators doesn't get evaluated if the left hand side determines the outcome.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "Because, if a is non-zero then b will not be evaluated in the expression (a || b)"
+                }
+            ]
+        }
+    ]
+}

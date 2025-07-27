@@ -1,0 +1,122 @@
+{
+    "chapter_name": "Control Instructions",
+    "questions": [
+        {
+            "question_title": "Point out the error, if any in the program.\n\n#include<stdio.h>\nint main()\n{\n    int i = 1;\n    switch(i)\n    {\n        printf(\"This is c program.\");\n        case 1:\n            printf(\"Case1\");\n            break;\n        case 2:\n            printf(\"Case2\");\n            break;\n    }\nreturn 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: No default specified",
+                    "opt_2": "Error: Invalid printf statement after switch statement",
+                    "opt_3": "No Error and prints \"Case1\"",
+                    "opt_4": "None of above",
+                    "correct_answer": "No Error and prints \"Case1\"",
+                    "description": "switch(i) becomes switch(1), then the case 1: block is get executed. Hence it prints \"Case1\".\n\nprintf(\"This is c program.\"); is ignored by the compiler. \nHence there is no error and prints \"Case1\"."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the program.\n#include<stdio.h>\nint main()\n{\n    int P = 10;\n    switch(P)\n    {\n       case 10:\n       printf(\"Case 1\");\n\n       case 20:\n       printf(\"Case 2\");\n       break;\n\n       case P:\n       printf(\"Case 2\");\n       break;\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: No default value is specified",
+                    "opt_2": "Error: Constant expression required at line case P:",
+                    "opt_3": "Error: There is no break statement in each case.",
+                    "opt_4": "No error will be reported.",
+                    "correct_answer": "Error: Constant expression required at line case P:",
+                    "description": "The compiler will report the error \"Constant expression required\" in the line case P: . Because, variable names cannot be used with case statements.\n\nThe case statements will accept only constant expression."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the for loop.\n#include<stdio.h>\nint main()\n{\n    int i=1;\n    for(;;)\n    {\n        printf(\"%d\\n\", i++);\n        if(i>10)\n           break;\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "There should be a condition in the for loop",
+                    "opt_2": "The two semicolons should be dropped",
+                    "opt_3": "The for loop should be replaced with while loop.",
+                    "opt_4": "No error",
+                    "correct_answer": "No error",
+                    "description": "Step 1: for(;;) this statement will genereate infinite loop.\nStep 2: printf(\"%d\\n\", i++); this statement will print the value of variable i and increement i by 1(one).\nStep 3: if(i>10) here, if the variable i value is greater than 10, then the for loop breaks.\n\n\nHence the output of the program is\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the while loop.\n#include<stdio.h>\nint main()\n{\n    void fun();\n    int i = 1;\n    while(i <= 5)\n    {\n        printf(\"%d\\n\", i);\n        if(i>2)\n            goto here;\n    }\nreturn 0;\n}\nvoid fun()\n{\n    here:\n    printf(\"It works\");\n}",
+            "options": [
+                {
+                    "opt_1": "No Error: prints \"It works\"",
+                    "opt_2": "Error: fun() cannot be accessed",
+                    "opt_3": "Error: goto cannot takeover control to other function",
+                    "opt_4": "No error",
+                    "correct_answer": "Error: goto cannot takeover control to other function",
+                    "description": "A label is used as the target of a goto statement, and that label must be within the same function as the goto statement.\n\n\nSyntax:  goto <identifier> ;\n\nControl is unconditionally transferred to the location of a local label specified by <identifier>.\n\n Example:\n \n \n \n#include <stdio.h>\nint main()\n{\n    int i=1;\n    while(i>0)\n    {\n        printf(\"%d\", i++);\n        if(i==5)\n          goto mylabel;\n    }\n    mylabel:\n    return 0;\n}\n \n \n Output: 1,2,3,4"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the program.\n#include<stdio.h> \nint main()\n{\n    int a = 10, b;\n    a >=5 ? b=100: b=200;\n    printf(\"%d\\n\", b);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "100",
+                    "opt_2": "200",
+                    "opt_3": "Error: L value required for b",
+                    "opt_4": "Garbage value",
+                    "correct_answer": "Error: L value required for b",
+                    "description": "Variable b is not assigned.\n\nIt should be like:  b = a >= 5 ? 100 : 200;"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the program.\n#include<stdio.h>\nint main()\n{\n    int i = 1;\n    switch(i)\n    {\n        case 1:\n           printf(\"Case1\");\n           break;\n        case 1*2+4:\n           printf(\"Case2\");\n           break;\n    }\nreturn 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: in case 1*2+4 statement",
+                    "opt_2": "Error: No default specified",
+                    "opt_3": "Error: in switch statement",
+                    "opt_4": "No Error",
+                    "correct_answer": "No Error",
+                    "description": "Constant expression are accepted in switch\nIt prints \"Case1\""
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following errors would be reported by the compiler on compiling the program given below?\n#include<stdio.h>\nint main()\n{\n    int a = 5;\n    switch(a)\n    {\n\tcase 1:\n\tprintf(\"First\");\n\n\tcase 2:\n\tprintf(\"Second\");\n\n\tcase 3 + 2:\n\tprintf(\"Third\");\n\n\tcase 5:\n\tprintf(\"Final\");\n\tbreak;\n\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "There is no break statement in each case.",
+                    "opt_2": "Expression as in case 3 + 2 is not allowed.",
+                    "opt_3": "Duplicate case  case 5:",
+                    "opt_4": "No error will be reported.",
+                    "correct_answer": "Duplicate case  case 5:",
+                    "description": "Because, case 3 + 2: and case 5: have the same constant value 5."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the while loop.\n#include<stdio.h>\nint main()\n{\n    int i=1;\n    while()\n    {\n        printf(\"%d\\n\", i++);\n        if(i>10)\n           break;\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "There should be a condition in the while loop",
+                    "opt_2": "There should be at least a semicolon in the while",
+                    "opt_3": "The while loop should be replaced with for loop.",
+                    "opt_4": "No error",
+                    "correct_answer": "There should be a condition in the while loop",
+                    "description": "The while() loop must have conditional expression or it shows \"Expression syntax\" error.\n\n\nExample: while(i > 10){ ... }"
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error, if any in the program.\n#include<stdio.h>\nint main()\n{\n    int a = 10;\n    switch(a)\n    {\n    }\n    printf(\"This is c program.\");\n\treturn 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: No case statement specified",
+                    "opt_2": "Error: No default specified",
+                    "opt_3": "No Error",
+                    "opt_4": "Error: infinite loop occurs",
+                    "correct_answer": "No Error",
+                    "description": "There can exists a switch statement, which has no case."
+                }
+            ]
+        }
+    ]
+}

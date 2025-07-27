@@ -1,0 +1,560 @@
+{
+    "chapter_name": "Functions",
+    "questions": [
+        {
+            "question_title": "The keyword used to transfer control from a function back to the calling function is",
+            "options": [
+                {
+                    "opt_1": "switch",
+                    "opt_2": "goto",
+                    "opt_3": "go back",
+                    "opt_4": "return",
+                    "correct_answer": "return",
+                    "description": "The keyword return is used to transfer control from a function back to the calling function.\nExample:\n\n#include<stdio.h>\nint add(int, int); /* Function prototype */\n\nint main()\n{\n    int a = 4, b = 3, c;\n    c = add(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\nint add(int a, int b)\n{\n/* returns the value and control back to main() function */\n   return (a+b);\n}\n\nOutput: \nc = 7"
+                }
+            ]
+        },
+        {
+            "question_title": "How many times the program will print \"IndiaBIX\" ?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"IndiaBIX\");\n    main();\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Infinite times",
+                    "opt_2": "32767 times",
+                    "opt_3": "65535 times",
+                    "opt_4": "Till stack overflows",
+                    "correct_answer": "Till stack overflows",
+                    "description": "A call stack or function stack is used for several related purposes, but the main reason for having one is to keep track of the point to which each active subroutine should return control when it finishes executing.\n\nA stack overflow occurs when too much memory is used on the call stack.\nHere function main() is called repeatedly and its return address is stored in the stack. After stack memory is full. It shows stack overflow error."
+                }
+            ]
+        },
+        {
+            "question_title": "What is the notation for following functions?\n1.  int f(int a, float b)\n    {\n        /* Some code */\n    }\n\n2.  int f(a, b)\n    int a; float b;\n    {\n        /* Some code */\n    }",
+            "options": [
+                {
+                    "opt_1": "1. KR Notation 2. ANSI Notation",
+                    "opt_2": "1. Pre ANSI C Notation 2. KR Notation",
+                    "opt_3": "1. ANSI Notation 2. KR Notation",
+                    "opt_4": "1. ANSI Notation 2. Pre ANSI Notation",
+                    "correct_answer": "1. ANSI Notation 2. KR Notation",
+                    "description": "KR Notation means Kernighan and Ritche Notation."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint fun(int(*)());\n\nint main()\n{\n    fun(main);\n    printf(\"Hi\\n\");\n    return 0;\n}\nint fun(int (*p)())\n{\n    printf(\"Hello \");\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Infinite loop",
+                    "opt_2": "Hi",
+                    "opt_3": "Hello Hi",
+                    "opt_4": "Error",
+                    "correct_answer": "Hello Hi",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nvoid fun(int);\ntypedef int (*pf) (int, int);\nint proc(pf, int, int);\n\nint main()\n{\n    int a=3;\n    fun(a);\n    return 0;\n}\nvoid fun(int n)\n{\n    if(n > 0)\n    {\n        fun(--n);\n        printf(\"%d,\", n);\n        fun(--n);\n    }\n}",
+            "options": [
+                {
+                    "opt_1": "0, 2, 1, 0,",
+                    "opt_2": "1, 1, 2, 0,",
+                    "opt_3": "0, 1, 0, 2,",
+                    "opt_4": "0, 1, 2, 0,",
+                    "correct_answer": "0, 1, 2, 0,",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nvoid fun(int*, int*);\nint main()\n{\n    int i=5, j=2;\n    fun(&i, &j);\n    printf(\"%d, %d\", i, j);\n    return 0;\n}\nvoid fun(int *i, int *j)\n{\n    *i = *i**i;\n    *j = *j**j;\n}",
+            "options": [
+                {
+                    "opt_1": "5, 2",
+                    "opt_2": "10, 4",
+                    "opt_3": "2, 5",
+                    "opt_4": "25, 4",
+                    "correct_answer": "25, 4",
+                    "description": "Step 1: int i=5, j=2; Here variable i and j are declared as an integer type and initialized to 5 and 2 respectively.\n\n\nStep 2: fun(&i, &j); Here the function fun() is called with two parameters &i and &j (The & denotes call by reference. So the address of the variable i and j are passed. )\n\n\nStep 3: void fun(int *i, int *j) This function is called by reference, so we have to use * before the parameters.\n\n\nStep 4: *i = *i**i; Here *i denotes the value of the variable i. We are multiplying 5*5 and storing the result 25 in same variable i.\n\n\nStep 5: *j = *j**j; Here *j denotes the value of the variable j. We are multiplying 2*2 and storing the result 4 in same variable j.\n\n\nStep 6: Then the function void fun(int *i, int *j) return back the control back to main() function.\n\n\nStep 7: printf(\"%d, %d\", i, j); It prints the value of variable i and j.\n\n\nHence the output is 25, 4."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    void fun(char*);\n    char a[100];\n    a[0] = 'A'; a[1] = 'B';\n    a[2] = 'C'; a[3] = 'D';\n    fun(&a[0]);\n    return 0;\n}\nvoid fun(char *a)\n{\n    a++;\n    printf(\"%c\", *a);\n    a++;\n    printf(\"%c\", *a);\n}",
+            "options": [
+                {
+                    "opt_1": "AB",
+                    "opt_2": "BC",
+                    "opt_3": "CD",
+                    "opt_4": "No output",
+                    "correct_answer": "BC",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint fun(int);\nint main()\n{\n    float k=3;\n    fun(k=fun(fun(k)));\n    printf(\"%f\\n\", k);\n    return 0;\n}\nint fun(int i)\n{\n    i++;\n    return i;\n}",
+            "options": [
+                {
+                    "opt_1": "5.000000",
+                    "opt_2": "3.000000",
+                    "opt_3": "Garbage value",
+                    "opt_4": "4.000000",
+                    "correct_answer": "5.000000",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "If int is 2 bytes wide.What will be the output of the program?\n#include <stdio.h>\nvoid fun(char**);\n\nint main()\n{\n    char *argv[] = {\"ab\", \"cd\", \"ef\", \"gh\"};\n    fun(argv);\n    return 0;\n}\nvoid fun(char **p)\n{\n    char *t;\n    t = (p+= sizeof(int))[-1];\n    printf(\"%s\\n\", t);\n}",
+            "options": [
+                {
+                    "opt_1": "ab",
+                    "opt_2": "cd",
+                    "opt_3": "ef",
+                    "opt_4": "gh",
+                    "correct_answer": "cd",
+                    "description": "Since C is a machine dependent language sizeof(int) may return different values.\n\nThe output for the above program will be cd in Windows (Turbo C) and gh in Linux (GCC).\n\nTo understand it better, compile and execute the above program in Windows (with Turbo C compiler) and in Linux (GCC compiler)."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint func1(int);\n\nint main()\n{\n    int k=35;\n    k = func1(k=func1(k=func1(k)));\n    printf(\"k=%d\\n\", k);\n    return 0;\n}\nint func1(int k)\n{\n    k++;\n    return k;\n}",
+            "options": [
+                {
+                    "opt_1": "k=35",
+                    "opt_2": "k=36",
+                    "opt_3": "k=37",
+                    "opt_4": "k=38",
+                    "correct_answer": "k=38",
+                    "description": "Step 1: int k=35; The variable k is declared as an integer type and initialized to 35.\n\n\nStep 2: k = func1(k=func1(k=func1(k))); The func1(k) increement the value of k by 1 and return it. Here the func1(k) is called 3 times. Hence it increements value of k = 35 to 38. The result is stored in the variable k = 38.\n\n\nStep 3: printf(\"k=%d\\n\", k); It prints the value of variable k \"38\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n#include<stdlib.h>\n\nint main()\n{\n    int i=0;\n    i++;\n    if(i<=5)\n    {\n        printf(\"IndiaBIX\");\n        exit(1);\n        main();\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Prints \"IndiaBIX\" 5 times",
+                    "opt_2": "Function main() doesn't calls itself",
+                    "opt_3": "Infinite loop",
+                    "opt_4": "Prints \"IndiaBIx\"",
+                    "correct_answer": "Prints \"IndiaBIx\"",
+                    "description": "Step 1: int i=0; The variable i is declared as in integer type and initialized to '0'(zero).\n\n\nStep 2: i++; Here variable i is increemented by 1. Hence i becomes '1'(one).\n\n\nStep 3: if(i<=5) becomes if(1 <=5). Hence the if condition is satisfied and it enter into if block statements.\n\n\nStep 4: printf(\"IndiaBIX\"); It prints \"IndiaBIX\".\n\n\nStep 5: exit(1); This exit statement  terminates the program execution.\n\n\nHence the output is \"IndiaBIx\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint fun(int, int);\ntypedef int (*pf) (int, int);\nint proc(pf, int, int);\n\nint main()\n{\n    printf(\"%d\\n\", proc(fun, 6, 6));\n    return 0;\n}\nint fun(int a, int b)\n{\n   return (a==b);\n}\nint proc(pf p, int a, int b)\n{\n   return ((*p)(a, b));\n}",
+            "options": [
+                {
+                    "opt_1": "6",
+                    "opt_2": "1",
+                    "opt_3": "0",
+                    "opt_4": "-1",
+                    "correct_answer": "1",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint addmult(int ii, int jj)\n{\n    int kk, ll;\n    kk = ii + jj;\n    ll = ii * jj;\n    return (kk, ll);\n}\n\nint main()\n{\n    int i=3, j=4, k, l;\n    k = addmult(i, j);\n    l = addmult(i, j);\n    printf(\"%d %d\\n\", k, l);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "12 12",
+                    "opt_2": "No error, No output",
+                    "opt_3": "Error: Compile error",
+                    "opt_4": "None of above",
+                    "correct_answer": "12 12",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint fun(int i)\n{\n    i++;\n    return i;\n}\n\nint main()\n{\n    int fun(int);\n    int i=3;\n    fun(i=fun(fun(i)));\n    printf(\"%d\\n\", i);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "5",
+                    "opt_2": "4",
+                    "opt_3": "Error",
+                    "opt_4": "Garbage value",
+                    "correct_answer": "5",
+                    "description": "Step 1: int fun(int); This is prototype of function fun(). It tells the compiler that the function fun() accept one integer parameter and returns an integer value.\n\n\nStep 2: int i=3; The variable i is declared as an integer type and initialized to value 3.\n\n\nStep 3: fun(i=fun(fun(i)));. The function fun(i) increements the value of i by 1(one) and return it.\n\n\nLets go step by step,\n => fun(i) becomes fun(3) is called and it returns 4.\n => i = fun(fun(i)) becomes i = fun(4) is called and it returns 5 and stored in variable i.(i=5)\n => fun(i=fun(fun(i))); becomes fun(5); is called and it return 6 and nowhere the return value is stored.\n\nStep 4: printf(\"%d\\n\", i); It prints the value of variable i.(5)\n\n\nHence the output is '5'."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint i;\nint fun1(int);\nint fun2(int);\n\nint main()\n{\n    extern int j;\n    int i=3;\n    fun1(i);\n    printf(\"%d,\", i);\n    fun2(i);\n    printf(\"%d\", i);\n    return 0;\n}\nint fun1(int j)\n{\n    printf(\"%d,\", ++j);\n    return 0;\n}\nint fun2(int i)\n{\n    printf(\"%d,\", ++i);\n    return 0;\n}\nint j=1;",
+            "options": [
+                {
+                    "opt_1": "3, 4, 4, 3",
+                    "opt_2": "4, 3, 4, 3",
+                    "opt_3": "3, 3, 4, 4",
+                    "opt_4": "3, 4, 3, 4",
+                    "correct_answer": "4, 3, 4, 3",
+                    "description": "Step 1: int i; The variable i is  declared as an global and integer type.\n\n\nStep 2: int fun1(int); This prototype tells the compiler that the fun1() accepts the one integer parameter and returns the integer value.\n\n\nStep 3: int fun2(int); This prototype tells the compiler that the fun2() accepts the one integer parameter and returns the integer value.\n\n\nStep 4: extern int j; Inside the main function, the extern variable j is declared and defined in another source file.\n\n\nStep 5: int i=3; The local variable i is defines as an integer type and initialized to 3.\n\n\nStep 6: fun1(i); The fun1(i) increements the given value of variable i prints it. Here fun1(i) becomes fun1(3) hence it prints '4' then the control is given back to the main function.\n\n\nStep 7: printf(\"%d,\", i); It prints the value of local variable i. So, it prints '3'.\n\n\nStep 8: fun2(i); The fun2(i) increements the given value of variable i prints it. Here fun2(i) becomes fun2(3) hence it prints '4' then the control is given back to the main function.\n\n\nStep 9: printf(\"%d,\", i); It prints the value of local variable i. So, it prints '3'.\n\n\nHence the output is \"4 3 4 3\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    int fun(int);\n    int i = fun(10);\n    printf(\"%d\\n\", --i);\n    return 0;\n}\nint fun(int i)\n{\n   return (i++);\n}",
+            "options": [
+                {
+                    "opt_1": "9",
+                    "opt_2": "10",
+                    "opt_3": "11",
+                    "opt_4": "8",
+                    "correct_answer": "9",
+                    "description": "Step 1: int fun(int); Here we declare the prototype of the function fun().\n\n\nStep 2: int i = fun(10); The variable i is declared as an integer type and the result of the fun(10) will be stored in the variable i.\n\n\nStep 3: int fun(int i){ return (i++); } Inside the fun() we are returning a value return(i++). It returns 10. because i++ is the post-increement operator.\n\n\nStep 4: Then the control back to the main function and the value 10 is assigned to variable i.\n\n\nStep 5: printf(\"%d\\n\", --i); Here --i denoted pre-increement. Hence it prints the value 9."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint check (int, int);\n\nint main()\n{\n    int c;\n    c = check(10, 20);\n    printf(\"c=%d\\n\", c);\n    return 0;\n}\nint check(int i, int j)\n{\n    int *p, *q;\n    p=&i;\n    q=&j;\n    i>=45 ? return(*p): return(*q);\n}",
+            "options": [
+                {
+                    "opt_1": "Print 10",
+                    "opt_2": "Print 20",
+                    "opt_3": "Print 1",
+                    "opt_4": "Compile error",
+                    "correct_answer": "Compile error",
+                    "description": "There is an error in this line i>=45 ? return(*p): return(*q);. We cannot use return keyword in the terenary operators."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint main()\n{\n    int i=1;\n    if(!i)\n        printf(\"IndiaBIX,\");\n    else\n    {\n        i=0;\n        printf(\"C-Program\");\n        main();\n    }\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "prints \"IndiaBIX, C-Program\" infinitely",
+                    "opt_2": "prints \"C-Program\" infinetly",
+                    "opt_3": "prints \"C-Program, IndiaBIX\" infinitely",
+                    "opt_4": "Error: main() should not inside else statement",
+                    "correct_answer": "prints \"C-Program\" infinetly",
+                    "description": "Step 1: int i=1; The variable i is declared as an integer type and initialized to 1(one).\n\n\nStep 2: if(!i) Here the !(NOT) operator reverts the i value 1 to 0. Hence the if(0) condition fails. So it goes to else part.\n\n\nStep 3: else { i=0; In the else part variable i is assigned to value 0(zero).\n\n\nStep 4: printf(\"C-Program\"); It prints the \"C-program\".\n\n\nStep 5: main(); Here we are calling the main() function.\n\n\nAfter calling the function, the program repeats from step 1 to step 5 infinitely.\n\n\nHence it prints \"C-Program\" infinitely."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint check(int);\nint main()\n{\n    int i=45, c;\n    c = check(i);\n    printf(\"%d\\n\", c);\n    return 0;\n}\nint check(int ch)\n{\n    if(ch >= 45)\n        return 100;\n    else\n        return 10;\n}",
+            "options": [
+                {
+                    "opt_1": "100",
+                    "opt_2": "10",
+                    "opt_3": "1",
+                    "opt_4": "0",
+                    "correct_answer": "100",
+                    "description": "Step 1: int check(int); This prototype tells the compiler that the function check() accepts one integer parameter and returns an integer value.\n\n\nStep 2: int l=45, c; The variable i and c are declared as an integer type and i is initialized to 45.\n\n\nThe function check(i) return 100 if the given value of variable i is >=(greater than or equal to) 45, else it will return 10.\n\n\nStep 3: c = check(i); becomes c = check(45); The function check() return 100 and it get stored in the variable c.(c = 100)\n                                                                                                                            \n\nStep 4: printf(\"%d\\n\", c); It prints the value of variable c.\n\n\nHence the output of the program is '100'."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint sumdig(int);\nint main()\n{\n    int a, b;\n    a = sumdig(123);\n    b = sumdig(123);\n    printf(\"%d, %d\\n\", a, b);\n    return 0;\n}\nint sumdig(int n)\n{\n    int s, d;\n    if(n!=0)\n    {\n        d = n%10;\n        n = n/10;\n        s = d+sumdig(n);\n    }\n    else\n        return 0;\n    return s;\n}",
+            "options": [
+                {
+                    "opt_1": "4, 4",
+                    "opt_2": "3, 3",
+                    "opt_3": "6, 6",
+                    "opt_4": "12, 12",
+                    "correct_answer": "6, 6",
+                    "description": "No answer description is available."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program in 16 bit platform (Turbo C under DOS)?\n#include<stdio.h>\n\nint main()\n{\n    int fun();\n    int i;\n    i = fun();\n    printf(\"%d\\n\", i);\n    return 0;\n}\nint fun()\n{\n    _AX = 1990;\n}",
+            "options": [
+                {
+                    "opt_1": "Garbage value",
+                    "opt_2": "0 (Zero)",
+                    "opt_3": "1990",
+                    "opt_4": "No output",
+                    "correct_answer": "1990",
+                    "description": "Turbo C (Windows): The return value of the function is taken from the Accumulator _AX=1990.\n\nBut it may not work as expected in GCC compiler (Linux)."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\n\nint addmult(int ii, int jj)\n{\n    int kk, ll;\n    kk = ii + jj;\n    ll = ii * jj;\n    return (kk, ll);\n}\n\nint main()\n{\n    int i=3, j=4, k, l;\n    k = addmult(i, j);\n    l = addmult(i, j);\n    printf(\"%d, %d\\n\", k, l);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "12, 12",
+                    "opt_2": "7, 7",
+                    "opt_3": "7, 12",
+                    "opt_4": "12, 7",
+                    "correct_answer": "12, 12",
+                    "description": "Step 1: int i=3, j=4, k, l; The variables i, j, k, l are declared as an integer type and variable i, j are initialized to 3, 4 respectively.\n\n\nThe function addmult(i, j); accept 2 integer parameters. \n\n\nStep 2: k = addmult(i, j); becomes k = addmult(3, 4)\n\n\n In the function addmult(). The variable kk, ll are declared as an integer type int kk, ll;  \n\n kk = ii + jj; becomes kk = 3 + 4 Now the kk value is '7'. \n ll = ii * jj; becomes ll = 3 * 4 Now the ll value is '12'. \n return (kk, ll); It returns the value of variable ll only.\n The value 12 is stored in variable 'k'. \n\nStep 3: l = addmult(i, j); becomes l = addmult(3, 4)\n\n\n kk = ii + jj; becomes kk = 3 + 4 Now the kk value is '7'. \n ll = ii * jj; becomes ll = 3 * 4 Now the ll value is '12'. \n return (kk, ll); It returns the value of variable ll only.\n The value 12 is stored in variable 'l'.  \n\nStep 4: printf(\"%d, %d\\n\", k, l); It prints the value of k and l\n\n\nHence the output is \"12, 12\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint i;\nint fun();\n\nint main()\n{\n    while(i)\n    {\n        fun();\n        main();\n    }\n    printf(\"Hello\\n\");\n    return 0;\n}\nint fun()\n{\n    printf(\"Hi\");\n}",
+            "options": [
+                {
+                    "opt_1": "Hello",
+                    "opt_2": "Hi Hello",
+                    "opt_3": "No output",
+                    "opt_4": "Infinite loop",
+                    "correct_answer": "Hello",
+                    "description": "Step 1: int i; The variable i is declared as an integer type.\n\n\nStep 1: int fun(); This prototype tells the compiler that the function fun() does not accept any arguments and it returns an integer value.\n\n\nStep 1: while(i) The value of i is not initialized so this while condition is failed. So, it does not execute the while block.\n\n\nStep 1: printf(\"Hello\\n\"); It prints \"Hello\".\n\n\nHence the output of the program is \"Hello\"."
+                }
+            ]
+        },
+        {
+            "question_title": "What will be the output of the program?\n#include<stdio.h>\nint reverse(int);\n\nint main()\n{\n    int no=5;\n    reverse(no);\n    return 0;\n}\nint reverse(int no)\n{\n    if(no == 0)\n        return 0;\n    else\n        printf(\"%d,\", no);\n    reverse (no--);\n}",
+            "options": [
+                {
+                    "opt_1": "Print 5, 4, 3, 2, 1",
+                    "opt_2": "Print 1, 2, 3, 4, 5",
+                    "opt_3": "Print 5, 4, 3, 2, 1, 0",
+                    "opt_4": "Infinite loop",
+                    "correct_answer": "Infinite loop",
+                    "description": "Step 1: int no=5; The variable no is declared as integer type and initialized to 5.\n\n\nStep 2: reverse(no); becomes reverse(5); It calls the function reverse() with '5' as parameter.\n\n\nThe function reverse accept an integer number 5 and it returns '0'(zero) if(5 == 0) if the given number is '0'(zero) or else printf(\"%d,\", no); it prints that number 5  and calls the function reverse(5);.\n\nThe function runs infinetely because the there is a post-decrement operator is used. It will not decrease the value of 'n' before calling the reverse() function.  So, it calls reverse(5) infinitely.\n\nNote: If we use pre-decrement operator like reverse(--n), then the output will be 5, 4, 3, 2, 1. Because before calling the function, it decrements the value of 'n'."
+                }
+            ]
+        },
+        {
+            "question_title": "There is a error in the below program. Which statement will you add to remove it?\n#include<stdio.h>\n\nint main()\n{\n    int a;\n    a = f(10, 3.14);\n    printf(\"%d\\n\", a);\n    return 0;\n}\nfloat f(int aa, float bb)\n{\n    return ((float)aa + bb);\n}",
+            "options": [
+                {
+                    "opt_1": "Add prototype: float f(aa, bb)",
+                    "opt_2": "Add prototype: float f(int, float)",
+                    "opt_3": "Add prototype: float f(float, int)",
+                    "opt_4": "Add prototype: float f(bb, aa)",
+                    "correct_answer": "Add prototype: float f(int, float)",
+                    "description": "The correct form of function f prototype is float f(int, float);"
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the function?\nlong fun(int num)\n{\n    int i;\n    long f=1;\n    for(i=1; i<=num; i++)\n        f = f * i;\n    return f;\n}",
+            "options": [
+                {
+                    "opt_1": "The function calculates the value of 1 raised to power num.",
+                    "opt_2": "The function calculates the square root of an integer",
+                    "opt_3": "The function calculates the factorial value of an integer",
+                    "opt_4": "None of above",
+                    "correct_answer": "The function calculates the factorial value of an integer",
+                    "description": "Yes, this function calculates and return the factorial value of an given integer num."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the program?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%p\\n\", main());\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "It prints garbage values infinitely",
+                    "opt_2": "Runs infinitely without printing anything",
+                    "opt_3": "Error: main() cannot be called inside printf()",
+                    "opt_4": "No Error and print nothing",
+                    "correct_answer": "Runs infinitely without printing anything",
+                    "description": "In printf(\"%p\\n\", main()); it calls the main() function and then it repeats infinetly, untill stack overflow."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\nint f(int a)\n{\n  a > 20? return(10): return(20);\n}\nint main()\n{\n    int f(int);\n    int b;\n    b = f(20);\n    printf(\"%d\\n\", b);\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Prototype declaration",
+                    "opt_2": "No error",
+                    "opt_3": "Error: return statement cannot be used with conditional operators",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: return statement cannot be used with conditional operators",
+                    "description": "In a ternary operator, we cannot use the return statement. The ternary operator requires expressions but not code."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n#include<stdio.h>\n\nint main()\n{\n    int a=10;\n    void f();\n    a = f();\n    printf(\"%d\\n\", a);\n    return 0;\n}\nvoid f()\n{\n    printf(\"Hi\");\n}",
+            "options": [
+                {
+                    "opt_1": "Error: Not allowed assignment",
+                    "opt_2": "Error: Doesn't print anything",
+                    "opt_3": "No error",
+                    "opt_4": "None of above",
+                    "correct_answer": "Error: Not allowed assignment",
+                    "description": "The function void f() is not visible to the compiler while going through main() function. So we have to declare this prototype void f(); before to main() function. This kind of error will not occur in modern compilers."
+                }
+            ]
+        },
+        {
+            "question_title": "Point out the error in the program\n\nf(int a, int b)\n{\n    int a;\n    a = 20;\n    return a;\n}",
+            "options": [
+                {
+                    "opt_1": "Missing parenthesis in return statement",
+                    "opt_2": "The function should be defined as int f(int a, int b)",
+                    "opt_3": "Redeclaration of a",
+                    "opt_4": "None of above",
+                    "correct_answer": "Redeclaration of a",
+                    "description": "f(int a, int b)  The variable a is declared in the function argument statement.\n\n\nint a; Here again we are declaring the variable a. Hence it shows the error \"Redeclaration of a\""
+                }
+            ]
+        },
+        {
+            "question_title": "Names of functions in two different files linked together must be unique",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, If two function are declared in a same name, it gives \"Error: Multiple declaration of function_name())\"."
+                }
+            ]
+        },
+        {
+            "question_title": "In C all functions except main() can be called recursively.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "False",
+                    "description": "Any function including main() can be called recursively."
+                }
+            ]
+        },
+        {
+            "question_title": "A function may have any number of return statements each returning different values.",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function may have any number of return statements each returning different values and each return statements will not occur successively."
+                }
+            ]
+        },
+        {
+            "question_title": "A function cannot be defined inside another function",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "A function cannot be defined inside the another function, but a function can be called inside a another function."
+                }
+            ]
+        },
+        {
+            "question_title": "Functions can be called either by value or reference",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function can be called either call by value or call by reference.\nExample:\nCall by value means c = sub(a, b); here value of a and b are passed.\n\nCall by reference means c = sub(&a, &b); here address of a and b are passed."
+                }
+            ]
+        },
+        {
+            "question_title": "If return type for a function is not specified, it defaults to int",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, The default return type for a function is int."
+                }
+            ]
+        },
+        {
+            "question_title": "Functions cannot return more than one value at a time",
+            "options": [
+                {
+                    "opt_1": "True",
+                    "opt_2": "False",
+                    "correct_answer": "True",
+                    "description": "True, A function cannot return more than one value at a time. because after returning a value the control is given back to calling function."
+                }
+            ]
+        },
+        {
+            "question_title": "Every function must return a value",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, If a function return type is declared as void it cannot return any value."
+                }
+            ]
+        },
+        {
+            "question_title": "Will the following functions work?\nint f1(int a, int b)\n{\n    return ( f2(20) );\n}\nint f2(int a)\n{\n    return (a*a);\n}",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, It will return the value 20*20 = 400\nExample:\n\n#include <stdio.h>\nint f1(int, int); /* Function prototype */\nint f2(int); /* Function prototype */\n\nint main()\n{\n    int a = 2, b = 3, c;\n    c = f1(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\n\nint f1(int a, int b)\n{\n    return ( f2(20) );\n}\n\nint f2(int a)\n{\n    return (a * a);\n}\n\nOutput:\nc = 400"
+                }
+            ]
+        },
+        {
+            "question_title": "Usually recursion works slower than loops.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "When a recursive call is made, the function/process clones itself and then process that funtion. This leads to time and space constrains.\n\n\nIn a loop, there is no recursive call involved that saves a lot of time and space too."
+                }
+            ]
+        },
+        {
+            "question_title": "If a function contains two return statements successively, the compiler will generate warnings. Yes/No ?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes. If a function contains two return statements  successively, the compiler will generate \"Unreachable code\" warnings.\nExample:\n\n#include<stdio.h>\nint mul(int, int); /* Function prototype */\n\nint main()\n{\n    int a = 4, b = 3, c;\n    c = mul(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\nint mul(int a, int b)\n{\n   return (a * b);\n   return (a - b); /* Warning: Unreachable code */\n}\n\nOutput:\nc = 12"
+                }
+            ]
+        },
+        {
+            "question_title": "Functions cannot return a floating point number",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "A function can return floating point value.\nExample:\n\n#include <stdio.h>\nfloat sub(float, float); /* Function prototype */\n\nint main()\n{\n    float a = 4.5, b = 3.2, c;\n    c = sub(a, b);\n    printf(\"c = %f\\n\", c);\n    return 0;\n}\nfloat sub(float a, float b)\n{\n   return (a - b);\n}\n\nOutput: \nc = 1.300000"
+                }
+            ]
+        },
+        {
+            "question_title": "Maximum number of arguments that a function can take is 12",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, C can accept upto 127 maximum number of arguments in a function."
+                }
+            ]
+        },
+        {
+            "question_title": "Is it true that too many recursive calls may result into stack overflow?",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "Yes",
+                    "description": "Yes, too many recursive calls may result into stack overflow. because when a function is called its return address is stored in stack.\nAfter sometime the stack memory will be filled completely. Hence stack overflow error will occur."
+                }
+            ]
+        },
+        {
+            "question_title": "In a function two return statements should never occur.",
+            "options": [
+                {
+                    "opt_1": "Yes",
+                    "opt_2": "No",
+                    "correct_answer": "No",
+                    "description": "No, In a function two return statements can occur but not successively.\nExample:\n\n#include <stdio.h>\nint mul(int, int); /* Function prototype */\n\nint main()\n{\n    int a = 0, b = 3, c;\n    c = mul(a, b);\n    printf(\"c = %d\\n\", c);\n    return 0;\n}\n\n/* Two return statements in the mul() function */\nint mul(int a, int b)\n{\n   if(a == 0 || b == 0)\n   {\n        return 0;\n   }\n   else\n   {\n        return (a * b);\n   }\n}\n\nOutput:\nc = 0"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "chapter_name": "Functions",
+    "questions": [
+        {
+            "question_title": "There is a error in the below program. Which statement will you add to remove it?\n#include<stdio.h>\n\nint main()\n{\n    int a;\n    a = f(10, 3.14);\n    printf(\"%d\\n\", a);\n    return 0;\n}\nfloat f(int aa, float bb)\n{\n    return ((float)aa + bb);\n}",
+            "options": [
+                {
+                    "opt_1": "Add prototype: float f(aa, bb)",
+                    "opt_2": "Add prototype: float f(int, float)",
+                    "opt_3": "Add prototype: float f(float, int)",
+                    "opt_4": "Add prototype: float f(bb, aa)",
+                    "correct_answer": "Add prototype: float f(int, float)",
+                    "description": "The correct form of function f prototype is float f(int, float);"
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the function?\nlong fun(int num)\n{\n    int i;\n    long f=1;\n    for(i=1; i<=num; i++)\n        f = f * i;\n    return f;\n}",
+            "options": [
+                {
+                    "opt_1": "The function calculates the value of 1 raised to power num.",
+                    "opt_2": "The function calculates the square root of an integer",
+                    "opt_3": "The function calculates the factorial value of an integer",
+                    "opt_4": "None of above",
+                    "correct_answer": "The function calculates the factorial value of an integer",
+                    "description": "Yes, this function calculates and return the factorial value of an given integer num."
+                }
+            ]
+        },
+        {
+            "question_title": "Which of the following statements are correct about the program?\n#include<stdio.h>\n\nint main()\n{\n    printf(\"%p\\n\", main());\n    return 0;\n}",
+            "options": [
+                {
+                    "opt_1": "It prints garbage values infinitely",
+                    "opt_2": "Runs infinitely without printing anything",
+                    "opt_3": "Error: main() cannot be called inside printf()",
+                    "opt_4": "No Error and print nothing",
+                    "correct_answer": "Runs infinitely without printing anything",
+                    "description": "In printf(\"%p\\n\", main()); it calls the main() function and then it repeats infinetly, untill stack overflow."
+                }
+            ]
+        }
+    ]
+}
